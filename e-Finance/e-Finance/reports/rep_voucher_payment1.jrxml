@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.3.1.final using JasperReports Library version 6.3.1  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="rep_voucher_payment" language="groovy" pageWidth="792" pageHeight="612" orientation="Landscape" whenNoDataType="AllSectionsNoDetail" columnWidth="752" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="73c94189-a6a0-4e80-a016-cfba13d03339">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="particulars" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="gendate" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="companyname" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[select * from tl_fn_vocherpayment where particulars=$P{particulars} or date=$P{gendate} and login_comp=$P{companyname}]]>
+	</queryString>
+	<field name="sno" class="java.lang.Long"/>
+	<field name="reciptno" class="java.lang.String"/>
+	<field name="date" class="java.lang.String"/>
+	<field name="under" class="java.lang.String"/>
+	<field name="currentbalance" class="java.lang.String"/>
+	<field name="particulars" class="java.lang.String"/>
+	<field name="currentbalance1" class="java.lang.String"/>
+	<field name="vouchertype" class="java.lang.String"/>
+	<field name="amount" class="java.lang.String"/>
+	<field name="narration" class="java.lang.String"/>
+	<field name="getdate" class="java.lang.String"/>
+	<field name="department" class="java.lang.String"/>
+	<field name="manager" class="java.lang.String"/>
+	<field name="deltby" class="java.lang.String"/>
+	<field name="login_comp" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="47" y="23" width="133" height="21" forecolor="#FF0000" uuid="bb65f4e9-2af6-47d9-aa93-a4c426f5df9d">
+					<printWhenExpression><![CDATA[$F{particulars}.equals( null )]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[No Data Found]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="288" y="23" width="234" height="46" uuid="22da6dac-8e7e-48ba-a21f-4a4bd3192cc0"/>
+				<textElement>
+					<font size="24" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{companyname}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch">
+			<staticText>
+				<reportElement x="288" y="0" width="217" height="35" uuid="3328b276-d7b8-4694-9425-b43160186a09"/>
+				<textElement>
+					<font size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Voucher Payment Details]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="20" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="0" width="752" height="20" backcolor="#055799" uuid="b33938b4-bf1f-4eb0-9ba1-f9dc8b8ba007"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="22" y="0" width="100" height="20" forecolor="#FFFFFF" uuid="defef13f-89f8-44f4-8ee5-97cb8ab71196"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Under]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="156" y="0" width="100" height="20" forecolor="#FFFFFF" uuid="3fac7951-391a-4cd5-bc44-5c4db2ed5a4d"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Current Balance]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="295" y="0" width="100" height="20" forecolor="#FFFFFF" uuid="39141a1b-5a10-42ec-b1d6-df8e7dda3444"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Particulars]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="422" y="0" width="100" height="20" forecolor="#FFFFFF" uuid="5f628ed4-70e0-4fa2-a739-1ae64c03b6bd"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Current Balance]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="559" y="0" width="100" height="20" forecolor="#FFFFFF" uuid="16ff0e2a-678e-4c03-b5c8-1463daa1267f"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Payment Date]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="0" width="752" height="20" backcolor="#BBDEF9" uuid="27246382-f688-445b-a2f3-325d4765e935">
+					<printWhenExpression><![CDATA[new Boolean( $V{PAGE_COUNT}.intValue() % 2 ==0 )]]></printWhenExpression>
+				</reportElement>
+			</rectangle>
+			<textField isBlankWhenNull="true">
+				<reportElement x="22" y="0" width="100" height="20" uuid="332752d5-92fd-4ac5-a9ec-187fad4fde20"/>
+				<textFieldExpression><![CDATA[$F{under}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="156" y="0" width="100" height="20" uuid="6eddf9c3-919e-4a53-87bb-2bbfa110edb0"/>
+				<textFieldExpression><![CDATA[$F{currentbalance}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="295" y="0" width="100" height="20" uuid="9763e6d2-6d41-4ae3-995c-2ee6451d2151"/>
+				<textFieldExpression><![CDATA[$F{particulars}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="422" y="0" width="100" height="20" uuid="0af5e7f0-e92f-47e5-865b-3bc9985606e1"/>
+				<textFieldExpression><![CDATA[$F{currentbalance1}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="571" y="0" width="100" height="20" uuid="fec55481-ae76-4116-b639-442f010af723"/>
+				<textFieldExpression><![CDATA[$F{date}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.3.1.final using JasperReports Library version 6.3.1  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="rep_voucher_sales_return " language="groovy" pageWidth="792" pageHeight="612" orientation="Landscape" whenNoDataType="AllSectionsNoDetail" columnWidth="752" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="f1bd2fbe-a703-418d-9e4f-1569fb9fcf4c">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="salesledger" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="nameofitem" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="date" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="companyname" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[select * from `tl_fn_salesreturn` where (salesledger=$P{salesledger} or nameofitem=$P{nameofitem} or date=$P{date}) and login_comp=$P{companyname}]]>
+	</queryString>
+	<field name="sno" class="java.lang.Long"/>
+	<field name="reciptno" class="java.lang.String"/>
+	<field name="refno" class="java.lang.String"/>
+	<field name="date" class="java.lang.String"/>
+	<field name="paryaccount" class="java.lang.String"/>
+	<field name="currentbalance" class="java.lang.String"/>
+	<field name="salesledger" class="java.lang.String"/>
+	<field name="nameofitem" class="java.lang.String"/>
+	<field name="quantity" class="java.lang.String"/>
+	<field name="units" class="java.lang.String"/>
+	<field name="rate" class="java.lang.String"/>
+	<field name="amount" class="java.lang.String"/>
+	<field name="narration" class="java.lang.String"/>
+	<field name="gendate" class="java.lang.String"/>
+	<field name="department" class="java.lang.String"/>
+	<field name="manager" class="java.lang.String"/>
+	<field name="deltby" class="java.lang.String"/>
+	<field name="login_comp" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="29" y="22" width="121" height="21" forecolor="#FF0000" uuid="55d13f47-071a-4f0b-99d9-9f991a656aa6">
+					<printWhenExpression><![CDATA[$F{salesledger}.equals( null )]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[No Data Found]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="308" y="23" width="218" height="40" uuid="20030133-52b2-42b1-9d98-cfceed765b6d"/>
+				<textElement>
+					<font size="24" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{companyname}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch">
+			<staticText>
+				<reportElement x="308" y="0" width="189" height="35" uuid="3e157c62-a941-4e3a-8339-28626b0f938f"/>
+				<textElement>
+					<font size="18" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Sales Return Details]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="20" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="0" width="752" height="20" backcolor="#055799" uuid="23987d2c-635d-4952-8791-d6c5257d9a18"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="16" y="0" width="100" height="20" forecolor="#FFFFFF" uuid="25aac5bd-f568-4038-acdb-cc93fc684585"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Sales Ledger]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="129" y="0" width="100" height="20" forecolor="#FFFFFF" uuid="f0a2e894-7db8-44ed-acac-973b4a99f016"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Name Of Item]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="247" y="0" width="100" height="20" forecolor="#FFFFFF" uuid="f07973fa-2895-445b-9364-0a66289cff75"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Quantity]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="361" y="0" width="100" height="20" forecolor="#FFFFFF" uuid="b71de9b5-6c58-495e-a470-163f691f86a3"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Units]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="478" y="0" width="100" height="20" forecolor="#FFFFFF" uuid="a34d6c4c-ad89-4b7e-a19f-f0a0723dd5c9"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Rate]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="598" y="0" width="100" height="20" forecolor="#FFFFFF" uuid="061f182a-74ef-45a2-9048-50acba15e4e1"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Amount]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="0" width="752" height="20" backcolor="#BBDEF9" uuid="00c94650-f20b-48e4-99bc-8a4b37451155">
+					<printWhenExpression><![CDATA[new Boolean( $V{PAGE_COUNT}.intValue() % 2 ==0 )]]></printWhenExpression>
+				</reportElement>
+			</rectangle>
+			<textField>
+				<reportElement x="16" y="0" width="100" height="20" uuid="93b7c3cd-fd46-4878-a6f1-ab35c368802e"/>
+				<textFieldExpression><![CDATA[$F{salesledger}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="129" y="0" width="100" height="20" uuid="5933c6d6-6078-4af5-990f-6262b71a93c4"/>
+				<textFieldExpression><![CDATA[$F{nameofitem}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="247" y="0" width="100" height="20" uuid="ceeab68b-7e2e-4a0c-8e64-1fad1f4e0c51"/>
+				<textFieldExpression><![CDATA[$F{quantity}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="361" y="0" width="100" height="20" uuid="5643a9f0-2222-4218-8702-8fb2b7e51e87"/>
+				<textFieldExpression><![CDATA[$F{units}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="478" y="0" width="100" height="20" uuid="1b44dd20-789d-408b-985e-7d781f68d8ae"/>
+				<textFieldExpression><![CDATA[$F{rate}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="598" y="0" width="100" height="20" uuid="41a6bb51-7b7e-474a-a4a2-da863098de7e"/>
+				<textFieldExpression><![CDATA[$F{amount}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

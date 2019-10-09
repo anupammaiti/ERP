@@ -1,0 +1,400 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.3.1.final using JasperReports Library version 6.3.1  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="rep_aging_of_account_recivable" language="groovy" pageWidth="1192" pageHeight="612" orientation="Landscape" whenNoDataType="AllSectionsNoDetail" columnWidth="1152" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="1b10872a-f629-4a08-836c-45ec64592229">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="companyname" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="fromdate" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="todate" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="imagePath" class="java.lang.Object"/>
+	<queryString>
+		<![CDATA[select * from tl_fn_aggingaccountreceivable where login_comp=$P{companyname} and (fromdate= $P{fromdate} and todate=$P{todate});]]>
+	</queryString>
+	<field name="sno" class="java.lang.Long"/>
+	<field name="fromdate" class="java.lang.String"/>
+	<field name="todate" class="java.lang.String"/>
+	<field name="date1" class="java.lang.String"/>
+	<field name="invoice1" class="java.lang.String"/>
+	<field name="account1" class="java.lang.String"/>
+	<field name="description1" class="java.lang.String"/>
+	<field name="thirtydays1" class="java.lang.String"/>
+	<field name="sixtydays1" class="java.lang.String"/>
+	<field name="nintydays1" class="java.lang.String"/>
+	<field name="accounta1" class="java.lang.String"/>
+	<field name="total1" class="java.lang.String"/>
+	<field name="accounta2" class="java.lang.String"/>
+	<field name="accounta3" class="java.lang.String"/>
+	<field name="accounta4" class="java.lang.String"/>
+	<field name="accounta5" class="java.lang.String"/>
+	<field name="date2" class="java.lang.String"/>
+	<field name="invoice2" class="java.lang.String"/>
+	<field name="account2" class="java.lang.String"/>
+	<field name="description2" class="java.lang.String"/>
+	<field name="thirtydays2" class="java.lang.String"/>
+	<field name="sixtydays2" class="java.lang.String"/>
+	<field name="nintydays2" class="java.lang.String"/>
+	<field name="total2" class="java.lang.String"/>
+	<field name="date3" class="java.lang.String"/>
+	<field name="invoice3" class="java.lang.String"/>
+	<field name="account3" class="java.lang.String"/>
+	<field name="description3" class="java.lang.String"/>
+	<field name="thirtydays3" class="java.lang.String"/>
+	<field name="sixtydays3" class="java.lang.String"/>
+	<field name="nintydays3" class="java.lang.String"/>
+	<field name="total3" class="java.lang.String"/>
+	<field name="date4" class="java.lang.String"/>
+	<field name="invoice4" class="java.lang.String"/>
+	<field name="account4" class="java.lang.String"/>
+	<field name="description4" class="java.lang.String"/>
+	<field name="thirtydays4" class="java.lang.String"/>
+	<field name="sixtydays4" class="java.lang.String"/>
+	<field name="nintydays4" class="java.lang.String"/>
+	<field name="total4" class="java.lang.String"/>
+	<field name="date5" class="java.lang.String"/>
+	<field name="invoice5" class="java.lang.String"/>
+	<field name="account5" class="java.lang.String"/>
+	<field name="description5" class="java.lang.String"/>
+	<field name="thirtydays5" class="java.lang.String"/>
+	<field name="sixtydays5" class="java.lang.String"/>
+	<field name="nintydays5" class="java.lang.String"/>
+	<field name="total5" class="java.lang.String"/>
+	<field name="gendate" class="java.lang.String"/>
+	<field name="login_comp" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<textField>
+				<reportElement x="467" y="16" width="233" height="45" uuid="8746654c-73a4-4ad3-888c-3d8fd332fcf6"/>
+				<textElement>
+					<font size="24" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{companyname}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="796" y="16" width="126" height="23" forecolor="#FF0000" uuid="a0db7dd2-e021-47e7-8c77-ac3f40626063">
+					<printWhenExpression><![CDATA[$F{date1}.equals( null )]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[No Data Found]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="36" splitType="Stretch">
+			<staticText>
+				<reportElement x="467" y="11" width="277" height="25" uuid="653c85eb-6a0d-4162-bda1-b4d36b4d6e41"/>
+				<textElement>
+					<font size="18" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Aging Of Account Recivable]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch">
+			<rectangle>
+				<reportElement x="13" y="41" width="1123" height="20" backcolor="#055799" uuid="f9291ca6-4075-492a-b4a8-a2b4a5edba66"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="20" y="41" width="100" height="20" forecolor="#FFFFFF" uuid="6637c22b-f315-4493-b9a2-5668f9b45f08"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Date]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="139" y="41" width="100" height="20" forecolor="#FFFFFF" uuid="d9073e23-e2e5-4b93-8224-048eb3e080c4"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Invoice]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="265" y="41" width="100" height="20" forecolor="#FFFFFF" uuid="365673c2-c7c1-4cf7-87e1-1a47688b6e41"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Account]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="390" y="41" width="100" height="20" forecolor="#FFFFFF" uuid="2f623815-5a68-45c5-b0d0-37a7b7b53683"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Description]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="513" y="41" width="100" height="20" forecolor="#FFFFFF" uuid="8a7755a6-bc5e-4ea2-8889-30aaeb7ee3cd"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Thirtydays]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="631" y="41" width="100" height="20" forecolor="#FFFFFF" uuid="175d500b-784a-41f7-874a-0c826dfab19f"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Sixty Days]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="888" y="41" width="100" height="20" forecolor="#FFFFFF" uuid="995af951-ec82-46b8-a797-cf3d4d65f55f"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Accounta]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="759" y="41" width="100" height="20" forecolor="#FFFFFF" uuid="a7b91da1-2ebf-44af-83b2-65c734ad3a97"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Ninty Days]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1014" y="41" width="100" height="20" forecolor="#FFFFFF" uuid="05b1df59-936a-49e9-875b-9a619012f3fa"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Total]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="241" splitType="Stretch">
+			<textField>
+				<reportElement x="20" y="19" width="100" height="20" uuid="c3d91c0c-dd91-4440-82af-8dfc4c27b8ec"/>
+				<textFieldExpression><![CDATA[$F{date1}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="139" y="20" width="100" height="20" uuid="da141b5b-0f96-4573-bdaf-d3a2b72f6124"/>
+				<textFieldExpression><![CDATA[$F{invoice1}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="265" y="20" width="100" height="20" uuid="1f2cbe2e-1ce1-4f5e-a936-091f4cee8e1d"/>
+				<textFieldExpression><![CDATA[$F{account1}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="390" y="20" width="100" height="20" uuid="8b449eb8-996c-4952-88dd-14f7cd606672"/>
+				<textFieldExpression><![CDATA[$F{description1}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="513" y="20" width="100" height="20" uuid="025081ea-c698-446c-b482-5f303ba6f75d"/>
+				<textFieldExpression><![CDATA[$F{thirtydays1}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="631" y="20" width="100" height="20" uuid="e81776b2-2f83-4bbb-9e71-9a6be102c417"/>
+				<textFieldExpression><![CDATA[$F{sixtydays1}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="888" y="20" width="100" height="20" uuid="4b9538df-918f-4cdf-903e-d4efb534eef1"/>
+				<textFieldExpression><![CDATA[$F{accounta1}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="759" y="20" width="100" height="20" uuid="ecddf2be-4546-43fa-96ce-a15175161f4d"/>
+				<textFieldExpression><![CDATA[$F{nintydays1}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="1014" y="19" width="100" height="20" uuid="5d9186d0-d280-4feb-8015-9bce6a8f0df3"/>
+				<textFieldExpression><![CDATA[$F{total1}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="20" y="64" width="100" height="20" uuid="f92517f3-187a-4626-b01f-a527d25ecf9b"/>
+				<textFieldExpression><![CDATA[$F{date2}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="139" y="64" width="100" height="20" uuid="b1ab31e3-006c-41f4-a0df-7da98e47ebe7"/>
+				<textFieldExpression><![CDATA[$F{invoice2}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="265" y="64" width="100" height="20" uuid="abac3931-12e2-4044-b236-30a0280a405d"/>
+				<textFieldExpression><![CDATA[$F{account2}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="390" y="65" width="100" height="20" uuid="39090bfc-ef3b-4a4b-87ed-399ded1bbc4b"/>
+				<textFieldExpression><![CDATA[$F{description2}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="513" y="64" width="100" height="20" uuid="63a76608-56de-443e-bae2-ac90b356f773"/>
+				<textFieldExpression><![CDATA[$F{thirtydays2}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="631" y="64" width="100" height="20" uuid="6541ba91-4f3e-4946-abbd-e61b78241054"/>
+				<textFieldExpression><![CDATA[$F{sixtydays2}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="759" y="64" width="100" height="20" uuid="777e2123-d671-41a3-a9b6-a6e4aed0e780"/>
+				<textFieldExpression><![CDATA[$F{nintydays2}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="888" y="64" width="100" height="20" uuid="b2bd2977-12e7-4e9f-adbb-0a82180867aa"/>
+				<textFieldExpression><![CDATA[$F{accounta2}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="1014" y="64" width="100" height="20" uuid="a3a584fd-1c4a-4c3b-9cc6-b4fcb8c0e6fd"/>
+				<textFieldExpression><![CDATA[$F{total2}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="19" y="115" width="100" height="20" uuid="69b11a47-1038-40e3-8d97-639c3c57488a"/>
+				<textFieldExpression><![CDATA[$F{date3}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="139" y="117" width="100" height="20" uuid="59fcac49-0b50-47d0-843a-71b086f22299"/>
+				<textFieldExpression><![CDATA[$F{invoice3}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="265" y="116" width="100" height="20" uuid="9008a56d-285f-4f69-919d-f6f44a9ce421"/>
+				<textFieldExpression><![CDATA[$F{account3}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="390" y="117" width="100" height="20" uuid="6102518a-b4f9-40c4-ac4c-8d45474ede76"/>
+				<textFieldExpression><![CDATA[$F{description3}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="513" y="117" width="100" height="20" uuid="585963d1-5ce6-45bf-b2a7-30e703fa2a92"/>
+				<textFieldExpression><![CDATA[$F{thirtydays3}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="631" y="117" width="100" height="20" uuid="533024c0-7bbc-42d3-afe5-acf8c25cd638"/>
+				<textFieldExpression><![CDATA[$F{sixtydays3}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="759" y="117" width="100" height="20" uuid="e0b48b1c-c4cc-4263-9398-b19d689e36dc"/>
+				<textFieldExpression><![CDATA[$F{nintydays3}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="1014" y="116" width="100" height="20" uuid="ce860354-8f4c-4bee-baf1-4deec0c1acee"/>
+				<textFieldExpression><![CDATA[$F{total3}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="888" y="117" width="100" height="20" uuid="97768c3e-f67c-4718-8707-3816ef887725"/>
+				<textFieldExpression><![CDATA[$F{accounta3}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="20" y="161" width="100" height="20" uuid="a46aa61b-ac14-4eaf-b4b1-98bf447b4974"/>
+				<textFieldExpression><![CDATA[$F{date4}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="139" y="162" width="100" height="20" uuid="3b3eadf6-5ffc-42af-b027-62f487f85c40"/>
+				<textFieldExpression><![CDATA[$F{invoice4}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="266" y="162" width="100" height="20" uuid="7e33a18b-a2e9-4da1-ab8c-cbf97d4faa52"/>
+				<textFieldExpression><![CDATA[$F{account4}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="390" y="162" width="100" height="20" uuid="8dfc68de-31e8-4151-93e0-651e837442e2"/>
+				<textFieldExpression><![CDATA[$F{description4}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="513" y="162" width="100" height="20" uuid="8465fb7b-31c8-42db-84b6-25999174a6d5"/>
+				<textFieldExpression><![CDATA[$F{thirtydays4}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="631" y="162" width="100" height="20" uuid="bb4a3e51-98c9-4faf-aa3d-6effd1268d78"/>
+				<textFieldExpression><![CDATA[$F{sixtydays4}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="759" y="162" width="100" height="20" uuid="ee8fa265-a1a8-406d-abda-f01e763c0c76"/>
+				<textFieldExpression><![CDATA[$F{nintydays4}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="1014" y="161" width="100" height="20" uuid="c2a7f060-02a9-4d07-8ace-953f8f29cfa7"/>
+				<textFieldExpression><![CDATA[$F{total4}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="888" y="162" width="100" height="20" uuid="d2634609-f16e-42f3-a9b4-ddae06167d61"/>
+				<textFieldExpression><![CDATA[$F{accounta4}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="20" y="199" width="100" height="20" uuid="052cc323-874d-4a2c-8e8e-56ba8e671d9f"/>
+				<textFieldExpression><![CDATA[$F{date5}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="135" y="200" width="100" height="20" uuid="408d3397-dd17-4308-823a-8b2b6716a1a4"/>
+				<textFieldExpression><![CDATA[$F{invoice5}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="265" y="200" width="100" height="20" uuid="7b928283-b8cb-49e7-9d45-eee15a523ecd"/>
+				<textFieldExpression><![CDATA[$F{account5}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="390" y="200" width="100" height="20" uuid="544fc227-9ad9-4e5e-9617-ee4b384f4f84"/>
+				<textFieldExpression><![CDATA[$F{description5}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="513" y="200" width="100" height="20" uuid="820af0e8-ffd2-4780-9835-6c99cf1c5f88"/>
+				<textFieldExpression><![CDATA[$F{thirtydays5}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="631" y="200" width="100" height="20" uuid="78305940-1550-46e0-a436-d8fa2081163a"/>
+				<textFieldExpression><![CDATA[$F{sixtydays5}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="759" y="200" width="100" height="20" uuid="56c777e9-54a6-4692-8469-4ac9373a9bad"/>
+				<textFieldExpression><![CDATA[$F{nintydays5}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="1014" y="199" width="100" height="20" uuid="8e26840b-137a-4b7b-b662-8697a86b5f7e"/>
+				<textFieldExpression><![CDATA[$F{total5}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="888" y="200" width="100" height="20" uuid="3750170d-c2db-4462-887a-8b9bd98f19fd"/>
+				<textFieldExpression><![CDATA[$F{accounta5}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="13" y="229" width="1123" height="1" uuid="7a047587-164a-4726-8bf6-ff67efdb2719"/>
+			</line>
+			<line>
+				<reportElement x="13" y="0" width="1" height="229" uuid="0df4eb8e-f94d-44e5-a75d-c7996709c8cb"/>
+			</line>
+			<line>
+				<reportElement x="1136" y="0" width="1" height="229" uuid="fad9d438-f2cd-4877-9690-9c47a0819f34"/>
+			</line>
+			<line>
+				<reportElement x="128" y="0" width="1" height="229" uuid="5a7edb5c-1b6c-4698-9fe7-13cc6b26062a"/>
+			</line>
+			<line>
+				<reportElement x="251" y="0" width="1" height="229" uuid="4eaff118-4253-4505-aab0-20bc151991c8"/>
+			</line>
+			<line>
+				<reportElement x="378" y="0" width="1" height="230" uuid="5a01bd79-e05f-4a29-9125-67920fea761a"/>
+			</line>
+			<line>
+				<reportElement x="502" y="0" width="1" height="229" uuid="3283f818-97b3-411f-adb6-1db4298430ce"/>
+			</line>
+			<line>
+				<reportElement x="623" y="0" width="1" height="229" uuid="d32962eb-5391-46b9-9ead-4dbf300f8728"/>
+			</line>
+			<line>
+				<reportElement x="744" y="0" width="1" height="229" uuid="8b6123fe-9b4a-444e-8e05-b37184d9256e"/>
+			</line>
+			<line>
+				<reportElement x="878" y="0" width="1" height="230" uuid="635b3c99-8532-4a45-aa06-d70b723ed2e6"/>
+			</line>
+			<line>
+				<reportElement x="1003" y="0" width="1" height="229" uuid="5f9cfcfd-6a44-46b4-baac-2e6bcb06f626"/>
+			</line>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

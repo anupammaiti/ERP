@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.3.1.final using JasperReports Library version 6.3.1  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="rep_phone_bill_exp" language="groovy" pageWidth="1092" pageHeight="612" orientation="Landscape" whenNoDataType="AllSectionsNoDetail" columnWidth="1052" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="412ef530-5b10-4858-b7e2-f9c5ad07c638">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="ledgername" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="provider" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="approvedby" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="companyname" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="deltby" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="fromdate" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT * FROM tl_fn_phonebillexpences where (ledgername=$P{ledgername} or provider=$P{provider} or approvedby=$P{approvedby} or gendate=$P{fromdate} or deltby=$P{deltby}) and login_comp=$P{companyname};]]>
+	</queryString>
+	<field name="sno" class="java.lang.Long"/>
+	<field name="date1" class="java.lang.String"/>
+	<field name="day1" class="java.lang.String"/>
+	<field name="provider" class="java.lang.String"/>
+	<field name="phoneno" class="java.lang.String"/>
+	<field name="location" class="java.lang.String"/>
+	<field name="approvedby" class="java.lang.String"/>
+	<field name="department" class="java.lang.String"/>
+	<field name="billmonth" class="java.lang.String"/>
+	<field name="amountdue" class="java.lang.String"/>
+	<field name="gendate" class="java.lang.String"/>
+	<field name="ledgername" class="java.lang.String"/>
+	<field name="department1" class="java.lang.String"/>
+	<field name="manager" class="java.lang.String"/>
+	<field name="deltby" class="java.lang.String"/>
+	<field name="login_comp" class="java.lang.String"/>
+	<variable name="Total" class="java.lang.String" calculation="Sum">
+		<variableExpression><![CDATA[$F{amountdue}]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="39" y="25" width="131" height="23" forecolor="#FF0000" uuid="7343fbc7-414d-4994-aa8a-6de99ef36b76">
+					<printWhenExpression><![CDATA[$F{day1}.equals( null )]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font size="18"/>
+				</textElement>
+				<text><![CDATA[No Data Found]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="427" y="28" width="223" height="37" uuid="933a936c-7865-4c99-93d6-12d27bd9cbac"/>
+				<textElement>
+					<font size="24" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{companyname}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch">
+			<staticText>
+				<reportElement x="427" y="0" width="200" height="35" uuid="f9dca940-797a-4603-9cad-fa0f83d6824a"/>
+				<textElement>
+					<font size="18" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Phone Bill Exp Details]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="23" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="3" width="1052" height="20" forecolor="#FFFFFF" backcolor="#055799" uuid="6f902ace-1956-48bf-b120-3da009284c41"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="20" y="3" width="100" height="20" forecolor="#FFFFFF" uuid="02de3723-e6bd-4f9c-827e-b272d0ee7fff"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Provider]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="139" y="3" width="100" height="20" forecolor="#FFFFFF" uuid="1f82cf6a-3807-4290-83b1-0235589ba498"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Phone No]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="264" y="3" width="100" height="20" forecolor="#FFFFFF" uuid="5f82aee7-7610-4306-9e78-f76037f71f87"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Location]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="385" y="3" width="100" height="20" forecolor="#FFFFFF" uuid="aa82df62-7c8d-4d45-9e8e-723566e0cec5"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Approved By]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="512" y="3" width="100" height="20" forecolor="#FFFFFF" uuid="c18467b9-fcea-4f1b-9434-0e4c7fe146f0"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Department]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="794" y="3" width="100" height="20" forecolor="#FFFFFF" uuid="20146997-146c-4515-9ae4-d0fe868607fd"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Amount Due]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="924" y="3" width="100" height="20" forecolor="#FFFFFF" uuid="d28c1fe5-15a1-4ba7-bf0e-a34a74a770c1"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Gen Date]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="650" y="3" width="100" height="20" forecolor="#FFFFFF" uuid="5ebc4721-2583-4ca7-a6eb-8bd1707f0cce"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Month Bill]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="23" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="0" width="1052" height="20" forecolor="#FFFFFF" backcolor="#BBDEF9" uuid="1cb4d6a8-57d3-47a8-b8ec-0b554edb434e">
+					<printWhenExpression><![CDATA[new Boolean( $V{PAGE_COUNT}.intValue() % 2 ==0 )]]></printWhenExpression>
+				</reportElement>
+			</rectangle>
+			<textField>
+				<reportElement x="20" y="0" width="100" height="20" uuid="f26e2a83-91fc-42d1-af1d-4a660cf2a716"/>
+				<textFieldExpression><![CDATA[$F{provider}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="139" y="0" width="100" height="20" uuid="84d4873e-55cd-4fed-ac3f-4e48921773e7"/>
+				<textFieldExpression><![CDATA[$F{phoneno}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="264" y="0" width="100" height="20" uuid="424efe6e-880f-4a84-998d-00d534349ba1"/>
+				<textFieldExpression><![CDATA[$F{location}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="385" y="0" width="100" height="20" uuid="8c949e2b-8ffe-4647-beb0-499b6e93c6d6"/>
+				<textFieldExpression><![CDATA[$F{approvedby}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="527" y="0" width="100" height="20" uuid="45e438ec-a28f-43c0-8b70-f3315326fa44"/>
+				<textFieldExpression><![CDATA[$F{department}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="650" y="0" width="100" height="20" uuid="e47215f3-69bb-4756-8e78-1308ffc3a3c3"/>
+				<textFieldExpression><![CDATA[$F{billmonth}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="794" y="0" width="100" height="20" uuid="bb71082b-7f25-4a3a-ada0-aa3546129c68"/>
+				<textFieldExpression><![CDATA[$F{amountdue}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="924" y="3" width="100" height="20" uuid="e9cc75ce-1851-4685-b0d7-31c80a9bc252"/>
+				<textFieldExpression><![CDATA[$F{gendate}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch">
+			<textField isBlankWhenNull="true">
+				<reportElement x="794" y="34" width="100" height="20" uuid="9a52970f-3e97-4cf7-9c58-1ce7ea6ffddb"/>
+				<textFieldExpression><![CDATA[$V{Total}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="694" y="34" width="100" height="20" forecolor="#CC3300" uuid="ff14448b-35c6-4051-8ec4-21a5024b0d8d"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Total Amount]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

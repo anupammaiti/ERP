@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.3.1.final using JasperReports Library version 6.3.1  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="rep_fn_repairsandmaintenance" language="groovy" pageWidth="992" pageHeight="612" orientation="Landscape" whenNoDataType="AllSectionsNoDetail" columnWidth="952" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="f95d33b4-b0c0-4213-b69b-ba3ff064e718">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="ledgername" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="itemname" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="gendate" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="companyname" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[select * from `tl_fn_repairmaintenance` where ledgername=$P{ledgername} and itemname=$P{itemname} and gendate=$P{gendate} and login_comp=$P{companyname}]]>
+	</queryString>
+	<field name="sno" class="java.lang.Long"/>
+	<field name="itemname" class="java.lang.String"/>
+	<field name="quantity" class="java.lang.String"/>
+	<field name="amount" class="java.lang.String"/>
+	<field name="total" class="java.lang.String"/>
+	<field name="gendate" class="java.lang.String"/>
+	<field name="department" class="java.lang.String"/>
+	<field name="manager" class="java.lang.String"/>
+	<field name="deltby" class="java.lang.String"/>
+	<field name="ledgername" class="java.lang.String"/>
+	<field name="login_comp" class="java.lang.String"/>
+	<field name="approvedby" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="55" y="20" width="121" height="24" forecolor="#FF0000" uuid="8554d0b5-bec2-40ab-ac5f-72a8a418de5a">
+					<printWhenExpression><![CDATA[$F{department}.equals( null )]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[No Data Found]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="379" y="20" width="228" height="42" uuid="451e7e75-0cec-4385-b7b8-c7f21d9ffdba"/>
+				<textElement>
+					<font size="24" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{companyname}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch">
+			<staticText>
+				<reportElement x="379" y="0" width="188" height="35" uuid="c0dccc64-39a6-49c5-928d-303b725ae922"/>
+				<textElement>
+					<font size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Repair and Maintenance]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="20" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="0" width="952" height="20" backcolor="#055799" uuid="083ef622-bd54-491c-b69c-9d294a6c9377"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="31" y="0" width="100" height="20" forecolor="#FFFFFF" uuid="1dbef94f-ad83-4142-a5fe-bc579f4ef49b"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Item Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="176" y="0" width="100" height="20" forecolor="#FFFFFF" uuid="b045f4b1-2994-4f58-a6c5-88c9bd5426bf"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Quantity]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="312" y="0" width="100" height="20" forecolor="#FFFFFF" uuid="aea275ca-db61-4c5b-b0fa-e31cf378b347"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Amount]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="443" y="0" width="100" height="20" forecolor="#FFFFFF" uuid="8682ba45-5106-422f-ab08-845661ee76e9"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Total]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="567" y="0" width="100" height="20" forecolor="#FFFFFF" uuid="c885de08-c1b1-4ed9-9602-1004d6d32331"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Gen Date]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="701" y="0" width="100" height="20" forecolor="#FFFFFF" uuid="b3377c5b-2f10-4e4f-aba9-b5043886cae2"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Ledger Name]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="0" width="952" height="20" backcolor="#BBDEF9" uuid="4cf27180-d9c6-47cd-8bb9-083962f66fd3">
+					<printWhenExpression><![CDATA[new Boolean( $V{PAGE_COUNT}.intValue() % 2 ==0 )]]></printWhenExpression>
+				</reportElement>
+			</rectangle>
+			<textField>
+				<reportElement x="31" y="0" width="100" height="20" uuid="b6a220de-488f-4a85-bf5e-1294bd61577b"/>
+				<textFieldExpression><![CDATA[$F{itemname}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="176" y="0" width="100" height="20" uuid="96f5f073-23d1-415a-ac88-87ca6036a792"/>
+				<textFieldExpression><![CDATA[$F{quantity}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="312" y="0" width="100" height="20" uuid="0676781c-0968-40ad-8aba-cae9ba814780"/>
+				<textFieldExpression><![CDATA[$F{amount}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="443" y="0" width="100" height="20" uuid="fd55a2ca-38e1-48dc-bb53-96131073f402"/>
+				<textFieldExpression><![CDATA[$F{total}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="567" y="0" width="100" height="20" uuid="f8c676a2-d939-4567-893f-2eb3e06bc6b2"/>
+				<textFieldExpression><![CDATA[$F{gendate}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="701" y="0" width="100" height="20" uuid="d57e4013-eda3-4578-8521-a55c466558a9"/>
+				<textFieldExpression><![CDATA[$F{ledgername}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

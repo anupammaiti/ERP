@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.3.1.final using JasperReports Library version 6.3.1  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="rep_postage_exp" language="groovy" pageWidth="992" pageHeight="612" orientation="Landscape" whenNoDataType="AllSectionsNoDetail" columnWidth="952" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="36d963fc-2ceb-4012-aaea-bc0c8925cc9e">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="ledgername" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="gendate" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="toname" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="companyname" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[select * from `tl_fn_postageexp` where ledgername=$P{ledgername} and gendate=$P{gendate} and to_name=$P{toname} and login_comp=$P{companyname};]]>
+	</queryString>
+	<field name="sno" class="java.lang.Long"/>
+	<field name="to_name" class="java.lang.String"/>
+	<field name="address" class="java.lang.String"/>
+	<field name="typeofpost" class="java.lang.String"/>
+	<field name="rate" class="java.lang.String"/>
+	<field name="totalamount" class="java.lang.String"/>
+	<field name="gendate" class="java.lang.String"/>
+	<field name="department" class="java.lang.String"/>
+	<field name="manager" class="java.lang.String"/>
+	<field name="deltby" class="java.lang.String"/>
+	<field name="ledgername" class="java.lang.String"/>
+	<field name="login_comp" class="java.lang.String"/>
+	<field name="approvedby" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="59" y="24" width="129" height="23" forecolor="#FF0000" uuid="87e99700-9c4a-46cc-82d3-aff3336c1140">
+					<printWhenExpression><![CDATA[$F{to_name}.equals( null )]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[No Data Found]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="382" y="24" width="228" height="40" uuid="a7aedbb7-3cb6-471b-ba16-fc1861c9c817"/>
+				<textElement>
+					<font size="24" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{companyname}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="32" splitType="Stretch">
+			<staticText>
+				<reportElement x="408" y="0" width="147" height="25" uuid="cdacb57e-39d2-42e8-8da5-5d236e95cca1"/>
+				<textElement>
+					<font size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Postage Expenses]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="20" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="0" width="952" height="20" backcolor="#055799" uuid="06ac2124-a9d7-4fb9-86c2-26e41b7394e5"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="15" y="0" width="100" height="20" forecolor="#FFFFFF" uuid="842a893d-75ca-44c0-bcd5-6f7227a1d4e6"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[To_Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="135" y="0" width="100" height="20" forecolor="#FFFFFF" uuid="ccd3a721-54fc-478e-bdf7-ade325015563"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Address]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="268" y="0" width="100" height="20" forecolor="#FFFFFF" uuid="505b673e-3734-4a08-80b7-105dfa59b77c"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Type Of Post]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="382" y="0" width="100" height="20" forecolor="#FFFFFF" uuid="4854e8dc-c633-4fa1-9952-87b397fa825c"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Rate]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="506" y="0" width="100" height="20" forecolor="#FFFFFF" uuid="ac277acb-eab0-485f-8a69-9dece43907d0"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Total Amount]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="646" y="0" width="100" height="20" forecolor="#FFFFFF" uuid="15f6c571-b229-4434-bef4-f7de86207005"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Gen Date]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="782" y="0" width="100" height="20" forecolor="#FFFFFF" uuid="ff5f51c5-4715-4112-bb26-adeddd625385"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Ledger Name]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="0" width="952" height="20" backcolor="#BBDEF9" uuid="d8091903-a352-4769-93aa-b89c24338c6d">
+					<printWhenExpression><![CDATA[new Boolean( $V{PAGE_COUNT}.intValue() % 2 ==0 )]]></printWhenExpression>
+				</reportElement>
+			</rectangle>
+			<textField>
+				<reportElement x="15" y="0" width="100" height="20" uuid="1f6aa30b-c4b0-4391-837c-2c0f58f21a6f"/>
+				<textFieldExpression><![CDATA[$F{to_name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="135" y="0" width="100" height="20" uuid="eb5ee1fb-4c47-4cc7-b8be-92a255a86f57"/>
+				<textFieldExpression><![CDATA[$F{address}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="268" y="0" width="100" height="20" uuid="6aa2a958-3ad7-40c9-a5ab-18c5389b80ef"/>
+				<textFieldExpression><![CDATA[$F{typeofpost}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="382" y="0" width="100" height="20" uuid="35b75b38-882b-480e-be28-a7e4cc72e016"/>
+				<textFieldExpression><![CDATA[$F{rate}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="506" y="0" width="100" height="20" uuid="e87a579f-180b-4084-a489-c4008d2ccbae"/>
+				<textFieldExpression><![CDATA[$F{totalamount}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="646" y="0" width="100" height="20" uuid="9acf7963-c36d-460d-9650-5037587c5e51"/>
+				<textFieldExpression><![CDATA[$F{gendate}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="782" y="0" width="100" height="20" uuid="97dbe654-9e29-4267-9050-8fdccdf3ce76"/>
+				<textFieldExpression><![CDATA[$F{ledgername}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

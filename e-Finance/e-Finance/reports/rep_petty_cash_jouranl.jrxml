@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.3.1.final using JasperReports Library version 6.3.1  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="rep_petty_cash_jouranl" language="groovy" pageWidth="1290" pageHeight="612" orientation="Landscape" whenNoDataType="AllSectionsNoDetail" columnWidth="1250" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="58475c73-f6a0-4642-8bbc-6d3c94c171cf">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="companyname" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="fromdate" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="todate" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="deltby" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="imagePath" class="java.lang.Object"/>
+	<queryString>
+		<![CDATA[select * from tl_fn_pettycashjournal where login_comp=$P{companyname} and (gendate between $P{fromdate} and $P{todate} or deltby=$P{deltby});]]>
+	</queryString>
+	<field name="sno" class="java.lang.Long"/>
+	<field name="dept" class="java.lang.String"/>
+	<field name="dates" class="java.lang.String"/>
+	<field name="voucher" class="java.lang.String"/>
+	<field name="payee" class="java.lang.String"/>
+	<field name="approvedby" class="java.lang.String"/>
+	<field name="total" class="java.lang.String"/>
+	<field name="balance" class="java.lang.String"/>
+	<field name="auditedby" class="java.lang.String"/>
+	<field name="approvedbys" class="java.lang.String"/>
+	<field name="gendate" class="java.lang.String"/>
+	<field name="deltby" class="java.lang.String"/>
+	<field name="login_comp" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="879" y="14" width="127" height="27" forecolor="#FF0000" uuid="345258d3-ea52-4d47-9baa-1fe9da045113">
+					<printWhenExpression><![CDATA[$F{voucher}.equals( null )]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[No Data Found]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="546" y="14" width="231" height="44" uuid="6fb24cc6-406e-49d4-bbfd-16bb1ac38e56"/>
+				<textElement>
+					<font size="24" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{companyname}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch">
+			<staticText>
+				<reportElement x="546" y="0" width="189" height="24" uuid="f241bae5-fcdb-4dc5-b47a-0ff76ab2db6c"/>
+				<textElement>
+					<font size="18" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Petty Cash Journal]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="20" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="0" width="1178" height="20" backcolor="#055799" uuid="4ec449e3-3e5e-427d-8a3f-ee25b72e3a08"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="23" y="0" width="100" height="20" forecolor="#FFFFFF" uuid="ae427266-83f4-4557-a749-d78df4b61839"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Department]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="153" y="0" width="100" height="20" forecolor="#FFFFFF" uuid="75048aaf-92ff-4a5e-a6df-3cc0a8d930c6"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Dates]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="274" y="0" width="100" height="20" forecolor="#FFFFFF" uuid="65aadb5e-bba4-4e5e-ba54-e2ff8c4f7645"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Voucher]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="397" y="0" width="100" height="20" forecolor="#FFFFFF" uuid="7d9b7b6e-ce46-46ce-8993-07d6143e2003"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Payee]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="518" y="0" width="100" height="20" forecolor="#FFFFFF" uuid="13e7ca6e-0182-430e-afae-95303ab223c6"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Approved By]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="647" y="0" width="100" height="20" forecolor="#FFFFFF" uuid="8d09e955-381c-4d62-aa30-0ce3f81b66a4"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Audited By]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="763" y="0" width="100" height="20" forecolor="#FFFFFF" uuid="0ec8b61a-684d-4015-a3b7-89f6404ccf24"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Approved Bys]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="889" y="0" width="100" height="20" forecolor="#FFFFFF" uuid="859f7ddb-001c-48ee-ba83-5018aa6ed84f"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Balance]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1021" y="0" width="100" height="20" forecolor="#FFFFFF" uuid="2b6fee82-7aba-4305-8166-f3c88f8187f3"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Total]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="46" splitType="Stretch">
+			<textField>
+				<reportElement x="23" y="14" width="100" height="20" uuid="ed201cc0-7f27-4790-9b56-e2f07a4c9f55"/>
+				<textFieldExpression><![CDATA[$F{dept}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="153" y="14" width="100" height="20" uuid="ef3054bc-c80d-4884-bd4b-2a4a7716c80f"/>
+				<textFieldExpression><![CDATA[$F{dates}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="277" y="14" width="100" height="20" uuid="e2a4f993-f8c7-4517-9842-459784136ce9"/>
+				<textFieldExpression><![CDATA[$F{voucher}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="397" y="14" width="100" height="20" uuid="454d71b8-770a-4150-9be0-2c3c1a5d984c"/>
+				<textFieldExpression><![CDATA[$F{payee}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="518" y="14" width="100" height="20" uuid="4cf11dec-a011-4c8d-bb0a-ae3ce5aee682"/>
+				<textFieldExpression><![CDATA[$F{approvedby}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="647" y="14" width="100" height="20" uuid="69de4091-2719-431c-ab84-23277ec3bc1e"/>
+				<textFieldExpression><![CDATA[$F{auditedby}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="763" y="14" width="100" height="20" uuid="f7bf034f-c408-4ed9-a65f-6e08878314a8"/>
+				<textFieldExpression><![CDATA[$F{approvedbys}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="889" y="14" width="100" height="20" uuid="d75e83b4-5cba-46d0-992c-5524c7825ac8"/>
+				<textFieldExpression><![CDATA[$F{balance}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="1021" y="14" width="100" height="20" uuid="beda4401-7e57-4af2-9835-c43ff8a1f8f0"/>
+				<textFieldExpression><![CDATA[$F{total}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="45" width="1178" height="1" uuid="022a1f74-9c99-42da-a172-028340dbf316"/>
+			</line>
+			<line>
+				<reportElement x="0" y="0" width="1" height="45" uuid="2e11520e-cc91-426f-b686-12469112a7b7"/>
+			</line>
+			<line>
+				<reportElement x="140" y="0" width="1" height="45" uuid="a8b08ec9-5adb-4273-b742-ffa7edf1dfb8"/>
+			</line>
+			<line>
+				<reportElement x="264" y="0" width="1" height="44" uuid="b62e83e8-6d0e-4653-ac15-eae22fab1b50"/>
+			</line>
+			<line>
+				<reportElement x="387" y="0" width="1" height="45" uuid="4b4e5c49-e09c-4168-a3e8-2fa1ec45ae43"/>
+			</line>
+			<line>
+				<reportElement x="507" y="0" width="1" height="44" uuid="54f532a0-49fa-4e5c-9e39-57bb343dbe7b"/>
+			</line>
+			<line>
+				<reportElement x="630" y="0" width="1" height="44" uuid="be341f6f-b059-4aca-a2fc-e6825c2dc35f"/>
+			</line>
+			<line>
+				<reportElement x="754" y="0" width="1" height="45" uuid="794ffbdd-0481-4f67-9bd2-5c0f60f4b1cd"/>
+			</line>
+			<line>
+				<reportElement x="877" y="0" width="1" height="45" uuid="60000973-27d2-4399-81d5-ced201a40006"/>
+			</line>
+			<line>
+				<reportElement x="1005" y="0" width="1" height="45" uuid="4713d6fa-8f15-41b0-b9c7-764d2bcdd17b"/>
+			</line>
+			<line>
+				<reportElement x="1178" y="0" width="1" height="44" uuid="a0166e75-f3de-481d-9d17-705a534af8bc"/>
+			</line>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

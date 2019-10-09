@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.3.1.final using JasperReports Library version 6.3.1  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="rep_fn_ledger_details" language="groovy" pageWidth="792" pageHeight="612" orientation="Landscape" whenNoDataType="AllSectionsNoDetail" columnWidth="752" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="d1ac3dce-86b1-42e0-ad91-162f67dab2fd">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="ledgername" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="under" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="ondate" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="companyname" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="imagePath" class="java.lang.Object"/>
+	<queryString>
+		<![CDATA[SELECT * FROM  tl_fn_ledgerdetails where (ledgername=$P{ledgername} or under=$P{under} or getdate=$P{ondate}) and login_comp=$P{companyname};]]>
+	</queryString>
+	<field name="sno" class="java.lang.Long"/>
+	<field name="ledgername" class="java.lang.String"/>
+	<field name="alias" class="java.lang.String"/>
+	<field name="under" class="java.lang.String"/>
+	<field name="inventoryvalues" class="java.lang.String"/>
+	<field name="name" class="java.lang.String"/>
+	<field name="address" class="java.lang.String"/>
+	<field name="state" class="java.lang.String"/>
+	<field name="pincode" class="java.lang.String"/>
+	<field name="panno" class="java.lang.String"/>
+	<field name="salestax" class="java.lang.String"/>
+	<field name="openingbalance" class="java.lang.String"/>
+	<field name="type" class="java.lang.String"/>
+	<field name="department" class="java.lang.String"/>
+	<field name="manager" class="java.lang.String"/>
+	<field name="deltby" class="java.lang.String"/>
+	<field name="getdate" class="java.lang.String"/>
+	<field name="login_comp" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="569" y="21" width="122" height="22" forecolor="#FF0000" uuid="b1584959-6a36-4cf5-b77f-5c6f6356ecb8">
+					<printWhenExpression><![CDATA[$F{ledgername}.equals( null )]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[No Data Found]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="292" y="21" width="217" height="42" uuid="6b1b0464-2dae-4cf8-a22c-abe0f9a793e8"/>
+				<textElement>
+					<font size="24" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{companyname}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch">
+			<staticText>
+				<reportElement x="326" y="6" width="128" height="24" uuid="a2aed71a-deb5-4067-939f-a51e49a1a10b"/>
+				<textElement>
+					<font size="18"/>
+				</textElement>
+				<text><![CDATA[Ledger Details]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="29" splitType="Stretch">
+			<rectangle>
+				<reportElement x="57" y="0" width="634" height="29" forecolor="#FFFFFF" backcolor="#055799" uuid="9fcb36d9-950b-41a5-8788-192566481432"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="57" y="6" width="100" height="20" forecolor="#FFFFFF" uuid="9c3ead9e-dd71-46b6-a3e4-364dd9367004"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Ledger Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Transparent" x="192" y="6" width="100" height="20" forecolor="#FFFFFF" uuid="c0d1d6b1-c172-4b5c-8fb3-aa2dfede56bc"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Under]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="312" y="6" width="100" height="20" forecolor="#FFFFFF" uuid="70ac99f8-798f-4d10-9ce5-b0e0e2b487f0"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Inventory Values]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="432" y="6" width="100" height="20" forecolor="#FFFFFF" uuid="6fbaef60-a392-47bf-a114-e3e6c6c85aaa"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="551" y="6" width="100" height="20" forecolor="#FFFFFF" uuid="63c27a89-b39a-4c16-9cf3-fe86b784c8a7"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Address]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="21" splitType="Stretch">
+			<rectangle>
+				<reportElement x="57" y="1" width="632" height="20" forecolor="#FFFFFF" backcolor="#BBDEF9" uuid="692b0daf-b94b-481e-a03f-edeb5b398144">
+					<printWhenExpression><![CDATA[new Boolean( $V{PAGE_COUNT}.intValue() % 2 ==0 )]]></printWhenExpression>
+				</reportElement>
+			</rectangle>
+			<textField>
+				<reportElement x="57" y="1" width="100" height="20" uuid="9f941570-17e5-4700-b791-5b48374a3a56"/>
+				<textFieldExpression><![CDATA[$F{ledgername}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="192" y="1" width="100" height="20" uuid="7bf30a42-48ab-499b-be00-a6d78f1096f4"/>
+				<textFieldExpression><![CDATA[$F{under}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="312" y="1" width="100" height="20" uuid="4312f718-ff94-4d3a-9d78-a686d1bc482c"/>
+				<textFieldExpression><![CDATA[$F{inventoryvalues}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="432" y="1" width="100" height="20" uuid="c14947c5-36ab-4c21-b153-96cb5b35c41d"/>
+				<textFieldExpression><![CDATA[$F{name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="551" y="1" width="100" height="20" uuid="78cf0040-3e1d-47a7-96b6-07e61ae8b463"/>
+				<textFieldExpression><![CDATA[$F{address}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

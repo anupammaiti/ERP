@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.3.1.final using JasperReports Library version 6.3.1  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="rep_group_mapping" language="groovy" pageWidth="595" pageHeight="842" whenNoDataType="NoPages" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="632e6581-21d3-4c27-937b-099ac723c923">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="imagePath" class="java.lang.Object">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="companyname" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT * FROM tl_fn_groupmapping where login_comp=$P{companyname};]]>
+	</queryString>
+	<field name="sno" class="java.lang.Long"/>
+	<field name="primarygroup" class="java.lang.String"/>
+	<field name="subgroup" class="java.lang.String"/>
+	<field name="gendate" class="java.lang.String"/>
+	<field name="login_comp" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<textField>
+				<reportElement x="194" y="21" width="230" height="43" uuid="dd63ef98-4f3a-47d8-97ca-e8dbc7185ea8"/>
+				<textElement>
+					<font size="24" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{companyname}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch">
+			<staticText>
+				<reportElement x="194" y="0" width="186" height="35" uuid="ee3ac2e8-fb76-4430-8663-67f2ff66f156"/>
+				<textElement>
+					<font size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Group Mapping Details]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="30" splitType="Stretch">
+			<rectangle>
+				<reportElement x="130" y="10" width="314" height="20" forecolor="#FFFFFF" backcolor="#055799" uuid="41f08984-f02a-4ae5-8061-d4b16566ba21"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="130" y="10" width="100" height="20" forecolor="#FFFFFF" uuid="de3e3961-2774-4801-95f4-4148668ed754"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Primary Group]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="344" y="10" width="100" height="20" forecolor="#FFFFFF" uuid="26cb0efa-3a03-4baa-bb87-5b8c5ad4a5ca"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Sub Group]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<rectangle>
+				<reportElement x="130" y="0" width="314" height="20" forecolor="#FFFFFF" backcolor="#BBDEF9" uuid="ae674c57-e8c1-4980-9286-b50bded9bf76">
+					<printWhenExpression><![CDATA[new Boolean( $V{PAGE_COUNT}.intValue() % 2 ==0 )]]></printWhenExpression>
+				</reportElement>
+			</rectangle>
+			<textField>
+				<reportElement x="130" y="0" width="100" height="20" uuid="7b9e8848-57df-482e-a83c-401a41c27be4"/>
+				<textFieldExpression><![CDATA[$F{primarygroup}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="344" y="0" width="100" height="20" uuid="c7b74f72-0e02-44a5-a14f-8d8fd9c2a0c3"/>
+				<textFieldExpression><![CDATA[$F{subgroup}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

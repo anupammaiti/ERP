@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.3.1.final using JasperReports Library version 6.3.1  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="rep_voucher_purchase_return" language="groovy" pageWidth="792" pageHeight="612" orientation="Landscape" whenNoDataType="AllSectionsNoDetail" columnWidth="752" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="e8b6d6a8-884c-4553-81a4-dbdb7c7167ad">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="purchaseledger" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="nameofitem" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="date" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="companyname" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[select * from `tl_fn_vocherpurcahsereturn` where purachaseledger=$P{purchaseledger} and nameofitem=$P{nameofitem} and date=$P{date} and login_comp=$P{companyname}]]>
+	</queryString>
+	<field name="sno" class="java.lang.Long"/>
+	<field name="reciptno" class="java.lang.String"/>
+	<field name="refno" class="java.lang.String"/>
+	<field name="date" class="java.lang.String"/>
+	<field name="partyaccount" class="java.lang.String"/>
+	<field name="currentbalance" class="java.lang.String"/>
+	<field name="purachaseledger" class="java.lang.String"/>
+	<field name="nameofitem" class="java.lang.String"/>
+	<field name="quantity" class="java.lang.String"/>
+	<field name="units" class="java.lang.String"/>
+	<field name="rate" class="java.lang.String"/>
+	<field name="amount" class="java.lang.String"/>
+	<field name="narration" class="java.lang.String"/>
+	<field name="gendate" class="java.lang.String"/>
+	<field name="department" class="java.lang.String"/>
+	<field name="manager" class="java.lang.String"/>
+	<field name="deltby" class="java.lang.String"/>
+	<field name="login_comp" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="36" y="21" width="131" height="33" forecolor="#FF0000" uuid="c75b3d50-53c7-4443-b63c-52cd0f704534">
+					<printWhenExpression><![CDATA[$F{purachaseledger}.equals( null )]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font size="18" isBold="true"/>
+				</textElement>
+				<text><![CDATA[No Data Found]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="263" y="21" width="259" height="33" uuid="a33a65e4-1fb0-4915-a690-0c75b130a9ee"/>
+				<textElement>
+					<font size="24" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{companyname}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch">
+			<staticText>
+				<reportElement x="235" y="0" width="313" height="35" uuid="3b6985c3-4057-4445-ac22-c02fa635d61a"/>
+				<textElement>
+					<font size="18" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Voucher Purchase Returns Details]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="20" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="0" width="752" height="20" backcolor="#055799" uuid="f29f2519-d273-4480-a47c-3570d8984d44"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="0" y="0" width="125" height="20" forecolor="#FFFFFF" uuid="b44659c2-c6db-4a5b-9044-efe1f077b45c"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Purachase Ledger]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="146" y="0" width="100" height="20" forecolor="#FFFFFF" uuid="4b99cf4b-9a5d-4bfe-897f-26d09cb9c45c"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Name Of Item]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="263" y="0" width="100" height="20" forecolor="#FFFFFF" uuid="b10b6dab-01fa-4582-bc08-db02e1511031"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Quantity]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="378" y="0" width="100" height="20" forecolor="#FFFFFF" uuid="3bba2cee-3fb1-4d5c-9249-fb0c58969533"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Units]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="494" y="0" width="100" height="20" forecolor="#FFFFFF" uuid="56a963de-17e4-4d3e-b172-174a901c16bd"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Rate]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="618" y="0" width="100" height="20" forecolor="#FFFFFF" uuid="d0f18851-8787-4153-a25c-1c02ef97df6c"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Amount]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="0" width="752" height="20" backcolor="#BBDEF9" uuid="6115846a-67a0-4a41-b6bd-4f7c3b8884aa">
+					<printWhenExpression><![CDATA[new Boolean( $V{PAGE_COUNT}.intValue() % 2 ==0 )]]></printWhenExpression>
+				</reportElement>
+			</rectangle>
+			<textField>
+				<reportElement x="263" y="0" width="100" height="20" uuid="7e4ca11f-07b5-4f66-90a9-ada54f473db3"/>
+				<textFieldExpression><![CDATA[$F{quantity}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="25" y="0" width="100" height="20" uuid="0afa7cde-43d0-477c-866a-ad5a087bb8d4"/>
+				<textFieldExpression><![CDATA[$F{purachaseledger}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="146" y="0" width="100" height="20" uuid="a567eccd-d854-4390-a03e-856c207f754e"/>
+				<textFieldExpression><![CDATA[$F{nameofitem}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="378" y="0" width="100" height="20" uuid="7c7e285e-4420-4c96-ab94-8c9cbb898700"/>
+				<textFieldExpression><![CDATA[$F{units}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="494" y="0" width="100" height="20" uuid="d3978f34-0d5d-424f-87c5-85787fdd0a4d"/>
+				<textFieldExpression><![CDATA[$F{rate}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="618" y="0" width="100" height="20" uuid="57a87f66-3986-47a3-adf5-12347a9ad61a"/>
+				<textFieldExpression><![CDATA[$F{amount}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.3.1.final using JasperReports Library version 6.3.1  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="rep_dailyCashReport" language="groovy" pageWidth="792" pageHeight="612" orientation="Landscape" whenNoDataType="AllSectionsNoDetail" columnWidth="752" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="de6c0fc4-8795-482d-8328-aded3719e023">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="companyname" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="fromdate" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="todate" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="deltby" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="imagePath" class="java.lang.Object"/>
+	<queryString>
+		<![CDATA[select * from tl_fn_dailycashreport where login_comp=$P{companyname} and (gendate between $P{fromdate} and $P{todate} or deltby=$P{deltby});]]>
+	</queryString>
+	<field name="sno" class="java.lang.Long"/>
+	<field name="dates" class="java.lang.String"/>
+	<field name="sno1" class="java.lang.String"/>
+	<field name="cashrecordedform1" class="java.lang.String"/>
+	<field name="amount1" class="java.lang.String"/>
+	<field name="cashpaidoutto1" class="java.lang.String"/>
+	<field name="amounts1" class="java.lang.String"/>
+	<field name="gendate" class="java.lang.String"/>
+	<field name="sno2" class="java.lang.String"/>
+	<field name="cashrecordedform2" class="java.lang.String"/>
+	<field name="amount2" class="java.lang.String"/>
+	<field name="cashpaidoutto2" class="java.lang.String"/>
+	<field name="amounts2" class="java.lang.String"/>
+	<field name="sno3" class="java.lang.String"/>
+	<field name="cashrecordedform3" class="java.lang.String"/>
+	<field name="amount3" class="java.lang.String"/>
+	<field name="cashpaidoutto3" class="java.lang.String"/>
+	<field name="amounts3" class="java.lang.String"/>
+	<field name="sno4" class="java.lang.String"/>
+	<field name="cashrecordedform4" class="java.lang.String"/>
+	<field name="amount4" class="java.lang.String"/>
+	<field name="cashpaidoutto4" class="java.lang.String"/>
+	<field name="amounts4" class="java.lang.String"/>
+	<field name="sno5" class="java.lang.String"/>
+	<field name="cashrecordedform5" class="java.lang.String"/>
+	<field name="amount5" class="java.lang.String"/>
+	<field name="cashpaidoutto5" class="java.lang.String"/>
+	<field name="amounts5" class="java.lang.String"/>
+	<field name="login_comp" class="java.lang.String"/>
+	<field name="deltby" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="551" y="14" width="128" height="27" forecolor="#FF0000" uuid="06f94d6a-ad0b-4b18-8184-78fb84eaed8b">
+					<printWhenExpression><![CDATA[$F{cashrecordedform1}.equals( null )]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[No Data Found]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="268" y="14" width="234" height="44" uuid="bf2d289f-37b0-49ce-9385-422748264850"/>
+				<textElement>
+					<font size="24" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{companyname}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch">
+			<staticText>
+				<reportElement x="285" y="9" width="191" height="26" uuid="e3759383-de1d-42c2-bb3e-e43bc1c35a98"/>
+				<textElement>
+					<font size="18" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Daily Cash Report]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="38" splitType="Stretch">
+			<rectangle>
+				<reportElement x="119" y="18" width="562" height="20" backcolor="#055799" uuid="1b724937-cfc7-452f-a19b-bf82e4e17ffc"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="132" y="18" width="100" height="20" forecolor="#FFFFFF" uuid="43f9f547-520a-4af3-a911-4aea3384f25a"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Cashrecordedform]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="285" y="18" width="100" height="20" forecolor="#FFFFFF" uuid="1f6b77c8-6fb1-46a8-8c3d-68483593d111"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Amount]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="419" y="18" width="100" height="20" forecolor="#FFFFFF" uuid="56050a49-4781-4bbf-9cb6-86a7fd3f650b"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Cashpaidoutto]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="551" y="18" width="100" height="20" forecolor="#FFFFFF" uuid="bf9763fe-d65e-4326-84e3-0cafde64044e"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Amounts]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="237" splitType="Stretch">
+			<textField>
+				<reportElement x="132" y="13" width="100" height="20" uuid="0a2f80dd-d636-44f7-bffa-4e48b7701087"/>
+				<textFieldExpression><![CDATA[$F{cashrecordedform1}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="285" y="13" width="100" height="20" uuid="8492ac09-7d77-4c0c-8a56-4ca42e308c94"/>
+				<textFieldExpression><![CDATA[$F{amount1}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="419" y="13" width="100" height="20" uuid="03942396-19b2-4d7f-98ba-99ee152db544"/>
+				<textFieldExpression><![CDATA[$F{cashpaidoutto1}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="558" y="13" width="100" height="20" uuid="c5c1b006-0031-49ce-8e7e-524a074c1adb"/>
+				<textFieldExpression><![CDATA[$F{amounts1}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="132" y="60" width="100" height="20" uuid="1acd88f9-0b11-467d-b3a3-27813e256d43"/>
+				<textFieldExpression><![CDATA[$F{cashrecordedform2}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="285" y="60" width="100" height="20" uuid="aa78902b-b228-44cf-9850-16264fb501ec"/>
+				<textFieldExpression><![CDATA[$F{amount2}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="419" y="60" width="100" height="20" uuid="ae73852e-90fc-46bd-b5f4-668273af2bf0"/>
+				<textFieldExpression><![CDATA[$F{cashpaidoutto2}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="559" y="60" width="100" height="20" uuid="93fc8b93-76e8-4791-9d3a-5242f973f042"/>
+				<textFieldExpression><![CDATA[$F{amounts2}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="132" y="99" width="100" height="20" uuid="eb706290-ead4-4200-b873-5c602dbb7142"/>
+				<textFieldExpression><![CDATA[$F{cashrecordedform3}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="285" y="100" width="100" height="20" uuid="84b2b109-8310-464b-96be-ac5948045c39"/>
+				<textFieldExpression><![CDATA[$F{amount3}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="419" y="100" width="100" height="20" uuid="b952dbcb-7c99-46cd-aedb-bc77ff79d423"/>
+				<textFieldExpression><![CDATA[$F{cashpaidoutto3}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="559" y="100" width="100" height="20" uuid="43bb9544-7322-4c2a-a10e-342802fd7aa2"/>
+				<textFieldExpression><![CDATA[$F{amounts3}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="132" y="146" width="100" height="20" uuid="38646486-8a7e-4aae-9c43-e52fbfbce90b"/>
+				<textFieldExpression><![CDATA[$F{cashrecordedform4}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="285" y="146" width="100" height="20" uuid="bb7251e1-3ad3-47bb-bf42-a8af9f0733ac"/>
+				<textFieldExpression><![CDATA[$F{amount4}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="419" y="146" width="100" height="20" uuid="866675a5-834e-4e11-9ea8-4e33b684c9a5"/>
+				<textFieldExpression><![CDATA[$F{cashpaidoutto4}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="559" y="146" width="100" height="20" uuid="6a078e42-baca-4d70-bdc2-a8cd03cdc6a3"/>
+				<textFieldExpression><![CDATA[$F{amounts4}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="132" y="196" width="100" height="20" uuid="e2d1d6c3-4966-4eeb-af7b-148e20e90fde"/>
+				<textFieldExpression><![CDATA[$F{cashrecordedform5}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="285" y="196" width="100" height="20" uuid="e02160ff-2c3b-4732-bd9f-975889fc8798"/>
+				<textFieldExpression><![CDATA[$F{amount5}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="419" y="196" width="100" height="20" uuid="5f8eaeec-2836-4ff1-b2ef-1b350f0fc8a8"/>
+				<textFieldExpression><![CDATA[$F{cashpaidoutto5}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="559" y="196" width="100" height="20" uuid="26c179cb-cb8f-4403-b3e0-2fe0c82edd19"/>
+				<textFieldExpression><![CDATA[$F{amounts5}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="119" y="1" width="1" height="235" uuid="c06183c3-f499-4450-88fb-35073adf9f49"/>
+			</line>
+			<line>
+				<reportElement x="681" y="1" width="1" height="235" uuid="9c4c9ae1-e3e0-4c01-9185-16a0ed18bd37"/>
+			</line>
+			<line>
+				<reportElement x="253" y="1" width="1" height="235" uuid="ba9c5026-f766-4367-81a0-ecb5e02308ba"/>
+			</line>
+			<line>
+				<reportElement x="404" y="1" width="1" height="235" uuid="072d2e2e-cd7b-4efb-b2ac-b382f6bd03d4"/>
+			</line>
+			<line>
+				<reportElement x="541" y="1" width="1" height="235" uuid="b2105a1c-7848-473d-a7ab-27ff256a1ae1"/>
+			</line>
+			<line>
+				<reportElement x="119" y="178" width="562" height="1" uuid="50299ee1-4c72-458e-9a2f-4583203173aa"/>
+			</line>
+			<line>
+				<reportElement x="119" y="129" width="562" height="1" uuid="718e26d4-551a-45bb-8e19-12874b74974f"/>
+			</line>
+			<line>
+				<reportElement x="120" y="89" width="561" height="1" uuid="245058ef-6509-4aa8-9ff3-dd5c3a11257c"/>
+			</line>
+			<line>
+				<reportElement x="119" y="45" width="563" height="1" uuid="9601dd55-7350-4c19-b754-52b4645411d0"/>
+			</line>
+			<line>
+				<reportElement x="119" y="236" width="562" height="1" uuid="be2d1ba2-17f3-4225-840d-0faec7673723"/>
+			</line>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

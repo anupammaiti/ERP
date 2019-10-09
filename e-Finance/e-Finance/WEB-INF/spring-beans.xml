@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:jdbc="http://www.springframework.org/schema/jdbc"
+	xmlns:jee="http://www.springframework.org/schema/jee"
+	xsi:schemaLocation="http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-3.0.xsd
+		http://www.springframework.org/schema/jdbc http://www.springframework.org/schema/jdbc/spring-jdbc-3.0.xsd
+		http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.0.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+
+	
+ 
+ 	
+	<!-- Login  -->
+	<bean id="LoginController" class="com.svs.finance.controller.C_LoginController"/>
+	<bean id="LoginService" class="com.svs.finance.service.impl.C_LoginServiceImpl"/>
+	<bean id="LoginDAO" class="com.svs.finance.dao.impl.C_LoginDAOImpl"/>
+	<!-- Login Ends -->
+	
+	<!--Finance Account Start-->
+	<bean id="FinanceController" class="com.svs.finance.controller.C_FinanceController"/>
+	<bean id="FinanceService" class="com.svs.finance.service.impl.C_FinanceServiceImpl"/>
+	<bean id="ClosingStockDAO" class="com.svs.finance.dao.impl.C_ClosingStockDAOImpl"/>
+	<bean id="CurrentAssertsDAO" class="com.svs.finance.dao.impl.C_CurrentAssertsDAOImpl"/>
+	<bean id="DailyAutoExpensesTravelDAO" class="com.svs.finance.dao.impl.C_DailyAutoExpensesTravelDAOImpl"/>
+	<bean id="EntertainmentExpDAO" class="com.svs.finance.dao.impl.C_EntertainmentExpDAOImpl"/>
+	<bean id="FoodExpDAO" class="com.svs.finance.dao.impl.C_FoodExpDAOImpl"/>
+	<bean id="GroupDAO" class="com.svs.finance.dao.impl.C_GroupDAOImpl"/>
+	<bean id="GroupDetailsDAO" class="com.svs.finance.dao.impl.C_GroupDetailsDAOImpl"/>
+	<bean id="GroupMappingDAO" class="com.svs.finance.dao.impl.C_GroupMappingDAOImpl"/>
+	<bean id="HotelExpDAO" class="com.svs.finance.dao.impl.C_HotelExpDAOImpl"/>
+	<bean id="LedgerDetailsDAO" class="com.svs.finance.dao.impl.C_LedgerDetailsDAOImpl"/>
+	<bean id="MeasuresDAO" class="com.svs.finance.dao.impl.C_MeasuresDAOImpl"/>
+	<bean id="MisleneousExpDAO" class="com.svs.finance.dao.impl.C_MisleneousExpDAOImpl"/>
+	<bean id="NonTradingExpDAO" class="com.svs.finance.dao.impl.C_NonTradingExpDAOImpl"/>
+	<bean id="PhoneBillExpensesDAO" class="com.svs.finance.dao.impl.C_PhoneBillExpensesDAOImpl"/>
+	<bean id="C_StockGroupDetailsDAOImpl" class="com.svs.finance.dao.impl.C_StockGroupDetailsDAOImpl"/>
+	<bean id="StockGroupDAO" class="com.svs.finance.dao.impl.C_StockGroupDAOImpl"/>
+	<bean id="StockItemDAO" class="com.svs.finance.dao.impl.C_StockItemDAOImpl"/>
+	<bean id="VoucherContraDAO" class="com.svs.finance.dao.impl.C_VoucherContraDAOImpl"/>
+	<bean id="VoucherDetailsDAO" class="com.svs.finance.dao.impl.C_VoucherDetailsDAOImpl"/>
+	<bean id="VoucherJournalDAO" class="com.svs.finance.dao.impl.C_VoucherJournalDAOImpl"/>
+	<bean id="VoucherPaymentDAO" class="com.svs.finance.dao.impl.C_VoucherPaymentDAOImpl"/>
+	<bean id="VoucherPurchaseReturnDAO" class="com.svs.finance.dao.impl.C_VoucherPurchaseReturnDAOImpl"/>
+	<bean id="VoucherPurchasesDAO" class="com.svs.finance.dao.impl.C_VoucherPurchasesDAOImpl"/>
+	<bean id="VoucherRecieptDAO" class="com.svs.finance.dao.impl.C_VoucherRecieptDAOImpl"/>
+	<bean id="VoucherSalesDAO" class="com.svs.finance.dao.impl.C_VoucherSalesDAOImpl"/>
+	<bean id="VoucherSalesReturnDAO" class="com.svs.finance.dao.impl.C_VoucherSalesReturnDAOImpl"/>
+	<bean id="InvoiceDAO" class="com.svs.finance.dao.impl.C_InvoiceDAOImpl"/>
+	<bean id="InternetExpDAO" class="com.svs.finance.dao.impl.C_InternetExpDAOImpl"/>
+	<bean id="AdvertisementExpDAO" class="com.svs.finance.dao.impl.C_AdvertisementExpDAOImpl"/>
+	<bean id="OfficeExpDAO" class="com.svs.finance.dao.impl.C_OfficeExpDAOImpl"/>
+	<bean id="RepairsAndMaintenanceDAO" class="com.svs.finance.dao.impl.C_RepairsAndMaintenanceDAOImpl"/>
+	<bean id="PostageExpDAO" class="com.svs.finance.dao.impl.C_PostageExpDAOImpl"/>
+	<bean id="CompanyRegistrationDAO" class="com.svs.finance.dao.impl.C_CompanyRegistrationDAOImpl"/>
+	<bean id="EmployeeDAO" class="com.svs.finance.dao.impl.C_EmployeeDAOImpl"/>
+	<bean id="InvoiceVatAndTaxDAO" class="com.svs.finance.dao.impl.C_InvoiceVatAndTaxDAOImpl"/>
+	<bean id="AgingOfAccountPayableDAO" class="com.svs.finance.dao.impl.C_AgingOfAccountPayableDAOImpl"/>
+	<bean id="AgingOfAccountRecivableDAO" class="com.svs.finance.dao.impl.C_AgingOfAccountRecivableDAOImpl"/>
+	<bean id="CashDisbursmentJournalDAO" class="com.svs.finance.dao.impl.C_CashDisbursmentJournalDAOImpl"/>
+	<bean id="CashreceiptsjournalDAO" class="com.svs.finance.dao.impl.C_CashreceiptsjournalDAOImpl"/>
+	<bean id="DailycashreportDAO" class="com.svs.finance.dao.impl.C_DailycashreportDAOImpl"/>
+	<bean id="PettyCashJournalDAO" class="com.svs.finance.dao.impl.C_PettyCashJournalDAOImpl"/>
+	<bean id="PettycashvoucherDAO" class="com.svs.finance.dao.impl.C_PettycashvoucherDAOImpl"/>
+	<bean id="VoucherTypeDAO" class="com.svs.finance.dao.impl.C_VoucherTypeDAOImpl"/>	
+<!--Finance Account End-->
+
+<!-- PaySlip -->
+
+<bean id="companyPaySlipDAOImpl" class="com.svs.finance.dao.impl.C_CompanyPaySlipDAOImpl"/>
+<bean id="calculatingPaySlip" class="com.svs.finance.helper.C_CalculatingPaySlip"/> 
+<bean id="finalPaySlipDAO" class="com.svs.finance.dao.impl.C_FinalPaySlipDAO"/>
+<!-- PaySlip -->
+
+<!-- University -->
+<bean id="univercityDAOImpl" class="com.svs.finance.dao.impl.C_UnivercityDAOImpl"/>
+<bean id="studentDAOImpl" class="com.svs.finance.dao.impl.C_StudentDAOImpl"/>
+<bean id="corierRecieptDAOImpl" class="com.svs.finance.dao.impl.C_CorierRecieptDAOImpl"/>
+<bean id="courierDispatchDAOImpl" class="com.svs.finance.dao.impl.C_CourierDispatchDAOImpl"/>
+<!-- University -->
+
+<!-- Reprot Start-->
+	<bean id="FinanceReport" class="com.svs.finance.reports.C_FinanceReportController"/>	
+<!-- Report End-->
+
+	<!--Util & Helper Starts -->
+	<bean id="FinanceHelper" class="com.svs.finance.helper.C_FinanceHelperController"/>
+	<bean id="Util_Date" class="com.svs.finance.util.C_Util_Date"/>
+	<bean id="StoredProceduresUtil" class="com.svs.finance.util.C_StoredProceduresUtil"/>	
+	<bean id="FileUploadUtil" class="com.svs.finance.util.C_FileUploadUtil"/>
+	<bean id="ConvertStackTracetoString" class="com.svs.finance.util.ConvertStackTracetoString"/>
+	<bean id="memoFileUpload" class="com.svs.finance.util.MemoFileUpload"/>
+	<bean id="studentImageUpload" class="com.svs.finance.util.StudentImageUpload"/>
+	<bean id="universityValidation" class="com.svs.finance.validation.UniversityValidation"/>
+	<bean id="studentValidation" class="com.svs.finance.validation.StudentValidation"/>
+	<bean id="courierRecieptValidation" class="com.svs.finance.validation.CourierRecieptValidation"/>
+	<bean id="recieptDispathValidation" class="com.svs.finance.validation.RecieptDispathValidation"/>
+			
+	<!--Util & Helper Ends  -->
+</beans>

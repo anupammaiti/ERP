@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="e-Finance">
+        <wb-resource deploy-path="/" source-path="/e-Finance" tag="defaultRootSource"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/e-Finance/WEB-INF/properties"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/e-Finance/reports"/>
+        <property name="context-root" value="e-Finance"/>
+        <property name="java-output-path" value="/e-Finance/build/classes"/>
+    </wb-module>
+</project-modules>

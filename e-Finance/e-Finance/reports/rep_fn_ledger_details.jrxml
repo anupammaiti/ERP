@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.3.1.final using JasperReports Library version 6.3.1  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="rep_fn_ledger_details" language="groovy" pageWidth="792" pageHeight="612" orientation="Landscape" whenNoDataType="AllSectionsNoDetail" columnWidth="752" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="8fc5bdee-1677-4670-a4cc-a7578e091988">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="ledgername" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT * FROM  tl_fn_ledgerdetails where ledgername=$P{ledgername};]]>
+	</queryString>
+	<field name="sno" class="java.lang.Long"/>
+	<field name="ledgername" class="java.lang.String"/>
+	<field name="alias" class="java.lang.String"/>
+	<field name="under" class="java.lang.String"/>
+	<field name="inventoryvalues" class="java.lang.String"/>
+	<field name="name" class="java.lang.String"/>
+	<field name="address" class="java.lang.String"/>
+	<field name="state" class="java.lang.String"/>
+	<field name="pincode" class="java.lang.String"/>
+	<field name="panno" class="java.lang.String"/>
+	<field name="salestax" class="java.lang.String"/>
+	<field name="openingbalance" class="java.lang.String"/>
+	<field name="type" class="java.lang.String"/>
+	<field name="department" class="java.lang.String"/>
+	<field name="manager" class="java.lang.String"/>
+	<field name="deltby" class="java.lang.String"/>
+	<field name="getdate" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="331" y="21" width="116" height="34" uuid="bea181f7-6100-4731-a496-0e76fe5a79f9"/>
+				<textElement>
+					<font size="24" isBold="true"/>
+				</textElement>
+				<text><![CDATA[e-Finance]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="57" y="21" width="122" height="22" forecolor="#FF0000" uuid="01f4b38c-6f4f-450e-8e0c-f01a1e48c888">
+					<printWhenExpression><![CDATA[$F{ledgername}.equals( null )]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[No Data Found]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch">
+			<staticText>
+				<reportElement x="326" y="6" width="128" height="24" uuid="f080de66-030d-402f-ab7f-c90e303f627b"/>
+				<textElement>
+					<font size="18"/>
+				</textElement>
+				<text><![CDATA[Ledger Details]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="29" splitType="Stretch">
+			<rectangle>
+				<reportElement x="57" y="0" width="634" height="29" backcolor="#055799" uuid="3dfbf3f0-6f90-4ec4-ad94-0c3c0b9650ba"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="80" y="6" width="100" height="20" forecolor="#FFFFFF" uuid="3ef0cda8-d633-4c31-8f28-b79011f9bbd4"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Ledger Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Transparent" x="215" y="6" width="100" height="20" forecolor="#FFFFFF" uuid="16a10899-8504-4a18-b812-2707fa8d0b5f"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Under]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="335" y="6" width="100" height="20" forecolor="#FFFFFF" uuid="ffe9f342-33fa-47eb-a7c7-d923379f586b"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Inventory Values]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="455" y="6" width="100" height="20" forecolor="#FFFFFF" uuid="13d62e69-de3b-4022-bbbd-4304e75625e4"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="574" y="6" width="100" height="20" forecolor="#FFFFFF" uuid="f27b5cb5-8bfc-4f42-9465-b4c04be48755"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Address]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="21" splitType="Stretch">
+			<rectangle>
+				<reportElement x="57" y="1" width="632" height="20" backcolor="#BBDEF9" uuid="0cacd495-3296-493b-922a-d4db8084722f">
+					<printWhenExpression><![CDATA[new Boolean( $V{PAGE_COUNT}.intValue() % 2 ==0 )]]></printWhenExpression>
+				</reportElement>
+			</rectangle>
+			<textField>
+				<reportElement x="57" y="1" width="100" height="20" uuid="c3c8d491-cb5d-4a9c-8031-6dfca2af2a2f"/>
+				<textFieldExpression><![CDATA[$F{ledgername}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="192" y="1" width="100" height="20" uuid="7a0a7f3e-06a4-45d8-bceb-ea3ccfe6458b"/>
+				<textFieldExpression><![CDATA[$F{under}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="312" y="1" width="100" height="20" uuid="f221d7bb-5663-4f90-8fa1-94f2acdd349f"/>
+				<textFieldExpression><![CDATA[$F{inventoryvalues}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="432" y="1" width="100" height="20" uuid="ed3a505d-2bcf-4709-8f2a-f481cda28ea0"/>
+				<textFieldExpression><![CDATA[$F{name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="551" y="1" width="100" height="20" uuid="23cbae9b-10fb-4686-98db-74b8e65b5c94"/>
+				<textFieldExpression><![CDATA[$F{address}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

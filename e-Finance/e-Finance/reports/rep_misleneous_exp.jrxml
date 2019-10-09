@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.3.1.final using JasperReports Library version 6.3.1  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="rep_misleneous_exp" language="groovy" pageWidth="1220" pageHeight="612" orientation="Landscape" whenNoDataType="AllSectionsNoDetail" columnWidth="1180" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="f77378af-4d16-4d78-b3f9-ca720c17332d">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="ledgername" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="gendate" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="empname" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="approvedby" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="companyname" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[select * from tl_fn_misleniousexpenceses where ledgername=$P{ledgername} and gendate=$P{gendate} and empname=$P{empname} and approvedby=$P{approvedby} and login_comp= $P{companyname};]]>
+	</queryString>
+	<field name="sno" class="java.lang.Long"/>
+	<field name="empname" class="java.lang.String"/>
+	<field name="phoneno" class="java.lang.String"/>
+	<field name="location" class="java.lang.String"/>
+	<field name="approvedby" class="java.lang.String"/>
+	<field name="department" class="java.lang.String"/>
+	<field name="date1" class="java.lang.String"/>
+	<field name="day1" class="java.lang.String"/>
+	<field name="purpose" class="java.lang.String"/>
+	<field name="amount" class="java.lang.String"/>
+	<field name="gendate" class="java.lang.String"/>
+	<field name="ledgername" class="java.lang.String"/>
+	<field name="department1" class="java.lang.String"/>
+	<field name="manager" class="java.lang.String"/>
+	<field name="deltby" class="java.lang.String"/>
+	<field name="login_comp" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="69" y="19" width="118" height="25" forecolor="#FF0000" uuid="2c2ba3ef-c897-412e-a3ce-776f2a1362ca">
+					<printWhenExpression><![CDATA[$F{empname}.equals( null)]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[No Data Found]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="474" y="19" width="231" height="44" uuid="4df8fbab-79e4-4f7b-90ba-4a5b8a26c6d1"/>
+				<textElement>
+					<font size="24" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{companyname}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch">
+			<staticText>
+				<reportElement x="469" y="4" width="236" height="23" uuid="08f1078e-f412-441d-84d0-3f6b6362ac58"/>
+				<textElement>
+					<font size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Misleneous Expenses Details]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="20" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="0" width="1180" height="20" backcolor="#055799" uuid="19a56ac8-7071-44ce-815f-6b2bf48ff6bb"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="16" y="0" width="100" height="20" forecolor="#FFFFFF" uuid="7c2efa87-b11b-44b8-95bf-227037111bfb"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Emp Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="137" y="0" width="100" height="20" forecolor="#FFFFFF" uuid="f6cacd8c-5864-49c0-8609-34795490b9f2"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Phone No]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="257" y="0" width="100" height="20" forecolor="#FFFFFF" uuid="71376d91-53d8-45e0-87b7-f24d2267f756"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Location]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="374" y="0" width="100" height="20" forecolor="#FFFFFF" uuid="891f4f0d-9a22-4395-bdbd-ce0e95d208b3"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Approved By]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="488" y="0" width="100" height="20" forecolor="#FFFFFF" uuid="87a1fed4-268a-4eb6-89d9-38c8d7ea18d3"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Department]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="605" y="0" width="100" height="20" forecolor="#FFFFFF" uuid="95f6478f-346f-4c2f-b9fc-f34e4758b63f"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Date1]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="732" y="0" width="100" height="20" forecolor="#FFFFFF" uuid="843c7716-6964-4823-b027-8a6c990906b7"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Purpose]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="863" y="0" width="100" height="20" forecolor="#FFFFFF" uuid="2a157144-baa7-4dcd-885b-1145e8b307a7"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Amount]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="996" y="0" width="100" height="20" forecolor="#FFFFFF" uuid="9a7aedc0-53e2-46d1-9c5e-029b35f5e961"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Ledger Name]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="0" width="1180" height="20" backcolor="#BBDEF9" uuid="c0f09506-e669-4ecc-a802-5ee685559935">
+					<printWhenExpression><![CDATA[new Boolean( $V{PAGE_COUNT}.intValue() % 2 ==0 )]]></printWhenExpression>
+				</reportElement>
+			</rectangle>
+			<textField>
+				<reportElement x="16" y="0" width="100" height="20" uuid="b238ca05-a0ae-401e-921a-91c41604be69"/>
+				<textFieldExpression><![CDATA[$F{empname}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="137" y="0" width="100" height="20" uuid="a22162c1-325c-4dc4-a5fe-d3472a3bc264"/>
+				<textFieldExpression><![CDATA[$F{phoneno}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="257" y="0" width="100" height="20" uuid="16eb4314-5efb-4b57-9c25-2ce90dd7ae92"/>
+				<textFieldExpression><![CDATA[$F{location}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="374" y="0" width="100" height="20" uuid="3b9ae609-d492-4dbe-a92c-6605fe928e6d"/>
+				<textFieldExpression><![CDATA[$F{approvedby}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="488" y="0" width="100" height="20" uuid="ec71dab1-3dca-404b-8ed1-0bf292be58d7"/>
+				<textFieldExpression><![CDATA[$F{department}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="605" y="0" width="100" height="20" uuid="edac5157-3629-4d9b-a5d6-251f514ee1a9"/>
+				<textFieldExpression><![CDATA[$F{date1}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="732" y="0" width="100" height="20" uuid="8b27a431-960b-407d-9691-ad6e4476bb44"/>
+				<textFieldExpression><![CDATA[$F{purpose}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="863" y="0" width="100" height="20" uuid="6cf7ecb2-91b0-406c-bdf8-6d6a51dde908"/>
+				<textFieldExpression><![CDATA[$F{amount}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="996" y="0" width="100" height="20" uuid="522a92c4-bffd-4083-8253-e1dbf2b46d82"/>
+				<textFieldExpression><![CDATA[$F{ledgername}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

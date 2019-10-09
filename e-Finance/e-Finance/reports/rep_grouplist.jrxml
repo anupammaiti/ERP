@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.3.1.final using JasperReports Library version 6.3.1  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="rep_grouplist" language="groovy" pageWidth="612" pageHeight="792" whenNoDataType="AllSectionsNoDetail" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="9c842437-53fd-4b88-8ca2-39245347cdc4">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="companyname" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="imagePath" class="java.lang.Object"/>
+	<queryString>
+		<![CDATA[select * from tl_fn_groups where login_comp=$P{companyname} ;]]>
+	</queryString>
+	<field name="sno" class="java.lang.Long"/>
+	<field name="groupname" class="java.lang.String"/>
+	<field name="login_comp" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<textField isBlankWhenNull="true">
+				<reportElement x="174" y="23" width="220" height="37" uuid="dddfc048-7de5-4bb2-aedd-4b8332491f27"/>
+				<textElement>
+					<font size="24" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{companyname}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="424" y="23" width="148" height="33" forecolor="#FF0000" uuid="861aeded-33b4-4513-80e3-e17b01725ecf">
+					<printWhenExpression><![CDATA[$F{groupname}.equals( null )]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[No Data Found]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch">
+			<staticText>
+				<reportElement x="174" y="5" width="104" height="30" uuid="281adb1a-f5c2-4f25-9377-7c1b4d6ea0b3"/>
+				<textElement>
+					<font size="18"/>
+				</textElement>
+				<text><![CDATA[Groups]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="26" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="6" width="572" height="20" forecolor="#FFFFFF" backcolor="#055799" uuid="60e8fa94-56f8-47f4-90cf-0a1913c1f205"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="357" y="6" width="100" height="20" forecolor="#FFFFFF" uuid="8ddd1b1c-7fb4-4db2-a700-640146f42cff"/>
+				<text><![CDATA[Group Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="137" y="6" width="100" height="20" forecolor="#FFFFFF" uuid="edca54f4-d489-40d5-ac38-89342de81d70"/>
+				<text><![CDATA[S No]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="0" width="572" height="20" forecolor="#FFFFFF" backcolor="#E6F2FB" uuid="98106de5-d30f-4e94-8eae-ead626b2aa4c">
+					<printWhenExpression><![CDATA[new Boolean( $V{PAGE_COUNT}.intValue() % 2 ==0 )]]></printWhenExpression>
+				</reportElement>
+			</rectangle>
+			<textField>
+				<reportElement x="357" y="0" width="100" height="20" uuid="2143a73c-1db5-4bd1-9c7c-73a1cff1c4f6"/>
+				<textFieldExpression><![CDATA[$F{groupname}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="137" y="0" width="100" height="20" uuid="a9dd18fe-2062-42e9-99ef-f7535ed7e437"/>
+				<textFieldExpression><![CDATA[$F{sno}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

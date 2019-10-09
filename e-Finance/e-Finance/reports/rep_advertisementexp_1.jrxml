@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.3.1.final using JasperReports Library version 6.3.1  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="rep_advertisementexp" language="groovy" pageWidth="1092" pageHeight="612" orientation="Landscape" whenNoDataType="AllSectionsNoDetail" columnWidth="1052" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="b6560374-e37b-4feb-af7e-250db9b14f6f">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="ledgername" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="onissue" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="ondate" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="companyname" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="deltby" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="imagePath" class="java.lang.Object"/>
+	<queryString>
+		<![CDATA[select * from tl_fn_advertisementexp where (ledgername=$P{ledgername} or onissues=$P{onissue} or gendate=$P{ondate} or deltby=$P{deltby}) and login_comp=$P{companyname}]]>
+	</queryString>
+	<field name="sno" class="java.lang.Long"/>
+	<field name="companyname" class="java.lang.String"/>
+	<field name="onissues" class="java.lang.String"/>
+	<field name="typeofaddess" class="java.lang.String"/>
+	<field name="noofseconds" class="java.lang.String"/>
+	<field name="mobileno" class="java.lang.String"/>
+	<field name="landno" class="java.lang.String"/>
+	<field name="amount" class="java.lang.String"/>
+	<field name="gendate" class="java.lang.String"/>
+	<field name="department" class="java.lang.String"/>
+	<field name="manager" class="java.lang.String"/>
+	<field name="deltby" class="java.lang.String"/>
+	<field name="ledgername" class="java.lang.String"/>
+	<field name="login_comp" class="java.lang.String"/>
+	<field name="approvedby" class="java.lang.String"/>
+	<variable name="Total Amount" class="java.lang.String" calculation="Sum">
+		<variableExpression><![CDATA[$F{amount}]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="860" y="22" width="116" height="23" forecolor="#FF0000" uuid="9b3f6587-1b1a-452f-b0a1-2ea18d6b3594">
+					<printWhenExpression><![CDATA[$F{companyname}.equals(null)]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[No Data Found]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="437" y="22" width="261" height="45" uuid="18a8c674-ed42-4228-ad99-6cdc9c66949f"/>
+				<textElement>
+					<font size="24" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{companyname}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch">
+			<staticText>
+				<reportElement x="437" y="6" width="209" height="24" uuid="697551ab-ca78-4f74-b8a5-76ccbd09a935"/>
+				<textElement>
+					<font size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Advertisement Exp Details]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="20" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="0" width="1052" height="20" forecolor="#FFFFFF" backcolor="#055799" uuid="f5e21fe8-a78a-47b6-a47d-f7121a7759fe"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="19" y="0" width="100" height="20" forecolor="#FFFFFF" uuid="954a3d5b-5695-48f3-acb9-b014a4aa04cc"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Company Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="144" y="0" width="100" height="20" forecolor="#FFFFFF" uuid="3faaf4e3-b1fb-4884-8d39-76fcb4e783d1"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[On Issues]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="270" y="0" width="100" height="20" forecolor="#FFFFFF" uuid="c92c08c8-fc6d-4a39-8319-bf87056fabc0"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Type Of Addess]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="388" y="0" width="100" height="20" forecolor="#FFFFFF" uuid="c44accc7-533e-4295-9c0e-7ce0e4de40e0"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[No Of Seconds]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="503" y="0" width="100" height="20" forecolor="#FFFFFF" uuid="3e9a627b-9f1a-4fb9-925b-a448b376ae50"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Mobile No]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="623" y="0" width="100" height="20" forecolor="#FFFFFF" uuid="d989f1c7-150f-45cf-9b8c-f72af8a04219"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Land No]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="756" y="0" width="100" height="20" forecolor="#FFFFFF" uuid="023e2e84-4eef-4e78-b2d7-049023b74e64"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Amount]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="876" y="0" width="100" height="20" forecolor="#FFFFFF" uuid="7ecb6d19-01b3-489c-b968-4bd463d16613"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Gen Date]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="0" width="1052" height="20" forecolor="#FFFFFF" backcolor="#BBDEF9" uuid="2ca3be1b-f09a-482c-84db-fcf4d20586bf">
+					<printWhenExpression><![CDATA[new Boolean( $V{PAGE_COUNT}.intValue() % 2 ==0 )]]></printWhenExpression>
+				</reportElement>
+			</rectangle>
+			<textField isBlankWhenNull="true">
+				<reportElement x="19" y="0" width="100" height="20" uuid="aeb49f98-5167-4f58-8c6c-a1746689f6c2"/>
+				<textFieldExpression><![CDATA[$F{companyname}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="144" y="0" width="100" height="20" uuid="08ebd553-870f-4516-962b-481f309344fb"/>
+				<textFieldExpression><![CDATA[$F{onissues}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="270" y="0" width="100" height="20" uuid="98a1f9b3-3c0e-4d3e-9a4e-0d940f6b93c0"/>
+				<textFieldExpression><![CDATA[$F{typeofaddess}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="388" y="0" width="100" height="20" uuid="20e35624-890c-4ae8-b11e-a80ad7093976"/>
+				<textFieldExpression><![CDATA[$F{noofseconds}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="503" y="0" width="100" height="20" uuid="00a36c58-1017-42d2-aeb6-1c35701e6324"/>
+				<textFieldExpression><![CDATA[$F{mobileno}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="623" y="0" width="100" height="20" uuid="2d158bc1-5de7-409c-9a99-42a5daca6d4a"/>
+				<textFieldExpression><![CDATA[$F{landno}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="756" y="0" width="100" height="20" uuid="b4f80c6b-9590-4fee-b9e2-cce6ba1bc26b"/>
+				<textFieldExpression><![CDATA[$F{amount}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="876" y="0" width="100" height="20" uuid="2d8260d3-0a2d-4b34-906c-4ebe23653505"/>
+				<textFieldExpression><![CDATA[$F{gendate}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch">
+			<textField isBlankWhenNull="true">
+				<reportElement x="952" y="25" width="100" height="20" uuid="13bd9bf9-ad91-46d9-9c4a-c2c9f60d2072"/>
+				<textFieldExpression><![CDATA[$V{Total Amount}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="871" y="25" width="81" height="20" forecolor="#CC3300" uuid="0d240980-c4f6-494a-b1ee-dd6630139431"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Total Amount]]></text>
+			</staticText>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

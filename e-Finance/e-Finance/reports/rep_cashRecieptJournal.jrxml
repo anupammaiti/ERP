@@ -1,0 +1,489 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.3.1.final using JasperReports Library version 6.3.1  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="rep_cashRecieptJournal" language="groovy" pageWidth="1495" pageHeight="842" whenNoDataType="AllSectionsNoDetail" columnWidth="1455" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="03d94242-f3c1-4e4a-8b2d-6885e8a6f4fb">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="6"/>
+	<parameter name="ledgername" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="fromdate" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="todate" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="companyname" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="deltby" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="imagePath" class="java.lang.Object"/>
+	<queryString>
+		<![CDATA[select * from tl_fn_cashreceiptsjournal where  login_comp=$P{companyname} and  (gendate between $P{fromdate} and $P{todate} or ledgerno=$P{ledgername} or deltby=$P{deltby})]]>
+	</queryString>
+	<field name="sno" class="java.lang.Long"/>
+	<field name="month" class="java.lang.String"/>
+	<field name="ledgerno" class="java.lang.String"/>
+	<field name="date1" class="java.lang.String"/>
+	<field name="accountcredited1" class="java.lang.String"/>
+	<field name="account1" class="java.lang.String"/>
+	<field name="sales1" class="java.lang.String"/>
+	<field name="amountreceivables1" class="java.lang.String"/>
+	<field name="cash1" class="java.lang.String"/>
+	<field name="discount1" class="java.lang.String"/>
+	<field name="other1" class="java.lang.String"/>
+	<field name="accountd1" class="java.lang.String"/>
+	<field name="accounts1" class="java.lang.String"/>
+	<field name="othera1" class="java.lang.String"/>
+	<field name="date2" class="java.lang.String"/>
+	<field name="accountcredited2" class="java.lang.String"/>
+	<field name="account2" class="java.lang.String"/>
+	<field name="sales2" class="java.lang.String"/>
+	<field name="amountreceivables2" class="java.lang.String"/>
+	<field name="cash2" class="java.lang.String"/>
+	<field name="discount2" class="java.lang.String"/>
+	<field name="other2" class="java.lang.String"/>
+	<field name="accountd2" class="java.lang.String"/>
+	<field name="accounts2" class="java.lang.String"/>
+	<field name="othera2" class="java.lang.String"/>
+	<field name="date3" class="java.lang.String"/>
+	<field name="accountcredited3" class="java.lang.String"/>
+	<field name="account3" class="java.lang.String"/>
+	<field name="sales3" class="java.lang.String"/>
+	<field name="amountreceivables3" class="java.lang.String"/>
+	<field name="cash3" class="java.lang.String"/>
+	<field name="discount3" class="java.lang.String"/>
+	<field name="other3" class="java.lang.String"/>
+	<field name="accountd3" class="java.lang.String"/>
+	<field name="accounts3" class="java.lang.String"/>
+	<field name="othera3" class="java.lang.String"/>
+	<field name="date4" class="java.lang.String"/>
+	<field name="accountcredited4" class="java.lang.String"/>
+	<field name="account4" class="java.lang.String"/>
+	<field name="sales4" class="java.lang.String"/>
+	<field name="amountreceivables4" class="java.lang.String"/>
+	<field name="cash4" class="java.lang.String"/>
+	<field name="discount4" class="java.lang.String"/>
+	<field name="other4" class="java.lang.String"/>
+	<field name="accountd4" class="java.lang.String"/>
+	<field name="accounts4" class="java.lang.String"/>
+	<field name="othera4" class="java.lang.String"/>
+	<field name="date5" class="java.lang.String"/>
+	<field name="accountcredited5" class="java.lang.String"/>
+	<field name="account5" class="java.lang.String"/>
+	<field name="sales5" class="java.lang.String"/>
+	<field name="amountreceivables5" class="java.lang.String"/>
+	<field name="cash5" class="java.lang.String"/>
+	<field name="discount5" class="java.lang.String"/>
+	<field name="other5" class="java.lang.String"/>
+	<field name="accountd5" class="java.lang.String"/>
+	<field name="accounts5" class="java.lang.String"/>
+	<field name="othera5" class="java.lang.String"/>
+	<field name="gendate" class="java.lang.String"/>
+	<field name="login_comp" class="java.lang.String"/>
+	<field name="deltby" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="997" y="16" width="123" height="26" forecolor="#FF0000" uuid="fdb46c1d-0e34-4e77-ae98-c342c0b70df9">
+					<printWhenExpression><![CDATA[$F{ledgerno}.equals( null )]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[No Data Found]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="680" y="16" width="219" height="43" uuid="171b8a37-d5dd-4cd8-99b2-10b6f198d3d1"/>
+				<textElement>
+					<font size="24" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{companyname}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch">
+			<staticText>
+				<reportElement x="680" y="0" width="199" height="35" uuid="d4599f4a-8fc1-431b-9f9e-0fb3dea9e476"/>
+				<textElement>
+					<font size="18" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Cash Reciept Journal]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="20" splitType="Stretch">
+			<rectangle>
+				<reportElement x="18" y="0" width="1367" height="20" backcolor="#055799" uuid="0e4a62e8-0c28-4bbc-9519-fbb2ab1b5cf3"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="21" y="0" width="100" height="20" forecolor="#FFFFFF" uuid="2c2ee1f8-bb0a-4686-a221-56fbd9ee5439"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Date]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="137" y="0" width="100" height="20" forecolor="#FFFFFF" uuid="afd18419-cd43-4e49-965e-cb30615f9e6f"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Accountcredited]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="255" y="0" width="100" height="20" forecolor="#FFFFFF" uuid="c5709b0b-fce6-472c-ab62-02c6eaca2a60"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Account]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="371" y="0" width="100" height="20" forecolor="#FFFFFF" uuid="b51b7bc6-8a2b-4bec-ab00-54da73236091"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Sales]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="485" y="0" width="100" height="20" forecolor="#FFFFFF" uuid="bc227c89-c623-4bcb-b5e4-d6bf575a1edb"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Amountreceivables]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="624" y="0" width="100" height="20" forecolor="#FFFFFF" uuid="6bccb478-9b60-446c-8646-bf3e55d6d8da"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Cash]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="762" y="0" width="100" height="20" forecolor="#FFFFFF" uuid="089b96cd-92ff-4e07-85ac-6c1bf308148d"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Discount]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="889" y="0" width="100" height="20" forecolor="#FFFFFF" uuid="358c3d3a-3a9b-47a5-8396-dbf7fac9f95e"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Other]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1020" y="0" width="100" height="20" forecolor="#FFFFFF" uuid="86d8de45-20dc-445e-84ce-e1f92356cb80"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Accountd]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1131" y="0" width="100" height="20" forecolor="#FFFFFF" uuid="0e37db3f-bee9-4255-8dc4-8e92db2ab7b5"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Accounts]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1264" y="0" width="100" height="20" forecolor="#FFFFFF" uuid="af6a7ed0-dacb-4dac-92b0-d8db2ab975cd"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Othera]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="198" splitType="Stretch">
+			<textField>
+				<reportElement x="21" y="16" width="100" height="20" uuid="3ff8020e-16aa-42f8-b92b-ea977d3eafe3"/>
+				<textFieldExpression><![CDATA[$F{date1}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="136" y="16" width="100" height="20" uuid="4a0c7c44-cd5c-4d08-9166-78583519abc9"/>
+				<textFieldExpression><![CDATA[$F{accountcredited1}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="256" y="16" width="100" height="20" uuid="7cfa6447-a1bd-4ac3-b31b-40be8c53c76d"/>
+				<textFieldExpression><![CDATA[$F{account1}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="371" y="16" width="100" height="20" uuid="ce9deaaa-cb84-4489-966c-479ebc05f4ae"/>
+				<textFieldExpression><![CDATA[$F{sales1}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="482" y="16" width="124" height="20" uuid="366c7c2b-2c00-4ac4-b11d-9ea521f90364"/>
+				<textFieldExpression><![CDATA[$F{amountreceivables1}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="625" y="16" width="100" height="20" uuid="108c2eae-a52b-45a3-81f4-f9e4c63acdf3"/>
+				<textFieldExpression><![CDATA[$F{cash1}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="744" y="16" width="100" height="20" uuid="99265750-f3c1-43cd-8abd-f2fd960ff4b1"/>
+				<textFieldExpression><![CDATA[$F{discount1}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="871" y="16" width="100" height="20" uuid="628f6a08-3cea-40f5-a613-aba79a21bd6f"/>
+				<textFieldExpression><![CDATA[$F{other1}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="1002" y="16" width="100" height="20" uuid="0ba4136c-3a21-46a1-9014-af2b0f6ebede"/>
+				<textFieldExpression><![CDATA[$F{accountd1}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="1131" y="16" width="100" height="20" uuid="c5328832-bd90-42fc-b427-a53b68d2cd69"/>
+				<textFieldExpression><![CDATA[$F{accounts1}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="1264" y="16" width="100" height="20" uuid="568c353e-7505-4a78-a346-f98c1981c6b1"/>
+				<textFieldExpression><![CDATA[$F{othera1}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="21" y="50" width="100" height="20" uuid="c284b7fd-5609-4c14-81bf-6e7b4078d18c"/>
+				<textFieldExpression><![CDATA[$F{date2}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="136" y="50" width="100" height="20" uuid="6eab9465-9847-469b-a019-2c3cc148e303"/>
+				<textFieldExpression><![CDATA[$F{accountcredited2}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="256" y="50" width="100" height="20" uuid="13bd95cf-9321-4239-8267-355e071a4337"/>
+				<textFieldExpression><![CDATA[$F{account2}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="371" y="50" width="100" height="20" uuid="c25bdddf-6b13-4cee-9f52-70d2dcbddcc9"/>
+				<textFieldExpression><![CDATA[$F{sales2}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="482" y="50" width="119" height="20" uuid="e0d2a3d6-9711-4d34-899c-817bab42d738"/>
+				<textFieldExpression><![CDATA[$F{amountreceivables2}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="625" y="50" width="100" height="20" uuid="34dc02dd-5bf2-4e50-93f8-faa1c66ab914"/>
+				<textFieldExpression><![CDATA[$F{cash2}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="744" y="50" width="100" height="20" uuid="c081b5c6-7e50-4697-84ed-a0aafb4b0c14"/>
+				<textFieldExpression><![CDATA[$F{discount2}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="872" y="50" width="100" height="20" uuid="68ead677-95e9-43a1-af35-a9e6906686d7"/>
+				<textFieldExpression><![CDATA[$F{other2}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="1004" y="51" width="100" height="20" uuid="b3c47e2d-adf4-4b75-9997-dbed88869eb0"/>
+				<textFieldExpression><![CDATA[$F{accountd2}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="1131" y="54" width="100" height="20" uuid="6dc08a4f-7b63-41f0-b079-58b2607e4175"/>
+				<textFieldExpression><![CDATA[$F{accounts2}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="1264" y="54" width="100" height="20" uuid="e5357b3d-c42f-45f1-a390-9fb501a10d89"/>
+				<textFieldExpression><![CDATA[$F{othera2}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="21" y="86" width="100" height="20" uuid="d49079e2-d68b-4bb7-9d3c-ce02e3dc3d4a"/>
+				<textFieldExpression><![CDATA[$F{date3}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="136" y="86" width="100" height="20" uuid="afdb8d30-d19c-48cc-9a0d-d08959533e7d"/>
+				<textFieldExpression><![CDATA[$F{accountcredited3}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="256" y="86" width="100" height="20" uuid="fd23b1a0-3f47-447d-a754-9ed418edf5e7"/>
+				<textFieldExpression><![CDATA[$F{account3}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="369" y="86" width="100" height="20" uuid="5e405b56-20e4-49e2-8bd8-402ffd704ad8"/>
+				<textFieldExpression><![CDATA[$F{sales3}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="485" y="86" width="116" height="20" uuid="36ba9bee-8bef-4c32-a5a5-db38e4c678b2"/>
+				<textFieldExpression><![CDATA[$F{amountreceivables3}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="625" y="86" width="100" height="20" uuid="2a646fda-9d29-4d2e-bfbd-649a6d3ad852"/>
+				<textFieldExpression><![CDATA[$F{cash3}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="744" y="86" width="100" height="20" uuid="96e6cdf3-288a-4c00-8956-7111c6e34aec"/>
+				<textFieldExpression><![CDATA[$F{discount3}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="871" y="86" width="100" height="20" uuid="51d40709-c87c-4364-b5ab-e033251a930f"/>
+				<textFieldExpression><![CDATA[$F{other3}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="1004" y="86" width="100" height="20" uuid="51f9bdab-a925-4e74-b71e-dabace088255"/>
+				<textFieldExpression><![CDATA[$F{accountd3}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="1131" y="86" width="100" height="20" uuid="c2323228-5f08-477a-b7fd-1ed002d36f5c"/>
+				<textFieldExpression><![CDATA[$F{accounts3}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="1264" y="86" width="100" height="20" uuid="4587f5f0-7f18-4a42-8592-0eaeb59c5e30"/>
+				<textFieldExpression><![CDATA[$F{othera3}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="21" y="113" width="100" height="20" uuid="fa6f0080-5a93-49e8-ade0-bca87980b1b4"/>
+				<textFieldExpression><![CDATA[$F{date4}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="136" y="113" width="100" height="20" uuid="760f02d1-0716-45c1-a398-7c39d3d180f9"/>
+				<textFieldExpression><![CDATA[$F{accountcredited4}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="256" y="113" width="100" height="20" uuid="4cd19f5a-6dce-4a9a-9a5e-8439f2faead1"/>
+				<textFieldExpression><![CDATA[$F{account4}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="369" y="113" width="100" height="20" uuid="69d62cc5-b5d7-4c36-a59c-bd36a8142c65"/>
+				<textFieldExpression><![CDATA[$F{sales4}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="482" y="113" width="119" height="20" uuid="c4a67d0d-89e4-4795-8c07-416293f4b1f9"/>
+				<textFieldExpression><![CDATA[$F{amountreceivables4}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="628" y="113" width="100" height="20" uuid="d7f22a1c-55df-4b0e-a0b0-42099a387a91"/>
+				<textFieldExpression><![CDATA[$F{cash4}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="744" y="113" width="100" height="20" uuid="bbd1c590-1934-4418-a416-fbd8471d35ac"/>
+				<textFieldExpression><![CDATA[$F{discount4}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="872" y="113" width="100" height="20" uuid="cfb091ba-36d7-409d-9a71-d43b366cf1fc"/>
+				<textFieldExpression><![CDATA[$F{other4}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="1006" y="113" width="100" height="20" uuid="7ef13cf1-401c-48f2-885a-b7f79c4e38d0"/>
+				<textFieldExpression><![CDATA[$F{accountd4}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="1131" y="113" width="100" height="20" uuid="1ccf8c43-3e62-4e4c-a627-f85324763555"/>
+				<textFieldExpression><![CDATA[$F{accounts4}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="1264" y="113" width="100" height="20" uuid="7c129ef4-5eb1-456d-b25e-755345fc4778"/>
+				<textFieldExpression><![CDATA[$F{othera4}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="21" y="150" width="100" height="20" uuid="5af211f5-12ea-4cca-952f-af6cd27cadde"/>
+				<textFieldExpression><![CDATA[$F{date5}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="133" y="150" width="100" height="20" uuid="09922526-8c86-4603-9165-13d29a0cbad7"/>
+				<textFieldExpression><![CDATA[$F{accountcredited5}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="256" y="150" width="100" height="20" uuid="84b05c93-2f4f-4cb3-87bf-f06ef13060a2"/>
+				<textFieldExpression><![CDATA[$F{account5}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="371" y="150" width="100" height="20" uuid="84f6aef2-eb8f-4cef-9192-904b09a34df8"/>
+				<textFieldExpression><![CDATA[$F{sales5}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="482" y="150" width="119" height="20" uuid="f53739f9-c246-43b5-90cf-5bbc4fe57f1c"/>
+				<textFieldExpression><![CDATA[$F{amountreceivables5}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="628" y="150" width="100" height="20" uuid="847c4228-2f38-4ea8-8d16-ea686e1db909"/>
+				<textFieldExpression><![CDATA[$F{cash5}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="744" y="150" width="100" height="20" uuid="d1498ddb-8f1b-445d-a611-05d3cdc31a83"/>
+				<textFieldExpression><![CDATA[$F{discount5}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="868" y="150" width="100" height="20" uuid="81e3370f-d788-4679-8b9e-297e48da0937"/>
+				<textFieldExpression><![CDATA[$F{other5}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="1002" y="150" width="100" height="20" uuid="8a42229f-e222-43a9-b911-85f463221fdf"/>
+				<textFieldExpression><![CDATA[$F{accountd5}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="1131" y="150" width="100" height="20" uuid="0498be39-4734-4015-8771-4e0c56652036"/>
+				<textFieldExpression><![CDATA[$F{accounts5}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="1264" y="150" width="100" height="20" uuid="85aeb783-5201-418c-b10f-1799e5a89d21"/>
+				<textFieldExpression><![CDATA[$F{othera5}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="16" y="197" width="1369" height="1" uuid="ecbd3d80-5845-4521-a9be-6e98634f9fce"/>
+			</line>
+			<line>
+				<reportElement x="17" y="-20" width="1" height="217" uuid="e7f7569e-7f41-4fe5-8d72-c90cdf5d7891"/>
+			</line>
+			<line>
+				<reportElement x="128" y="0" width="1" height="198" uuid="b95b3cca-03cb-4526-bc4a-568afc25a795"/>
+			</line>
+			<line>
+				<reportElement x="243" y="0" width="1" height="198" uuid="67710da4-6201-4e8c-8e7a-c8c4f7d92c20"/>
+			</line>
+			<line>
+				<reportElement x="365" y="0" width="1" height="197" uuid="c551aa28-45b3-44cc-a292-2590a7511cff"/>
+			</line>
+			<line>
+				<reportElement x="476" y="0" width="1" height="197" uuid="6a3c4433-fe0f-4609-9787-b49fa8ceb52a"/>
+			</line>
+			<line>
+				<reportElement x="611" y="0" width="1" height="198" uuid="7a5292aa-5e41-4d92-bc90-2e0da3c2c2e7"/>
+			</line>
+			<line>
+				<reportElement x="737" y="0" width="1" height="197" uuid="2c959564-3f3e-434b-9310-3d729ba78d11"/>
+			</line>
+			<line>
+				<reportElement x="857" y="0" width="1" height="197" uuid="173913f8-3c1d-4a78-9755-0200643476d1"/>
+			</line>
+			<line>
+				<reportElement x="989" y="0" width="1" height="198" uuid="e42cef14-5761-4c8e-8394-5e2e708c4a7e"/>
+			</line>
+			<line>
+				<reportElement x="1120" y="0" width="1" height="197" uuid="841c79c5-29f7-405c-8413-1014169487ef"/>
+			</line>
+			<line>
+				<reportElement x="1236" y="0" width="1" height="197" uuid="bc75b7eb-78e4-4ce4-a767-76901e6d1c87"/>
+			</line>
+			<line>
+				<reportElement x="1384" y="0" width="1" height="197" uuid="7a521386-d466-4680-8d4b-3e0a2aa6eec3"/>
+			</line>
+			<line>
+				<reportElement x="18" y="36" width="1366" height="1" uuid="fffd0b11-15ea-4200-ba7c-d9ac78c54231"/>
+			</line>
+			<line>
+				<reportElement x="18" y="74" width="1366" height="1" uuid="393b9c75-18e8-4966-a293-b0e177e3b1f0"/>
+			</line>
+			<line>
+				<reportElement x="18" y="106" width="1366" height="1" uuid="63b4dc0f-4cae-4e99-b71c-a94f00a976c3"/>
+			</line>
+			<line>
+				<reportElement x="17" y="144" width="1367" height="1" uuid="0fc122d3-37c6-4606-b49d-7e8c60c4dc9a"/>
+			</line>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

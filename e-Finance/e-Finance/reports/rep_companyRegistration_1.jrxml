@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.3.1.final using JasperReports Library version 6.3.1  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="rep_companyRegistration" language="groovy" pageWidth="595" pageHeight="842" whenNoDataType="NoPages" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="bb14c34e-26bd-47ba-9fa4-646b6f60d49a">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="141"/>
+	<queryString>
+		<![CDATA[select * from tl_fn_companyregistration where sno=(select MAX(sno) from tl_fn_companyregistration);]]>
+	</queryString>
+	<field name="sno" class="java.lang.Long"/>
+	<field name="companyname" class="java.lang.String"/>
+	<field name="username" class="java.lang.String"/>
+	<field name="password" class="java.lang.String"/>
+	<field name="reenterpassword" class="java.lang.String"/>
+	<field name="app_status" class="java.lang.String"/>
+	<field name="gendate" class="java.lang.String"/>
+	<field name="logo" class="java.lang.String"/>
+	<field name="mobileno" class="java.lang.String"/>
+	<field name="landline" class="java.lang.String"/>
+	<field name="email" class="java.lang.String"/>
+	<field name="address" class="java.lang.String"/>
+	<field name="companyid" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<textField>
+				<reportElement x="186" y="18" width="236" height="44" forecolor="#0099CC" uuid="ba9c344e-fb5c-425f-b3f2-02bbc2392973"/>
+				<textElement>
+					<font size="24"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{companyname}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch">
+			<staticText>
+				<reportElement x="186" y="0" width="202" height="35" uuid="a10661f7-f2c3-4c91-a135-99d2ee01f836"/>
+				<textElement>
+					<font size="18" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Company Registration]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="197" splitType="Stretch">
+			<textField>
+				<reportElement x="131" y="14" width="100" height="20" uuid="e67a2d7f-4a34-4731-8d51-4d8910c2c3cf"/>
+				<textFieldExpression><![CDATA[$F{mobileno}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="422" y="14" width="100" height="20" uuid="d7a6f523-1d84-4415-bdb3-5be427d42077"/>
+				<textFieldExpression><![CDATA[$F{landline}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="131" y="68" width="100" height="20" uuid="5fe72d10-5434-4102-ae85-27f635b1ddd7"/>
+				<textFieldExpression><![CDATA[$F{email}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="422" y="68" width="100" height="20" uuid="11e3ce7a-be53-4ebc-9bf1-6ad6fe886363"/>
+				<textFieldExpression><![CDATA[$F{address}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="19" y="14" width="100" height="20" uuid="9c1ae8e5-5273-437d-9fc8-fe40f250d101"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[mobileno]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="287" y="14" width="100" height="20" uuid="2284606c-256b-4865-8b6a-af6b3355a49c"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[landline]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="19" y="68" width="100" height="20" uuid="cdc5a587-a68c-40dc-b3b0-37b35b4f9709"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[email]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="287" y="68" width="100" height="20" uuid="8ec80562-629b-4701-8cd6-544b83ae6c53"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[address]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="131" y="126" width="100" height="20" uuid="d4a59dee-3431-4580-9e3c-f5118c723751"/>
+				<textFieldExpression><![CDATA[$F{address}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="19" y="126" width="100" height="20" uuid="885f5e79-18ce-4a6a-aa27-d9c39377e79b"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[address]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="131" y="177" width="100" height="20" uuid="f7bddef4-f4cd-4f9b-a53f-b6d0ce428737"/>
+				<textFieldExpression><![CDATA[$F{username}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="19" y="177" width="100" height="20" forecolor="#993300" uuid="e26f779d-8617-4b3e-ac5b-7418384a8f2e"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[User Name]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="422" y="177" width="100" height="20" uuid="1fe6a253-138c-4583-8bee-71b0d9e0d5c8"/>
+				<textFieldExpression><![CDATA[$F{password}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="277" y="177" width="100" height="20" forecolor="#993300" uuid="a1d61d4b-9045-40d1-b652-f8b867328102"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Password]]></text>
+			</staticText>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch">
+			<staticText>
+				<reportElement x="20" y="22" width="195" height="20" uuid="ae4bb727-a6e2-4f4d-92ef-1913feed61ec"/>
+				<textElement>
+					<font size="14" isBold="false" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[* Please Save the Document. ]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
