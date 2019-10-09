@@ -1,0 +1,1411 @@
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+1)
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+create table usernames(username char(30), password char(30));
+
+mysql> desc usernames;
++----------+----------+------+-----+---------+-------+
+| Field    | Type     | Null | Key | Default | Extra |
++----------+----------+------+-----+---------+-------+
+| username | char(30) | YES  |     | NULL    |       |
+| password | char(30) | YES  |     | NULL    |       |
++----------+----------+------+-----+---------+-------+
+2 rows in set (0.03 sec)
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+2)
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+create table companyinformation(companyname char(60), mailingaddress char(100), statutory char(30), state char(50), pincode char(40) ,
+				telephonenumber char(30),  email char(50), currencysymbol char(10), Maintain char(30), financialyear date, 
+				booksbeginning date, numberofdecimalpalces int(3), symbolfordecimalportion char(20));
+
+mysql> desc companyinformation;
++-------------------------+-----------+------+-----+---------+-------+
+| Field                   | Type      | Null | Key | Default | Extra |
++-------------------------+-----------+------+-----+---------+-------+
+| companyname             | char(60)  | YES  |     | NULL    |       |
+| mailingaddress          | char(100) | YES  |     | NULL    |       |
+| statutory               | char(30)  | YES  |     | NULL    |       |
+| state                   | char(50)  | YES  |     | NULL    |       |
+| pincode                 | char(40)  | YES  |     | NULL    |       |
+| telephonenumber         | char(30)  | YES  |     | NULL    |       |
+| email                   | char(50)  | YES  |     | NULL    |       |
+| currencysymbol          | char(10)  | YES  |     | NULL    |       |
+| Maintain                | char(30)  | YES  |     | NULL    |       |
+| financialyear           | date      | YES  |     | NULL    |       |
+| booksbeginning          | date      | YES  |     | NULL    |       |
+| numberofdecimalpalces   | int(3)    | YES  |     | NULL    |       |
+| symbolfordecimalportion | char(20)  | YES  |     | NULL    |       |
++-------------------------+-----------+------+-----+---------+-------+
+13 rows in set (0.02 sec)
+
+
+
+
+mysql> select * from  companyinformation;
++-------------+----------------+-----------+---------------+---------+-----------------+--------+----------------+----------+---------------+----------------+-----------------------+-------------------------+
+| companyname | mailingaddress | statutory | state         | pincode | telephonenumber | email  | currencysymbol | Maintain | financialyear | booksbeginning | numberofdecimalpalces | symbolfordecimalportion |
++-------------+----------------+-----------+---------------+---------+-----------------+--------+----------------+----------+---------------+----------------+-----------------------+-------------------------+
+| pranam      | hyd            | india     | AndhraPradesh | 46465   | 244654          | defasd | Rs.            | Accounts | 2008-04-01    | 2008-04-01     |2                      | paise                   |
++-------------+----------------+-----------+---------------+---------+-----------------+--------+----------------+----------+---------------+----------------+-----------------------+-------------------------+
+1 row in set (0.00 sec)
+
+insert into companyinformation values('pranam','hyd','india','AndhraPradesh','46465','244654','defasd','Rs.','Accounts','2008-04-01','2008-04-01',2,'paise');
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+3)
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+create table employee(empno char(20), name char(50), nameinhris char(40),fathername char(40),dob  date , sex  char(10),
+			joiningdate date, designation char(30), department char(40), reportingto char(30), joblevel char(40),
+			location char(50), entrymanner char(10), nomination char(40), birthpalce  char(50), maritalstatus char(20),
+			marriagedate date, religion char(20), pannumber char(30), passportnumber char(40), 
+			issuedateandplace char(50), validity char(30),companyname  char(30), qualification char(20), 
+			present_sal double, exp_sal double , offered_sal double , join_time_req varchar(20)) ;
+
+mysql> desc employee;
++-------------------+----------+------+-----+---------+-------+
+| Field             | Type     | Null | Key | Default | Extra |
++-------------------+----------+------+-----+---------+-------+
+| empno             | char(20) | NO   | PRI |         |       |
+| name              | char(50) | YES  |     | NULL    |       |
+| nameinhris        | char(40) | YES  |     | NULL    |       |
+| fathername        | char(40) | YES  |     | NULL    |       |
+| dob               | date     | YES  |     | NULL    |       |
+| sex               | char(10) | YES  |     | NULL    |       |
+| joiningdate       | date     | YES  |     | NULL    |       |
+| designation       | char(30) | YES  |     | NULL    |       |
+| department        | char(40) | YES  |     | NULL    |       |
+| reportingto       | char(30) | YES  |     | NULL    |       |
+| joblevel          | char(40) | YES  |     | NULL    |       |
+| location          | char(50) | YES  |     | NULL    |       |
+| entrymanner       | char(10) | YES  |     | NULL    |       |
+| nomination        | char(40) | YES  |     | NULL    |       |
+| birthpalce        | char(50) | YES  |     | NULL    |       |
+| maritalstatus     | char(20) | YES  |     | NULL    |       |
+| marriagedate      | date     | YES  |     | NULL    |       |
+| religion          | char(20) | YES  |     | NULL    |       |
+| pannumber         | char(30) | YES  |     | NULL    |       |
+| passportnumber    | char(40) | YES  |     | NULL    |       |
+| issuedateandplace | char(50) | YES  |     | NULL    |       |
+| validity          | char(30) | YES  |     | NULL    |       |
+| companyname       | char(30) | YES  |     | NULL    |       |
+| qualification     | char(20) | YES  |     | NULL    |       |
++-------------------+----------+------+-----+---------+-------+
+24 rows in set (0.05 sec)
+
+
+mysql> select * from employee;
++--------+-----------------+---------------+------------+------------+------+-------------+---------------+------------+-------------+----------+-----------+-------------+------------+------------+---------------+--------------+----------+------------+----------------+-------------------+----------+-------------+---------------+
+| empno  | name            | nameinhris    | fathername | dob        | sex  | joiningdate | designation   | department | reportingto | joblevel | location  | entrymanner | nomination | birthpalce | maritalstatus | marriagedate | religion |pannumber  | passportnumber | issuedateandplace | validity | companyname | qualification |
++--------+-----------------+---------------+------------+------------+------+-------------+---------------+------------+-------------+----------+-----------+-------------+------------+------------+---------------+--------------+----------+------------+----------------+-------------------+----------+-------------+---------------+
+| 1001   | ajay            | ajay          | ajay       | 1985-04-08 | Male | 2008-12-12  | jr            | acct       | pavan       | s1       | hyd       | Campus      |            |            |               | 1985-01-01   |          |           |                | NULL              |          | pranam      | NULL         |
+| 1002   | ravi kumar      | ravi          | ravi       | 1985-04-08 | Male | 2008-12-12  | cep           | finance    | asd         | asd      | asdf      | Placement   | asdf       | asa        |               | 1985-01-01   |          |           |                | NULL              |          | kvk         | NULL         |
+| 10221  | Ravi Kumar M    | Ravi Kumar    | Rao        | 2007-02-19 | Male | 2008-02-19  | EDP Executive | Finance    | Pavan       | s1       | Hyderabad | Direct      | none       | hyderabad  | married       | 2007-03-19   | comunist |ap225599xz | z646488311     | NULL              | 50 years | kvk         | Professionals |
+| 10222  | Kishore Kumar M | Kishore Kumar | Rao        | 2007-02-19 | Male | 2008-02-19  | EDP Executive | Finance    | Pavan       | s1       | Hyderabad | Direct      | none       | hyderabad  | married       | 2007-03-19   | comunist |ap225599xz | z646488311     | NULL              | 50 years | kvk         | Professionals |
+| 121213 | asd             | asdf          | adsf       | 1985-04-08 | Male | 2008-12-12  | afs3          | finnace    | asd         | asd      | asdf      | Direct      | asd        | ads        | ad            | 1985-01-01   | ads      |ads        | ad             | NULL              | asdf     | asd         | Doctorities   |
+| 12234  | ajay            | NULL          | ajay       | 1985-01-12 | Male | 2000-10-10  | jr            | developer  | ceo         | jr       | hyd       | Placement   | indian     | vij        | never married | 1985-12-12   | hindu    |asdf2134   | sdf23          | NULL              | nov      | kvk         | NULL         |
+| 123a   | ajay            | ajay          | ajay       | 1985-04-08 | Male | 2008-12-12  | dep           | java       | ceo         | jr       | hyd       | Placement   | i          | vij        | unmarried     | 1985-01-01   | hi       |asdf23     | asdf23         | NULL              | asdf     | ajay        | Technical     |
+| 21     | asd             | asdf          | adsf       | 1985-04-08 | Male | 2008-12-12  | afs3          | finnace    | asd         | asd      | asdf      | Direct      | asd        | ads        | ad            | 1985-01-01   | ads      |ads        | ad             | NULL              | asdf     | asd         | Doctorities   |
+| 23a    | asd             | ad            | asdf       | 1985-04-08 | Male | 2008-12-12  | asdf          | asdf       | asdf        | asdf     | asdf      | Placement   | a          | asdf       | sdf           | 1985-01-01   | asd      |asdf       | asdf           | NULL              | asdf     | ajay        | Doctorities   |
+| 23sedf | ajy             | ajay          | ajay       | 1985-04-08 | Male | 2008-12-12  | developer     | cse        | ceo         | prog     | hyd       | Direct      | indian     | vij        | unmarried     | 1985-01-01   | h        |asdf23     | a              | NULL              | nov      | kvk         | NULL         |
+| asd    | sda             | NULL          | asd        | 1985-04-08 | Male | 2008-12-12  | asd           | asdf       | asdf        | asdf     | asdf      | Placement   | asdf       | asdf       | asdf          | 1985-12-12   | asdf     |asdf       | ads            | NULL              | asdf     | asdf        | NULL         |
+| asd23  | ajay            | NULL          | ajay       | 1985-04-08 | Male | 2008-12-12  | pr            | ces        | ceo         | aas      | asd       | Placement   | as         | asd        | asd           | 1985-12-12   | asdf     |asdf       | asd            | NULL              | 23ed     | pranam      | NULL         |
++--------+-----------------+---------------+------------+------------+------+-------------+---------------+------------+-------------+----------+-----------+-------------+------------+------------+---------------+--------------+----------+------------+----------------+-------------------+----------+-------------+---------------+
+12 rows in set (0.00 sec)
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+create table employeerequsition (position char(20),company char(20),department char(30),location char(30),joblevel char(30),
+				jobresponsibilities char(100),specificaccountabilities char(100), skillsrequired  char(100),
+				qulification char(20),experience char(20),targettime char(30), industryspecific char(30),
+				age int(10),ageto int(10),personalitytraits char(100),mobility char(50),organizationspecific char(100),
+				computerliteracy  char(100),  leadershipqualitiesa char(100), leadershipqualitiesb char(100),
+				leadershipqualitiesc char(100),leadershipqualitiesd char(100),locationspecifica char(50),
+				locationspecificb char(50), locationspecific char(50),genderspecific char(10),
+				indentername char(30),functionalheadname char(30), unithead char(30), date1 date,
+				date2 date,date3 date);
+
+
+
+
+mysql> desc employeerequsition;
++--------------------------+-----------+------+-----+---------+-------+
+| Field                    | Type      | Null | Key | Default | Extra |
++--------------------------+-----------+------+-----+---------+-------+
+| position                 | char(20)  | YES  |     | NULL    |       |
+| company                  | char(20)  | YES  |     | NULL    |       |
+| department               | char(30)  | YES  |     | NULL    |       |
+| location                 | char(30)  | YES  |     | NULL    |       |
+| joblevel                 | char(30)  | YES  |     | NULL    |       |
+| jobresponsibilities      | char(100) | YES  |     | NULL    |       |
+| specificaccountabilities | char(100) | YES  |     | NULL    |       |
+| skillsrequired           | char(100) | YES  |     | NULL    |       |
+| qulification             | char(20)  | YES  |     | NULL    |       |
+| experience               | char(20)  | YES  |     | NULL    |       |
+| targettime               | char(30)  | YES  |     | NULL    |       |
+| industryspecific         | char(30)  | YES  |     | NULL    |       |
+| age                      | int(10)   | YES  |     | NULL    |       |
+| ageto                    | int(10)   | YES  |     | NULL    |       |
+| personalitytraits        | char(100) | YES  |     | NULL    |       |
+| mobility                 | char(50)  | YES  |     | NULL    |       |
+| organizationspecific     | char(100) | YES  |     | NULL    |       |
+| computerliteracy         | char(100) | YES  |     | NULL    |       |
+| leadershipqualitiesa     | char(100) | YES  |     | NULL    |       |
+| leadershipqualitiesb     | char(100) | YES  |     | NULL    |       |
+| leadershipqualitiesc     | char(100) | YES  |     | NULL    |       |
+| leadershipqualitiesd     | char(50)  | YES  |     | NULL    |       |
+| locationspecifica        | char(50)  | YES  |     | NULL    |       |
+| locationspecificb        | char(50)  | YES  |     | NULL    |       |
+| locationspecific         | char(50)  | YES  |     | NULL    |       |
+| genderspecific           | char(10)  | YES  |     | NULL    |       |
+| indentername             | char(30)  | YES  |     | NULL    |       |
+| functionalheadname       | char(30)  | YES  |     | NULL    |       |
+| unithead                 | char(30)  | YES  |     | NULL    |       |
+| date1                    | date      | YES  |     | NULL    |       |
+| date2                    | date      | YES  |     | NULL    |       |
+| date3                    | date      | YES  |     | NULL    |       |
++--------------------------+-----------+------+-----+---------+-------+
+32 rows in set (0.03 sec)
+
+
+
+
+
+
+
+mysql> select * from employeerequsition;
++----------+---------+-------------+----------+----------+---------------------+--------------------------+----------------+--------------+------------+------------+------------------+------+-------+-------------------+----------+----------------------+------------------+----------------------+----------------------+----------------------+----------------------+-------------------+-------------------+------------------+----------------+--------------+--------------------+----------+------------+------------+------------+
+| position | company | department  | location | joblevel | jobresponsibilities | specificaccountabilities | skillsrequired | qulification | experience | targettime | industryspecific | age  | ageto | personalitytraits | mobility | organizationspecific | computerliteracy | leadershipqualitiesa | leadershipqualitiesb | leadershipqualitiesc | leadershipqualitiesd | locationspecifica | locationspecificb | locationspecific | genderspecific | indentername | functionalheadname | unithead | date1      | date2      | date3      |
++----------+---------+-------------+----------+----------+---------------------+--------------------------+----------------+--------------+------------+------------+------------------+------+-------+-------------------+----------+----------------------+------------------+----------------------+----------------------+----------------------+----------------------+-------------------+-------------------+------------------+----------------+--------------+--------------------+----------+------------+------------+------------+
+| NULL     | ajay    | dev         | vij      | jr       | asdf                | asdf                     | NULL           | b.tech       | 2          | NULL       | NULL             |   21 |    23 | asdf              | ADSF     | asd                  | NULL             | asdf                 | asdf                 | asd                  | asd                  | asdf              | asdf              | asdf             | Male           | ajay         | ajay               | NULL     | 2008-01-02 | 2008-02-02 | 2008-01-01 |
+| on       | kvk     | development | hyd      | jr       | adsf                | asdf                     | asdf           | b.tech       | 2          | ads        | Same Nature      |   21 |    24 | sdf               | asdf     | asdf                 | NULL             | asdf                 | asdf                 | asdf                 | asdf                 | asdf              | hyd               | vij              | Male           | ajay         | ajay               | NULL     | 2008-01-02 | 2008-02-02 | 2008-01-01 |
+| on       | ajay    | finance     | hyd      | jr       | asdf                | dsf                      | asdf           | b.tech       | 3          | asdf       | Same Nature      |   21 |    23 | asdf              | fdfs     | asdf                 | ad               | sdaf                 | asdf                 | asdf                 | asdf                 | asdf              | asdf              | asdf             | Male           | ajay         | ajay               | NULL     | 2008-01-02 | 2008-02-02 | 2008-01-01 |
+| New      | asdf    | dsf         | asd      | asd      | asd                 | asd                      | asd            | ds           | f          | f          | Same Nature      |   21 |    22 | asd               | as       | asd                  | asd              | asd                  | asd                  | asdas                | asd                  | asd               | asd               | asd              | Male           | asd          | asd                | asd      | 2008-01-02 | 2008-02-02 | 2008-01-01 |
+| New      | asdf    | dsf         | asd      | asd      | asd                 | asd                      | asd            | ds           | f          | f          | Same Nature      |   21 |    22 | asd               | as       | asd                  | asd              | asd                  | asd                  | asdas                | asd                  | asd               | asd               | asd              | Male           | asd          | asd                | asd      | 2008-01-02 | 2008-02-02 | 2008-01-01 |
++----------+---------+-------------+----------+----------+---------------------+--------------------------+----------------+--------------+------------+------------+------------------+------+-------+-------------------+----------+----------------------+------------------+----------------------+----------------------+----------------------+----------------------+-------------------+-------------------+------------------+----------------+--------------+--------------------+----------+------------+------------+------------+
+5 rows in set (0.00 sec)
+
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+create table enter_expenses(empname char(30),phone char(30),location char(30),approvedby char(50),
+			 date1 date,totalamount char(30),dept char(30),day char(10));
+
+mysql> desc  enter_expenses;
++-------------+----------+------+-----+---------+-------+
+| Field       | Type     | Null | Key | Default | Extra |
++-------------+----------+------+-----+---------+-------+
+| empname     | char(30) | YES  |     | NULL    |       |
+| phone       | char(30) | YES  |     | NULL    |       |
+| location    | char(30) | YES  |     | NULL    |       |
+| approvedby  | char(50) | YES  |     | NULL    |       |
+| date1       | date     | YES  |     | NULL    |       |
+| totalamount | char(30) | YES  |     | NULL    |       |
+| dept        | char(30) | YES  |     | NULL    |       |
+| day         | char(10) | YES  |     | NULL    |       |
++-------------+----------+------+-----+---------+-------+
+8 rows in set (0.01 sec)
+
+
+
+
+
+
+
+mysql> select * from enter_expenses;
++---------+-------+----------+------------+------------+-------------+---------+------+
+| empname | phone | location | approvedby | date1      | totalamount | dept    | day  |
++---------+-------+----------+------------+------------+-------------+---------+------+
+| ajay    | 3545  | hyd      | ahay       | 2008-03-14 | 1000        | Sales   | MON  |
+| ajay    | 3545  | hyd      | ahay       | 2008-03-14 | 1000        | Sales   | TUE  |
+| ajay    | 3545  | hyd      | ahay       | 2008-03-14 | 1000        | Finance | TUE  |
+| ajay    | 3545  | hyd      | ahay       | 2008-03-14 | 1000        | Finance | MON  |
+| ajay    | 3545  | hyd      | ahay       | 2008-03-14 | 1000        | Sales   | SUN  |
+| ajay    | 3545  | hyd      | ahay       | 2008-03-14 | 1000        | Finance | SUN  |
+| ajay98  | 897   | y        | yi         | 2008-03-14 | 987         | Sales   | WED  |
+| ajay    | 3545  | 8uytuy   | ahay       | 2008-03-14 | 978         | Sales   | THU  |
+| jaay    | 9878  | yhjh     | 98798      | 2008-03-14 | 8987        | Sales   | FRI  |
+| ajay    | 3545  | 8uytuy   | 98798      | 2008-03-14 | 8987        | Sales   | SAT  |
++---------+-------+----------+------------+------------+-------------+---------+------+
+10 rows in set (0.00 sec)
+
+
+
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+create table food_expenses (empname char(30),phone char(30),location char(30),approvedby char(50),
+			date1 date,totalamount char(30),dept char(30),day char(10));
+
+
+mysql> desc food_expenses;
++-------------+----------+------+-----+---------+-------+
+| Field       | Type     | Null | Key | Default | Extra |
++-------------+----------+------+-----+---------+-------+
+| empname     | char(30) | YES  |     | NULL    |       |
+| phone       | char(30) | YES  |     | NULL    |       |
+| location    | char(30) | YES  |     | NULL    |       |
+| approvedby  | char(50) | YES  |     | NULL    |       |
+| date1       | date     | YES  |     | NULL    |       |
+| totalamount | char(30) | YES  |     | NULL    |       |
+| dept        | char(30) | YES  |     | NULL    |       |
+| day         | char(10) | YES  |     | NULL    |       |
++-------------+----------+------+-----+---------+-------+
+8 rows in set (0.02 sec)
+
+
+mysql> select * from food_expenses;
++---------+-------+----------+------------+------------+-------------+---------+------+
+| empname | phone | location | approvedby | date1      | totalamount | dept    | day  |
++---------+-------+----------+------------+------------+-------------+---------+------+
+| ajay    | 3545  | hyd      | ahay       | 2008-03-14 | 1000        | Sales   | THU  |
+| ajay    | 3545  | hyd      | ahay       | 2008-03-14 | 1000        | Sales   | FRI  |
+| ajay    | 3545  | hyd      | ahay       | 2008-03-14 | 1000        | Sales   | SAT  |
+| ajay    | 3545  | hyd      | ahay       | 2008-03-14 | 1000        | Finance | THU  |
+| ajay    | 3545  | hyd      | ahay       | 2008-03-14 | 1000        | Finance | FRI  |
+| ajay    | 3545  | hyd      | ahay       | 2008-03-14 | 1000        | Finance | SAT  |
+| ajay    | 3545  | hyd      | ahay       | 2008-03-14 | 1000        | Finance | TUE  |
+| ajay    | 3545  | 8uytuy   | ahay       | 2008-03-14 | 500         | Sales   | TUE  |
++---------+-------+----------+------------+------------+-------------+---------+------+
+8 rows in set (0.01 sec)
+
+
+
+
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+create table hotel_expenses(empname char(30),phone char(30),location char(30),approvedby char(50),
+			date1 date,noofdays char(10),hotelname char(30),hotellocation char(50),
+			amountperday char(50),totalamount char(30),dept char(30),day char(10));
+
+mysql> desc  hotel_expenses;
++---------------+----------+------+-----+---------+-------+
+| Field         | Type     | Null | Key | Default | Extra |
++---------------+----------+------+-----+---------+-------+
+| empname       | char(30) | YES  |     | NULL    |       |
+| phone         | char(30) | YES  |     | NULL    |       |
+| location      | char(30) | YES  |     | NULL    |       |
+| approvedby    | char(50) | YES  |     | NULL    |       |
+| date1         | date     | YES  |     | NULL    |       |
+| noofdays      | char(10) | YES  |     | NULL    |       |
+| hotelname     | char(30) | YES  |     | NULL    |       |
+| hotellocation | char(50) | YES  |     | NULL    |       |
+| amountperday  | char(50) | YES  |     | NULL    |       |
+| totalamount   | char(30) | YES  |     | NULL    |       |
+| dept          | char(30) | YES  |     | NULL    |       |
+| day           | char(10) | YES  |     | NULL    |       |
++---------------+----------+------+-----+---------+-------+
+12 rows in set (0.03 sec)
+
+
+
+
+mysql> select * from hotel_expenses;
++---------+-------+----------+------------+------------+----------+-----------+---------------+--------------+-------------+---------+------+
+| empname | phone | location | approvedby | date1      | noofdays | hotelname |hotellocation | amountperday | totalamount | dept    | day  |
++---------+-------+----------+------------+------------+----------+-----------+---------------+--------------+-------------+---------+------+
+| ajay    | 3545  | hyd      | ahay       | 2008-03-14 | 3        | swagat    |hyd           | 1000         | 3000        | Sales   | SUN  |
+| ajay    | 3545  | hyd      | ahay       | 2008-03-14 | 3        | swagat    |hyd           | 1000         | 3000        | Sales   | MON  |
+| ajay    | 3545  | hyd      | ahay       | 2008-03-14 | 3        | swagat    |hyd           | 1000         | 3000        | Finance | SUN  |
+| ajay    | 3545  | hyd      | ahay       | 2008-03-14 | 3        | swagat    |hyd           | 1000         | 3000        | Finance | MON  |
+| JHGJH   | 798   | jkh      | jhjk       | 2008-03-14 | 78       | 6         |7678          | 78           | 6084        | Sales   | MON  |
+| ajay    | 876   | 8uytuy   | uyt        | 2008-03-14 | 56       | hg        |h             | 76           | 4256        | Sales   | WED  |
+| ajay    | 3545  | 8uytuy   | ahay       | 2008-03-14 | 12       | j         |iuy           | 1221         | 14652       | Sales   | THU  |
+| jfg     | ghf   | yut      | hjg        | 2008-03-14 | 76       | hg        |8             | 87           | 6612        | Sales   | FRI  |
+| ajay    | 3545  | 8uytuy   | ahay       | 2008-03-14 | 12       | 6         |7678          | 1000         | 12000       | Sales   | SAT  |
+| ajay    | 3545  | 8uytuy   | ahay       | 2008-03-14 | 12       | 6         |7678          | 1000         | 12000       | Sales   | TUE  |
+| ajay    | 3545  | 8uytuy   | ahay       | 2008-03-14 | 12       | 6         |7678          | 1221         | 14652       | Sales   | FRI  |
++---------+-------+----------+------------+------------+----------+-----------+---------------+--------------+-------------+---------+------+
+11 rows in set (0.00 sec)
+
+
+
+
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+create table interviewevaluationreport(candidatename char(40),date date,position char(30),company char(40),
+				appearance char(32),qualification char(30),experience char(30),jobstability char(32),
+				attitude char(32),communicationskills char(32),jobknowledge char(32),jobskills char(32),
+				jobpotential char(32),careerachievements char(32),workdedication char(32),abilitytolearn char(32),
+				openmindness char(32),overallsuitability char(32),finalassessment char(10),othercomments char(150),
+				interviewedby char(32),executivename char(32));
+
+
+mysql> desc interviewevaluationreport;
++---------------------+-----------+------+-----+---------+-------+
+| Field               | Type      | Null | Key | Default | Extra |
++---------------------+-----------+------+-----+---------+-------+
+| candidatename       | char(40)  | YES  |     | NULL    |       |
+| date                | date      | YES  |     | NULL    |       |
+| position            | char(30)  | YES  |     | NULL    |       |
+| company             | char(40)  | YES  |     | NULL    |       |
+| appearance          | char(32)  | YES  |     | NULL    |       |
+| qualification       | char(30)  | YES  |     | NULL    |       |
+| experience          | char(30)  | YES  |     | NULL    |       |
+| jobstability        | char(32)  | YES  |     | NULL    |       |
+| attitude            | char(32)  | YES  |     | NULL    |       |
+| communicationskills | char(32)  | YES  |     | NULL    |       |
+| jobknowledge        | char(32)  | YES  |     | NULL    |       |
+| jobskills           | char(32)  | YES  |     | NULL    |       |
+| jobpotential        | char(32)  | YES  |     | NULL    |       |
+| careerachievements  | char(32)  | YES  |     | NULL    |       |
+| workdedication      | char(32)  | YES  |     | NULL    |       |
+| abilitytolearn      | char(32)  | YES  |     | NULL    |       |
+| openmindness        | char(32)  | YES  |     | NULL    |       |
+| overallsuitability  | char(32)  | YES  |     | NULL    |       |
+| finalassessment     | char(10)  | YES  |     | NULL    |       |
+| othercomments       | char(150) | YES  |     | NULL    |       |
+| interviewedby       | char(30)  | YES  |     | NULL    |       |
+| executivename       | char(20)  | YES  |     | NULL    |       |
++---------------------+-----------+------+-----+---------+-------+
+22 rows in set (0.01 sec)
+
+
+
+mysql> select * from interviewevaluationreport;
++---------------+------------+----------+---------+--------------+-----------------+----------------+--------------+-----------------------+---------------------+--------------+----------------+----------------------+--------------------+------------------+----------------+-----------------+----------------------+-----------------+---------------+---------------+---------------+
+| candidatename | date       | position | company | appearance   | qualification   | experience     | jobstability | attitude              | communicationskills | jobknowledge | jobskills      | jobpotential         | careerachievements | workdedication   | abilitytolearn | openmindness    | overallsuitability   | finalassessment | othercomments | interviewedby | executivename |
++---------------+------------+----------+---------+--------------+-----------------+----------------+--------------+-----------------------+---------------------+--------------+----------------+----------------------+--------------------+------------------+----------------+-----------------+----------------------+-----------------+---------------+---------------+---------------+
+| ajay          | 2008-01-10 | jr       | kv      | NULL         | NULL		   | NULL           | NULL         | NULL                  | NULL		 | NULL         | NULL           | NULL                 | NULL               | NULL             | NULL           | NULL            | NULL                 | Selected        |               |               | pranam        |
+| ajay          | 2008-01-01 | jr       | kvk     | appearanceex | qualificationex | jobstabilityex | NULL         | communicationskillsex | jobknowledgeex	 | jobskillsex  | jobpotentialex | careerachievementsex | workdedicationex   | abilitytolearnex | openmindnessex | maturitylevelex | overallsuitabilityex | Selected        | asf           | ajay          | pranam        |
+| ajay          | 2008-01-01 | jr       | kvk     | appearancevg | qualificationvg | jobstabilityex | NULL         | communicationskillsvg | jobknowledgevg	 | jobskillsvg  | jobpotentialvg | careerachievementsvg | workdedicationvg   | abilitytolearnex | openmindnessvg | maturitylevelvg | overallsuitabilityvg | Selected        | asf           | ajay          | pranam        |
+| pranam        | 2008-01-01 | jr       | kvk     | appearanceex | qualificationex | jobstabilityvg | NULL         | communicationskillsp  | jobknowledgevg	 | jobskillsvg  | jobpotentialvg | careerachievementsp  | workdedicationp    | abilitytolearng  | openmindnessvg | maturitylevelvg | overallsuitabilityvg | Selected        | no            | ajay          | pranam        |
+| vinay         | 2008-01-01 | asd      | asd     | appearanceg  | qualificationex | jobstabilityg  | NULL         | communicationskillsex | jobknowledgeex	 | jobskillsex  | jobpotentialex | careerachievementsex | workdedicationex   | abilitytolearnex | openmindnessex | maturitylevelex | overallsuitabilityex | Selected        | as            | ajay          | pranam        |
+| vinay         | 2008-01-01 | asd      | asd     | appearanceg  | qualificationex | jobstabilityg  | NULL         | communicationskillsex | jobknowledgeex	 | jobskillsex  | jobpotentialex | careerachievementsex | workdedicationex   | abilitytolearnex | openmindnessex | maturitylevelex | overallsuitabilityex | Selected        | as            | ajay          | pranam        |
++---------------+------------+----------+---------+--------------+-----------------+----------------+--------------+-----------------------+---------------------+--------------+----------------+----------------------+--------------------+------------------+----------------+-----------------+----------------------+-----------------+---------------+---------------+---------------+
+6 rows in set (0.00 sec)
+
+
+
+
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+create table interviewevaluationreport1(candidatename char(40),date date,position char(30),company char(40),
+				appearance char(32),qualification char(30),experience char(30),jobstability char(32),
+				attitude char(32),communicationskills char(32),jobknowledge char(32),jobskills char(32),
+				jobpotential char(32),careerachievements char(32),workdedication char(32),abilitytolearn char(32),
+				openmindness char(32),maturitylevel char(40),overallsuitability char(32),finalassessment char(10),
+				othercomments char(150),interviewedby char(30),executivename char(20),presentsalary char(30),
+				exceptedsalary char(30),salaryoffered char(30),joiningtimerequired char(30),department char(30) );
+
+
+mysql> desc interviewevaluationreport1;
++---------------------+-----------+------+-----+---------+-------+
+| Field               | Type      | Null | Key | Default | Extra |
++---------------------+-----------+------+-----+---------+-------+
+| candidatename       | char(40)  | YES  |     | NULL    |       |
+| date                | date      | YES  |     | NULL    |       |
+| position            | char(30)  | YES  |     | NULL    |       |
+| company             | char(40)  | YES  |     | NULL    |       |
+| appearance          | char(32)  | YES  |     | NULL    |       |
+| qualification       | char(30)  | YES  |     | NULL    |       |
+| experience          | char(30)  | YES  |     | NULL    |       |
+| jobstability        | char(32)  | YES  |     | NULL    |       |
+| attitude            | char(32)  | YES  |     | NULL    |       |
+| communicationskills | char(32)  | YES  |     | NULL    |       |
+| jobknowledge        | char(32)  | YES  |     | NULL    |       |
+| jobskills           | char(32)  | YES  |     | NULL    |       |
+| jobpotential        | char(32)  | YES  |     | NULL    |       |
+| careerachievements  | char(32)  | YES  |     | NULL    |       |
+| workdedication      | char(32)  | YES  |     | NULL    |       |
+| abilitytolearn      | char(32)  | YES  |     | NULL    |       |
+| openmindness        | char(32)  | YES  |     | NULL    |       |
+| maturitylevel       | char(40)  | YES  |     | NULL    |       |
+| overallsuitability  | char(32)  | YES  |     | NULL    |       |
+| finalassessment     | char(10)  | YES  |     | NULL    |       |
+| othercomments       | char(150) | YES  |     | NULL    |       |
+| interviewedby       | char(30)  | YES  |     | NULL    |       |
+| executivename       | char(20)  | YES  |     | NULL    |       |
+| presentsalary       | char(30)  | YES  |     | NULL    |       |
+| exceptedsalary      | char(30)  | YES  |     | NULL    |       |
+| salaryoffered       | char(30)  | YES  |     | NULL    |       |
+| joiningtimerequired | char(30)  | YES  |     | NULL    |       |
+| department          | char(30)  | YES  |     | NULL    |       |
++---------------------+-----------+------+-----+---------+-------+
+28 rows in set (0.02 sec)
+
+mysql> select * from interviewevaluationreport1;
++---------------+------------+-----------+---------+--------------+-----------------+--------------+----------------+-----------+-----------------------+----------------+-------------+----------------+----------------------+------------------+------------------+----------------+-----------------+----------------------+-----------------+---------------------+---------------+---------------+---------------+----------------+---------------+---------------------+------------+
+| candidatename | date       | position  | company | appearance   | qualification   | experience   | jobstability   | attitude  | communicationskills   | jobknowledge   | jobskills   | jobpotential   | careerachievements   | workdedication   | abilitytolearn   | openmindness   | maturitylevel   | overallsuitability   | finalassessment | othercomments       | interviewedby | executivename | presentsalary | exceptedsalary | salaryoffered | joiningtimerequired | department |
++---------------+------------+-----------+---------+--------------+-----------------+--------------+----------------+-----------+-----------------------+----------------+-------------+----------------+----------------------+------------------+------------------+----------------+-----------------+----------------------+-----------------+---------------------+---------------+---------------+---------------+----------------+---------------+---------------------+------------+
+| ajay          | 2008-01-01 | jr        | pranam  | appearanceex | qualificationex | experienceex | jobstabilityex | NULL      | communicationskillsex | jobknowledgeex | jobskillsex | jobpotentialex | careerachievementsex | workdedicationex | abilitytolearnex | openmindnessex | maturitylevelex | overallsuitabilityex | Selected        | no                  | ajay          | pranam        | NULL       | NULL           | NULL          | NULL                | NULL       |
+| prasad        | 2008-01-01 | jr        | kvk     | Excellent    | Excellent	    | Excellent    | Excellent      | NULL      | Excellent             | Excellent      | Excellent   | Excellent      | Excellent            | Excellent	  | Excellent        | Excellent      | Excellent       | Excellent            | Selected        | no                  | ajay          | pranam        | NULL       | NULL           | NULL          | NULL                | NULL       |
+| prasad        | 2008-01-01 | jr        | kvk     | Excellent    | Excellent	    | Excellent    | Excellent      | NULL      | Excellent             | Excellent      | Excellent   | Excellent      | Excellent            | Excellent	  | Excellent        | Excellent      | Excellent       | Excellent            | Selected        | no                  | ajay          | pranam        | NULL       | NULL           | NULL          | NULL                | NULL       |
+| prasad        | 2008-01-01 | jr        | kvk     | Excellent    | Excellent	    | Excellent    | Excellent      | NULL      | Excellent             | Excellent      | Excellent   | Excellent      | Excellent            | Excellent	  | Excellent        | Excellent      | Excellent       | Excellent            | Selected        | asd                 | asdf          | pranam        | NULL       | NULL           | NULL          | NULL                | NULL       |
+| asdf          | 2008-01-01 | jr        | kvk     | Excellent    | Excellent	    | Excellent    | Excellent      | NULL      | Excellent             | Excellent      | Excellent   | Excellent      | Excellent            | Excellent	  | Excellent        | Excellent      | Excellent       | Excellent            | Selected        | asd                 | asdf          | pranam        | NULL       | NULL           | NULL          | NULL                | NULL       |
+| asdf          | 2008-01-01 | jr        | kvk     | Excellent    | Excellent	    | Excellent    | Excellent      | NULL      | Excellent             | Excellent      | Excellent   | Excellent      | Excellent            | Excellent	  | Excellent        | Excellent      | Excellent       | Excellent            | Selected        | asd                 | asdf          | pranam        | NULL       | NULL           | NULL          | NULL                | NULL       |
+| asdfasdfasdf  | 2008-01-01 | jr        | kvk     | Excellent    | Excellent	    | Excellent    | Excellent      | NULL      | Excellent             | Excellent      | Excellent   | Excellent      | Excellent            | Excellent	  | Excellent        | Excellent      | Excellent       | Excellent            | Selected        | asd                 | asdf          | pranam        | NULL       | NULL           | NULL          | NULL                | NULL       |
+| pavan         | 2008-01-01 | asdf      | asd     | Excellent    | Excellent	    | Excellent    | Excellent      | Excellent | VeryGood              | VeryGood       | Excellent   | Excellent      | VeryGood             | VeryGood	  | VeryGood         | Excellent      | VeryGood        | VeryGood             | Selected        | as                  | asd           | pranam        | NULL       | NULL           | NULL          | NULL                | NULL       |
+| asd           | 2008-01-01 | asd       | asfd    | Excellent    | Excellent	    | Excellent    | Excellent      | Excellent | Excellent             | Excellent      | Excellent   | Excellent      | Excellent            | Excellent	  | Excellent        | Excellent      | Excellent       | Excellent            | Selected        | asd                 | as            | pranam        | NULL       | NULL           | NULL          | NULL                | NULL       |
+| asd           | 2008-01-01 | sad       | sdaf    | Excellent    | Excellent	    | Excellent    | Excellent      | Excellent | Excellent             | Excellent      | Excellent   | Excellent      | Excellent            | Excellent	  | Excellent        | Excellent      | Excellent       | Excellent            | Selected        | no                  | ajay          | pranam        | NULL       | NULL           | NULL          | NULL                | NULL       |
+| NULL          | NULL       | NULL      | NULL    | NULL         | NULL	    | NULL         | NULL           | NULL      | NULL                  | NULL	         | NULL        | NULL           | NULL                 | NULL		  | NULL             | NULL           | NULL            | NULL                 | NULL            | NULL                | NULL          | NULL          | NULL       | NULL           | NULL          | NULL                | NULL       |
+| asdf          | 2008-01-01 | asd       | asd     | Excellent    | Excellent	    | Excellent    | Excellent      | Excellent | Excellent             | Excellent      | Excellent   | Excellent      | Excellent            | Excellent	  | Excellent        | Excellent      | Excellent       | Excellent            | Selected        |  lasd               | asdf          | pranam        | NULL       | NULL           | NULL          | NULL                | NULL       |
+| asdf          | 2008-01-01 | asd       | sadf    | Excellent    | Excellent	    | Excellent    | Excellent      | Excellent | Excellent             | Excellent      | Excellent   | Excellent      | Excellent            | Excellent	  | Excellent        | Excellent      | Excellent       | Excellent            | Selected        | asdf                | asd           | pranam        | NULL       | NULL           | NULL          | NULL                | NULL       |
+| asdf          | 2008-01-01 | asd       | sadf    | Excellent    | Excellent	    | Excellent    | Excellent      | Excellent | Excellent             | Excellent      | Excellent   | Excellent      | Excellent            | Excellent	  | Excellent        | Excellent      | Excellent       | Excellent            | Selected        | asdf                | asd           | pranam        | NULL       | NULL           | NULL          | NULL                | NULL       |
+| asdf          | 2008-01-01 | asd       | sadf    | Excellent    | Excellent	    | Excellent    | Excellent      | Excellent | Excellent             | Excellent      | Excellent   | Excellent      | Excellent            | Excellent	  | Excellent        | Excellent      | Excellent       | Excellent            | Selected        | asdf                | asd           | pranam        | NULL       | NULL           | NULL          | NULL                | NULL       |
+| asd           | 2008-01-01 | asd       | asdf    | Excellent    | Excellent	    | Excellent    | Excellent      | Excellent | Excellent             | Excellent      | Excellent   | Excellent      | Excellent            | Excellent	  | Excellent        | Excellent      | Excellent       | Excellent            | Selected        | asd                 | asd           | pranam        | NULL       | NULL           | NULL          | NULL                | NULL       |
+| asd           | 2008-01-01 | asd       | asdf    | Excellent    | Excellent	    | Excellent    | Excellent      | Excellent | Excellent             | Excellent      | Excellent   | Excellent      | Excellent            | Excellent	  | Excellent        | Excellent      | Excellent       | Excellent            | Selected        | asd                 | asd           | pranam        | NULL       | NULL           | NULL          | NULL                | NULL       |
+| asd           | 2008-01-01 | asd       | as      | Excellent    | Excellent	    | Excellent    | Excellent      | Excellent | Excellent             | Excellent      | Excellent   | Excellent      | Excellent            | Excellent	  | Excellent        | Excellent      | Excellent       | Excellent            | Selected        | sd                  | s             | pranam        | 10000      | 15000          | 20000         | NULL                | a          |
+| asd           | 2008-01-01 | asd       | as      | Excellent    | Excellent	    | Excellent    | Excellent      | Excellent | Excellent             | Excellent      | Excellent   | Excellent      | Excellent            | Excellent	  | Excellent        | Excellent      | Excellent       | Excellent            | Selected        | sd                  | s             | pranam        | 10000      | 15000          | 20000         | NULL                | a          |
+| asd           | 2008-01-01 | asd       | as      | Excellent    | Excellent	    | Excellent    | Excellent      | Excellent | Excellent             | Excellent      | Excellent   | Excellent      | Excellent            | Excellent	  | Excellent        | Excellent      | Excellent       | Excellent            | Selected        | sd                  | s             | pranam        | 10000      | 15000          | 20000         | NULL                | a          |
+| asd           | 2008-01-01 | asd       | as      | Excellent    | Excellent	    | Excellent    | Excellent      | Excellent | Excellent             | Excellent      | Excellent   | Excellent      | Excellent            | Excellent	  | Excellent        | Excellent      | Excellent       | Excellent            | Selected        | sd                  | s             | pranam        | 10000      | 15000          | 20000         | NULL                | a          |
+| Appa Rao      | 2008-02-19 | executive | kvk     | Excellent    | Excellent	    | Excellent    | Excellent      | Excellent | Excellent             | Excellent      | Excellent   | Excellent      | Excellent            | Excellent	  | Excellent        | Excellent      | Excellent       | Excellent            | Rejected        | too much Excellence | ajay          | pranam        | 100        | 105            | 102.5         | NULL                | finance    |
++---------------+------------+-----------+---------+--------------+-----------------+--------------+----------------+-----------+-----------------------+----------------+-------------+----------------+----------------------+------------------+------------------+----------------+-----------------+----------------------+-----------------+---------------------+---------------+---------------+---------------+----------------+---------------+---------------------+------------+
+22 rows in set (0.00 sec)
+
+
+
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+create table(customername char(50),id char(50), invoiceno char(40),date date, refferenceno char(20), 
+		srlno char(30),name char(30),unitprice float,numberofpieces int(10),servicetax char(30),
+		vat char(20), educesstax char(20),total char(20),dept char(20));
+
+
+mysql> desc invoice;
++----------------+----------+------+-----+---------+-------+
+| Field          | Type     | Null | Key | Default | Extra |
++----------------+----------+------+-----+---------+-------+
+| customername   | char(50) | YES  |     | NULL    |       |
+| id             | char(50) | YES  |     | NULL    |       |
+| invoiceno      | char(40) | YES  |     | NULL    |       |
+| date           | date     | YES  |     | NULL    |       |
+| refferenceno   | char(20) | YES  |     | NULL    |       |
+| srlno          | char(30) | YES  |     | NULL    |       |
+| name           | char(30) | YES  |     | NULL    |       |
+| unitprice      | float    | YES  |     | NULL    |       |
+| numberofpieces | int(10)  | YES  |     | NULL    |       |
+| servicetax     | char(30) | YES  |     | NULL    |       |
+| vat            | char(20) | YES  |     | NULL    |       |
+| educesstax     | char(20) | YES  |     | NULL    |       |
+| total          | char(20) | YES  |     | NULL    |       |
+| dept           | char(20) | YES  |     | NULL    |       |
++----------------+----------+------+-----+---------+-------+
+14 rows in set (0.03 sec)
+
+
+
+
+
+mysql> select * from invoice;
++--------------+------+-----------+------------+--------------+-------+-------+-----------+----------------+------------+-------+------------+-------+-------+
+| customername | id   | invoiceno | date       | refferenceno | srlno | name  |unitprice  | numberofpieces | servicetax | vat   | educesstax | total | dept  |
++--------------+------+-----------+------------+--------------+-------+-------+-----------+----------------+------------+-------+------------+-------+-------+
+| ajay,hyd     | 1021 | 1111      | 2008-03-16 | 100          | 111   | PEN   |       10  |             10 | 12.0       | 12.5  | 124.5      | ajay  | Sales |
+| aj           | 1001 | 1110      | 2008-03-17 | 1001         | 113   | table |      300  |             10 | 360.0      | 375.0 | 3735.0     | ajay  | Sales |
++--------------+------+-----------+------------+--------------+-------+-------+-----------+----------------+------------+-------+------------+-------+-------+
+2 rows in set (0.00 sec)
+
+
+
+
+
+
+
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+create table leaveapplications(name char(30),company char(20),employeecode char(30),designation char(30),
+			purposeofleave char(30),addressonleave char(100),fromdate date,todate date,
+			cl char(20),sl char(20),el char(20),lop char(20));
+
+
+mysql> desc leaveapplications;
++----------------+-----------+------+-----+---------+-------+
+| Field          | Type      | Null | Key | Default | Extra |
++----------------+-----------+------+-----+---------+-------+
+| name           | char(30)  | YES  |     | NULL    |       |
+| company        | char(20)  | YES  |     | NULL    |       |
+| employeecode   | char(30)  | YES  |     | NULL    |       |
+| designation    | char(30)  | YES  |     | NULL    |       |
+| purposeofleave | char(30)  | YES  |     | NULL    |       |
+| addressonleave | char(100) | YES  |     | NULL    |       |
+| fromdate       | date      | YES  |     | NULL    |       |
+| todate         | date      | YES  |     | NULL    |       |
+| cl             | char(20)  | YES  |     | NULL    |       |
+| sl             | char(20)  | YES  |     | NULL    |       |
+| el             | char(20)  | YES  |     | NULL    |       |
+| lop            | char(20)  | YES  |     | NULL    |       |
++----------------+-----------+------+-----+---------+-------+
+12 rows in set (0.05 sec)
+
+
+
+
+
+
+
+
+mysql> select * from leaveapplications;
++----------+---------+--------------+-------------+----------------+----------------+-----
+| name     | company | employeecode | designation | purposeofleave | addressonleave | from
++----------+---------+--------------+-------------+----------------+----------------+-----
+| NULL     | pranam  | asd23        | afs3        | fever          | NULL           | 2008
+| vijay    | kvk     | asd23        | developer   | fever          | vij            | 2008
+| asdfasfd | asfd    | asd          | asdf        | asdf           | a              | 2008
+| asdfasfd | asfd    | asd          | asdf        | asdf           | a              | 2008
+| asdfasfd | asfd    | asd          | asdf        | asdf           | a              | 2008
+| ajay     | pranm   | 12           | as          | fever          | sa             | 2008
+| appa Rao | kvk     | 10002        | executive   | death          | hell           | 2008
++----------+---------+--------------+-------------+----------------+----------------+-----
+7 rows in set (0.00 sec)
+
+
+
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+create table misc_expenses(empname  char(30),phone  char(30),location  char(30),  
+			approvedby char(50),date1 date,purpose  char(70),totalamount  char(30),
+			dept  char(30),day  char(10));
+
+
+mysql> desc misc_expenses;
++-------------+----------+------+-----+---------+-------+
+| Field       | Type     | Null | Key | Default | Extra |
++-------------+----------+------+-----+---------+-------+
+| empname     | char(30) | YES  |     | NULL    |       |
+| phone       | char(30) | YES  |     | NULL    |       |
+| location    | char(30) | YES  |     | NULL    |       |
+| approvedby  | char(50) | YES  |     | NULL    |       |
+| date1       | date     | YES  |     | NULL    |       |
+| purpose     | char(70) | YES  |     | NULL    |       |
+| totalamount | char(30) | YES  |     | NULL    |       |
+| dept        | char(30) | YES  |     | NULL    |       |
+| day         | char(10) | YES  |     | NULL    |       |
++-------------+----------+------+-----+---------+-------+
+9 rows in set (0.03 sec)
+
+
+
+
+
+
+
+
+
+mysql> select * from misc_expenses;
++---------+-------+----------+------------+------------+---------+-------------+---------+------+
+| empname | phone | location | approvedby | date1      | purpose | totalamount | dept    | day  |
++---------+-------+----------+------------+------------+---------+-------------+---------+------+
+| ajay    | 3545  | hyd      | ahay       | 2008-03-14 | auto    | 100         | Sales   | SUN  |
+| ajay    | 3545  | hyd      | ahay       | 2008-03-14 | auto    | 100         | Sales   | MON  |
+| ajay    | 3545  | hyd      | ahay       | 2008-03-14 | auto    | 100         | Finance | SUN  |
+| ajay    | 3545  | hyd      | ahay       | 2008-03-14 | auto    | 100         | Finance | MON  |
+| ajay    | 798   | hysdq    | aja        | 2008-03-15 | auto    | 200         | Sales   | WED  |
+| ajay    | 3545  | 8uytuy   | aja        | 2008-03-14 | auto    | 200         | Sales   | THU  |
+| ajay    | 3545  | 8uytuy   | 98798      | 2008-03-14 | auto    | 100         | Sales   | SAT  |
+| ajay    | 3545  | 8uytuy   | 98798      | 2008-03-14 | auto    | 100         | Sales   | TUE  |
+| ajay    | 3545  | 8uytuy   | 98798      | 2008-03-14 | auto    | 100         | Sales   | FRI  |
++---------+-------+----------+------------+------------+---------+-------------+---------+------+
+9 rows in set (0.00 sec)
+
+
+
+
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+create table pettycashjournal(dept char(20),date1 date,vocher1 char(30),payee1 char(40),
+			 approvedby1 char(30),total1  char(40),balence1  char(40),auditedby  char(40),
+			  approvedby char(40));
+
+
+mysql> desc pettycashjournal;
++-------------+----------+------+-----+---------+-------+
+| Field       | Type     | Null | Key | Default | Extra |
++-------------+----------+------+-----+---------+-------+
+| dept        | char(20) | YES  |     | NULL    |       |
+| date1       | date     | YES  |     | NULL    |       |
+| vocher1     | char(30) | YES  |     | NULL    |       |
+| payee1      | char(40) | YES  |     | NULL    |       |
+| approvedby1 | char(30) | YES  |     | NULL    |       |
+| total1      | char(40) | YES  |     | NULL    |       |
+| balence1    | char(40) | YES  |     | NULL    |       |
+| auditedby   | char(40) | YES  |     | NULL    |       |
+| approvedby  | char(40) | YES  |     | NULL    |       |
++-------------+----------+------+-----+---------+-------+
+9 rows in set (0.03 sec)
+
+
+
+
+
+
+mysql> select * from pettycashjournal;
++---------+------------+---------+--------+-------------+--------+----------+-----------+------------+
+| dept    | date1      | vocher1 | payee1 | approvedby1 | total1 | balence1 | auditedby |approvedby |
++---------+------------+---------+--------+-------------+--------+----------+-----------+------------+
+| Sales   | 2008-03-14 | 11      | ajay   | ajay        | 150    | 100      | ajay      |pavan      |
+| Sales   | 2008-03-14 | 11      | ajay   | ajay        | 150    | 100      | ajay      |pavan      |
+| Finance | 2008-03-18 | 101     | ajay   | ajay        | 100    | 50       | ajay      |pavan      |
+| Finance | 2008-03-18 | 101     | ajay   | ajay        | 100    | 50       | ajay      |pavan      |
++---------+------------+---------+--------+-------------+--------+----------+-----------+------------+
+4 rows in set (0.00 sec)
+
+
+
+
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+create table phone_bill(currentdate date,provider char(30),location char(30),approvedby char(50),
+			phone char(20),billmonth  char(50),amount  char(50),dept  char(30),
+			 day char(10));
+
+
+
+mysql> desc phone_bill;
++-------------+----------+------+-----+---------+-------+
+| Field       | Type     | Null | Key | Default | Extra |
++-------------+----------+------+-----+---------+-------+
+| currentdate | date     | YES  |     | NULL    |       |
+| provider    | char(30) | YES  |     | NULL    |       |
+| location    | char(30) | YES  |     | NULL    |       |
+| approvedby  | char(50) | YES  |     | NULL    |       |
+| phone       | char(20) | YES  |     | NULL    |       |
+| billmonth   | char(50) | YES  |     | NULL    |       |
+| amount      | char(50) | YES  |     | NULL    |       |
+| dept        | char(30) | YES  |     | NULL    |       |
+| day         | char(10) | YES  |     | NULL    |       |
++-------------+----------+------+-----+---------+-------+
+9 rows in set (0.03 sec)
+
+
+
+
+
+mysql> select * from phone_bill;
++-------------+----------+----------+------------+---------+-----------+--------+---------+------+
+| currentdate | provider | location | approvedby | phone   | billmonth | amount | dept	  | day  |
++-------------+----------+----------+------------+---------+-----------+--------+---------+------+
+| 2008-03-14  | BSNL     | hyd      | ravi       | 5558195 | Mar       | 500    | NULL	  | NULL |
+| NULL        | NULL     | hyd      | ravi       | 5558195 | NULL      | 500    | NULL	  | NULL |
+| 2008-03-14  | Airtel   | hyd      | ravi       | 5558195 | Apr       | 500    | NULL	  | NULL |
+| 2008-03-14  | BSNL     | hyd      | ahay       | 3545    | Jan       | 500    | sales   | NULL |
+| 2008-03-14  | BSNL     | hyd      | ahay       | 3545    | Jan       | 1000   | finance | NULL |
+| 2008-03-14  | BSNL     | hyd      | ahay       | 3545    | Jan       | 1000   | finance | SUN  |
++-------------+----------+----------+------------+---------+-----------+--------+---------+------+
+6 rows in set (0.00 sec)
+
+
+
+
+
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+create table travel_expenses(currentdate date,empname char(30),completedby char(40),location char(30),
+			 auditedby char(30),address char(100),purpose char(50),city char(40),
+			  approvedby char(50),state char(40),zip char(20),phone char(20),
+			   date1 date,travelfrom char(50),totalmileage char(50), 
+			   ratepermile char(20),amount char(50),dept char(30),day char(10))
+
+
+
+mysql> desc travel_expenses;
++--------------+-----------+------+-----+---------+-------+
+| Field        | Type      | Null | Key | Default | Extra |
++--------------+-----------+------+-----+---------+-------+
+| currentdate  | date      | YES  |     | NULL    |       |
+| empname      | char(30)  | YES  |     | NULL    |       |
+| completedby  | char(40)  | YES  |     | NULL    |       |
+| location     | char(30)  | YES  |     | NULL    |       |
+| auditedby    | char(30)  | YES  |     | NULL    |       |
+| address      | char(100) | YES  |     | NULL    |       |
+| purpose      | char(50)  | YES  |     | NULL    |       |
+| city         | char(40)  | YES  |     | NULL    |       |
+| approvedby   | char(50)  | YES  |     | NULL    |       |
+| state        | char(40)  | YES  |     | NULL    |       |
+| zip          | char(20)  | YES  |     | NULL    |       |
+| phone        | char(20)  | YES  |     | NULL    |       |
+| date1        | date      | YES  |     | NULL    |       |
+| travelfrom   | char(50)  | YES  |     | NULL    |       |
+| totalmileage | char(50)  | YES  |     | NULL    |       |
+| ratepermile  | char(20)  | YES  |     | NULL    |       |
+| amount       | char(50)  | YES  |     | NULL    |       |
+| dept         | char(30)  | YES  |     | NULL    |       |
+| day          | char(10)  | YES  |     | NULL    |       |
++--------------+-----------+------+-----+---------+-------+
+19 rows in set (0.03 sec)
+
+
+
+
+
+mysql> select * from travel_expenses;
++-------------+---------+-------------+----------+-----------+---------+---------+------+------------+-------+--------+------------+------------+------------+--------------+-------------+--------+----------+------+
+| currentdate | empname | completedby | location | auditedby | address | purpose | city | approvedby | state | zip    | phone      | date1      | travelfrom | totalmileage | ratepermile | amount | dept     | day  |
++-------------+---------+-------------+----------+-----------+---------+---------+------+------------+-------+--------+------------+------------+------------+--------------+-------------+--------+----------+------+
+| 2008-03-14  | ajay    | ajay        | hyd      | ajay      | hyd     | exp     | vij  | pavan      | ap    | 520007 | 9985123282 | 2008-03-14 | vij        | 50           | 50          | 2500   | Sales    | SUN  |
+| 2008-03-14  | ajay    | ajay        | hyd      | ajay      | hyd     | exp     | vij  | pavan      | ap    | 520007 | 3545       | 2008-03-14 | vij        | 50           | 50          | 2500   | Sales    | MON  |
+| 2008-03-14  | ajay    | ajay        | hyd      | ajay      | as      | as      | as   | ahay       | ap    | 520007 | 3545       | 2008-03-14 | vij        | 50           | 50          | 2500   | Sales    | TUE  |
+| 2008-03-14  | ajay    | ajay        | hyd      | ajay      | as      | as      | as   | ahay       | ap    | 520007 | 3545       | 2008-03-14 | vij        | 50           | 50          | 2500   | Finance  | SUN  |
+| 2008-03-14  | ajay    | ajay        | hyd      | ajay      | as      | as      | as   | ahay       | ap    | 520007 | 3545       | 2008-03-14 | vij        | 33           | 44          | 1452   | Finance  | MON  |
+| 2008-03-14  | ajay    | ajay        | hyd      | ajay      | as      | as      | as   | ahay       | ap    | 520007 | 3545       | 2008-03-14 | vij        | 33           | 44          | 1452   | Accounts | MON  |
+| 2008-03-14  | ajay    | ajay        | hyd      | ajay      | as      | as      | as   | ahay       | ap    | 520007 | 9985123282 | 2008-03-14 | vij        | 1312         | 12          | 15744  | Sales    | WED  |
+| 2008-03-14  | ajay    | ajay        | hyd      | ajay      | as      | as      | as   | ahay       | ap    | 520007 | 3545       | 2008-03-14 | vij        | 1312         | 44          | 57728  | Sales    | THU  |
+| 2008-03-14  | ajay    | ajay        | hyd      | ajay      | as      | as      | as   | ahay       | ap    | 520007 | 3545       | 2008-03-14 | vij        | 1312         | 12          | 15744  | Sales    | FRI  |
+| 2008-03-14  | ajay    | ajay        | hyd      | ajay      | as      | as      | as   | aja        | ap    | 520007 | 3545       | 2008-03-14 | vij        | 1312         | 12          | 15744  | Sales    | SAT  |
++-------------+---------+-------------+----------+-----------+---------+---------+------+------------+-------+--------+------------+------------+------------+--------------+-------------+--------+----------+------+
+10 rows in set (0.00 sec)
+
+
+
+
+
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+create table ledgers(name char(100));
+
+
+mysql> desc ledgers;
++-------+-----------+------+-----+---------+-------+
+| Field | Type      | Null | Key | Default | Extra |
++-------+-----------+------+-----+---------+-------+
+| name  | char(100) | YES  |     | NULL    |       |
++-------+-----------+------+-----+---------+-------+
+1 row in set (0.05 sec)
+
+
+
+mysql> select * from ledgers
+    -> ;
++----------------+
+| name           |
++----------------+
+| Cash           |
+| Profit&LossA/c |
++----------------+
+2 rows in set (0.00 sec)
+
+insert into ledgers values('Cash');
+insert into ledgers values('Profit&LossA/c');
+
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+create table ledgersdata(ledgername char(50) primary key, aliasname char(60), under char(50), inventoryvalues char(10), name char(50), 
+			address  char(120), state char(50), pincode char(50), panoritno char(50), salestaxno char(50),
+			openingbalance char(30), type char(20), balance double);
+
+
+mysql> desc ledgersdata;
++-----------------+-----------+------+-----+---------+-------+
+| Field           | Type      | Null | Key | Default | Extra |
++-----------------+-----------+------+-----+---------+-------+
+| ledgername      | char(50)  | YES  |     | NULL    |       |
+| aliasname       | char(60)  | YES  |     | NULL    |       |
+| under           | char(50)  | YES  |     | NULL    |       |
+| inventoryvalues | char(10)  | YES  |     | NULL    |       |
+| name            | char(50)  | YES  |     | NULL    |       |
+| address         | char(120) | YES  |     | NULL    |       |
+| state           | char(50)  | YES  |     | NULL    |       |
+| pincode         | char(50)  | YES  |     | NULL    |       |
+| panoritno       | char(50)  | YES  |     | NULL    |       |
+| salestaxno      | char(50)  | YES  |     | NULL    |       |
+| openingbalance  | char(30)  | YES  |     | NULL    |       |
+| type            | char(20)  | YES  |     | NULL    |       |
++-----------------+-----------+------+-----+---------+-------+
+12 rows in set (0.01 sec)
+
+
+
+
+
+mysql> select * from ledgersdata;
++------------+-----------+--------------+-----------------+---------+---------+-------+---------+-----------+------------+----------------+------+
+| ledgername | aliasname | under        | inventoryvalues | name    | address | state | pincode | panoritno | salestaxno | openingbalance | type |
++------------+-----------+--------------+-----------------+---------+---------+-------+---------+-----------+------------+----------------+------+
+| ledg1      | ledg      | BankAccounts | No              | pranam1 | hyd     | ap    | 500018  | 12321     | asd1       | 10             | Dr   |
+| Cash       |           | Cash-in-Hand | Yes             |         |         |       |		|           |            |                | Dr   |
+| ledg2      | led       | BankAccounts | Yes             | pranam  | fds     | dsa   | 46465   | 4654      | 56465      | 10             | Dr   |
+| ledg2      | led       | BankAccounts | Yes             | pranam  | fds     | dsa   | 46465   | 4654      | 56465      | 10             | Dr   |
++------------+-----------+--------------+-----------------+---------+---------+-------+---------+-----------+------------+----------------+------+
+4 rows in set (0.00 sec)
+
+
+insert into ledgersdata values('Cash', '', 'Cash-in-Hand', 'Yes', '', '', '', '', '', '', '', 'Dr',0);
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+create table ledgertypes(type char(50));
+
+mysql> desc ledgertypes;
++-------+----------+------+-----+---------+-------+
+| Field | Type     | Null | Key | Default | Extra |
++-------+----------+------+-----+---------+-------+
+| type  | char(50) | YES  |     | NULL    |       |
++-------+----------+------+-----+---------+-------+
+1 row in set (0.02 sec)
+
+insert into ledgertypes values('Cash');
+insert into ledgertypes values('Profit&LossA/c');
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+create table vocherdata(name char(30) , typeofvocher char(30) , abbr char(30) , numberingmethod char(10) ,useadvconfiguration  char(30),
+		useeffectivedates char(10) ,usecommonnarrition  char(10) , narrationsforeachentry  char(10), nameofclass char(50) );
+
+mysql> desc vocherdata;
++------------------------+----------+------+-----+---------+-------+
+| Field                  | Type     | Null | Key | Default | Extra |
++------------------------+----------+------+-----+---------+-------+
+| name                   | char(30) | YES  |     | NULL    |       |
+| typeofvocher           | char(30) | YES  |     | NULL    |       |
+| abbr                   | char(30) | YES  |     | NULL    |       |
+| numberingmethod        | char(10) | YES  |     | NULL    |       |
+| useadvconfiguration    | char(30) | YES  |     | NULL    |       |
+| useeffectivedates      | char(10) | YES  |     | NULL    |       |
+| usecommonnarrition     | char(10) | YES  |     | NULL    |       |
+| narrationsforeachentry | char(10) | YES  |     | NULL    |       |
+| nameofclass            | char(50) | YES  |     | NULL    |       |
++------------------------+----------+------+-----+---------+-------+
+9 rows in set (0.00 sec)
+
+
+
+
+
+mysql> select * from  vocherdata;
++------------------+------------------+------------+-----------------+---------------------+-------------------+--------------------+------------------------+-------------+
+| name             | typeofvocher     | abbr       | numberingmethod | useadvconfiguration | useeffectivedates | usecommonnarrition | narrationsforeachentry | nameofclass |
++------------------+------------------+------------+-----------------+---------------------+-------------------+--------------------+------------------------+-------------+
+| Contra           | Contra           | Ctra       | Automatic       | No		   | No                | Yes                | No                     |             |
+| CreditNote       | CreditNote       | C/Note     | Automatic       | No		   | No                | Yes                | No                     |             |
+| DebitNote        | DebitNote        | D/Note     | Automatic       | No		   | No                | Yes                | No                     |             |
+
+| DeliveryNote     | DeliveryNote     | D/Note     | Automatic       | No		   | No                | Yes                | No                     |             |
+
+| Journal          | Journal          | Jrnl       | Automatic       | No		   | No                | Yes                | No                     |             |
+
+| Memorandom       | Memorandom       | Memo       | Automatic       | No		   | No                | Yes                | No                     |             |
+
+| Payment          | Payment          | Pymt       | Automatic       | No		   | No                | Yes                | No                     |             |
+
+| PhysicalStock    | PhysicalStock    | PhyStk     | Automatic       | No		   | No                | Yes                | No                     |             |
+
+| Purchase         | Purchase         | Purc       | Automatic       | No		   | No                | Yes                | No                     |             |
+
+| PurchaseOrder    | PurchaseOrder    | PurcOrder  | Automatic       | No		   | No                | Yes                | No                     |             |
+
+| Receipt          | Receipt          | Rcpt       | Automatic       | No		   | No                | Yes                | No                     |             |
+
+| ReceiptNote      | ReceiptNote      | RcptNote   | Automatic       | No		   | No                | Yes                | No                     |             |
+
+| RejectionsIn     | RejectionIn      | RejIn      | Automatic       | No		   | No                | Yes                | No                     |             |
+
+| RejectionsOut    | RejectionOut     | RejOut     | Automatic       | No		   | No                | Yes                | No                     |             |
+
+| ReversingJournal | ReversingJournal | RevJrnl    | Automatic       | No		   | No                | Yes                | No                     |             |
+
+| Sales            | Sales            | Sale       | Automatic       | No		   | No                | Yes                | No                     |             |
+
+| SalesOrder       | SalesOrder       | SalesOrder | Automatic       | No		   | No                | Yes                | No                     |             |
+
+| StockJournal     | StockJournal     | StkJrnl    | Automatic       | No		   | No                | Yes                | No                     |             |
+| sales1           | Sales            | sasle      | Automatic       | No		   | No                | Yes                | No                     | None        |
++------------------+------------------+------------+-----------------+---------------------+-------------------+--------------------+------------------------+-------------+
+19 rows in set (0.00 sec)
+
+
+insert into vocherdata values('', '', '', '', '', '', '', '', '');
+
+insert into vocherdata values('Contra', 'Contra', 'Ctra', 'Automatic', 'No', 'No', 'Yes', 'No', '');
+insert into vocherdata values('CreditNote', 'CreditNote', 'C/Note', 'Automatic', 'No', 'No', 'Yes', 'No', '');
+insert into vocherdata values('DebitNote', 'DebitNote', 'D/Note', 'Automatic', 'No', 'No', 'Yes', 'No', '');
+insert into vocherdata values('DeliveryNote', 'DeliveryNote', 'D/Note', 'Automatic', 'No', 'No', 'Yes', 'No', '');
+insert into vocherdata values('Journal', 'Journal', 'Jrnl', 'Automatic', 'No', 'No', 'Yes', 'No', '');
+insert into vocherdata values('Memorandom', 'Memorandom', 'Memo', 'Automatic', 'No', 'No', 'Yes', 'No', '');
+insert into vocherdata values('Payment', 'Payment', 'Pymt', 'Automatic', 'No', 'No', 'Yes', 'No', '');
+insert into vocherdata values('PhysicalStock', 'PhysicalStock', 'PhyStk', 'Automatic', 'No', 'No', 'Yes', 'No', '');
+insert into vocherdata values('Purchase', 'Purchase', 'Purc', 'Automatic', 'No', 'No', 'Yes', 'No', '');
+insert into vocherdata values('PurchaseOrder', 'PurchaseOrder', 'PurcOrder', 'Automatic', 'No', 'No', 'Yes', 'No', '');
+insert into vocherdata values('Receipt', 'Receipt', 'Rcpt', 'Automatic', 'No', 'No', 'Yes', 'No', '');
+insert into vocherdata values('ReceiptNote', 'ReceiptNote', 'RcptNote', 'Automatic', 'No', 'No', 'Yes', 'No', '');
+insert into vocherdata values('RejectionsIn', 'RejectionsIn', 'RejIn', 'Automatic', 'No', 'No', 'Yes', 'No', '');
+insert into vocherdata values('RejectionsOut', 'RejectionsOut', 'RejOut', 'Automatic', 'No', 'No', 'Yes', 'No', '');
+insert into vocherdata values('ReversingJournal', 'ReversingJournal', 'RevJrnl', 'Automatic', 'No', 'No', 'Yes', 'No', '');
+insert into vocherdata values('Sales', 'Sales', 'Sale', 'Automatic', 'No', 'No', 'Yes', 'No', '');
+insert into vocherdata values('SalesOrder', 'SalesOrder', 'SalesOrder', 'Automatic', 'No', 'No', 'Yes', 'No', '');
+insert into vocherdata values('StockJournal', 'StockJournal', 'StkJrnl', 'Automatic', 'No', 'No', 'Yes', 'No', '');
+
+
+
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+create table vochertypes(name char(100));
+
+mysql> desc vochertypes;
++-------+-----------+------+-----+---------+-------+
+| Field | Type      | Null | Key | Default | Extra |
++-------+-----------+------+-----+---------+-------+
+| name  | char(100) | YES  |     | NULL    |       |
++-------+-----------+------+-----+---------+-------+
+1 row in set (0.01 sec)
+
+
+
+mysql> select * from vochertypes;
++------------------+
+| name             |
++------------------+
+| contra           |
+| CreditNote       |
+| DebitNote        |
+| DeliveryNote     |
+| Journal          |
+| Memorandum       |
+| Payment          |
+| PhysicalStock    |
+| Purchase         |
+| PurchaseOrder    |
+| Receipt          |
+| ReceiptNote      |
+| RejectionsIn     |
+| RejectionsOut    |
+| ReversingJournal |
+| Sales            |
+| SalesOrder       |
+| StockJournal     |
++------------------+
+18 rows in set (0.00 sec)
+
+insert into vochertypes values('');
+
+insert into vochertypes values('contra');
+insert into vochertypes values('CreditNote');
+insert into vochertypes values('DebitNote');
+insert into vochertypes values('DeliveryNote');
+insert into vochertypes values('Journal');
+insert into vochertypes values('Memorandum');
+insert into vochertypes values('Payment');
+insert into vochertypes values('PhysicalStock');
+insert into vochertypes values('Purchase');
+insert into vochertypes values('PurchaseOrder');
+insert into vochertypes values('Receipt');
+insert into vochertypes values('ReceiptNote');
+insert into vochertypes values('RejectionsIn');
+insert into vochertypes values('RejectionsOut');
+insert into vochertypes values('ReversingJournal');
+insert into vochertypes values('Sales');
+insert into vochertypes values('SalesOrder');
+insert into vochertypes values('StockJournal');
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+create table groups(name varchar(30));
+
+mysql> desc groups;
++-------+-------------+------+-----+---------+-------+
+| Field | Type        | Null | Key | Default | Extra |
++-------+-------------+------+-----+---------+-------+
+| name  | varchar(30) | YES  |     | NULL    |       |
++-------+-------------+------+-----+---------+-------+
+1 row in set (0.01 sec)
+
+
+mysql> select * from groups;
++-----------------------+
+| name                  |
++-----------------------+
+| BankAccounts          |
+| BankOCC-A/c           |
+| BankOD-A/c            |
+| Branch/Divisions      |
+| CapitalAccount        |
+| Cash-in-Hand          |
+| CurrentAssets         |
+| CurrentLiabilities    |
+| Deposits(Asset)       |
+| DirectExpenses        |
+| DirectIncomes         |
+| Duties&Taxes          |
+| Expenses(Direct)      |
+| Expenses(InDirect)    |
+| FixedAssets           |
+| Income(Direct)        |
+| Income(InDirect)      |
+| IndirectExpenses      |
+| IndirectIncomes       |
+| Investments           |
+| Loans&Advances(Asset) |
+| Loans(Liability)      |
+| Misc.Expenses(ASSET)  |
+| Provisions            |
+| PurchaseAccounts      |
+| Reverse&Surplus       |
+| RetainedEarnings      |
+| SalesAccounts         |
+| SecuredLoans          |
+| Stock-in-hand         |
+| SundryCreditors       |
+| SundryDebtors         |
+| Suspense-A/c          |
+| UnsecuredLoans        |
++-----------------------+
+34 rows in set (0.00 sec)
+
+insert into groups values ('');
+
+
+insert into groups values ('BankAccounts');
+insert into groups values ('BankOCC-A/c');
+insert into groups values ('BankOD-A/c');
+insert into groups values ('Branch/Divisions');
+insert into groups values ('CapitalAccount');
+insert into groups values ('Cash-in-Hand');
+insert into groups values ('CurrentAssets');
+insert into groups values ('CurrentLiabilities');
+insert into groups values ('Deposits(Asset)');
+insert into groups values ('DirectExpenses');
+insert into groups values ('DirectIncomes');
+insert into groups values ('Duties&Taxes');
+insert into groups values ('Expenses(Direct)');
+insert into groups values ('Expenses(InDirect)');
+insert into groups values ('FixedAssets');
+insert into groups values ('Income(Direct)');
+insert into groups values ('Income(InDirect)');
+insert into groups values ('IndirectExpenses');
+insert into groups values ('IndirectIncomes');
+insert into groups values ('Investments');
+insert into groups values ('Loans&Advances(Asset)');
+insert into groups values ('Loans(Liability)');
+insert into groups values ('Misc.Expenses(ASSET)');
+insert into groups values ('Provisions');
+insert into groups values ('PurchaseAccounts');
+insert into groups values ('Reverse&Surplus');
+insert into groups values ('RetainedEarnings');
+insert into groups values ('SalesAccounts');
+insert into groups values ('SecuredLoans');
+insert into groups values ('Stock-in-hand');
+insert into groups values ('SundryCreditors');
+insert into groups values ('SundryDebtors');
+insert into groups values ('Suspense-A/c');
+insert into groups values ('UnsecuredLoans');
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+create table groupdetails(name varchar(30), alias varchar(30), under varchar(30),nameofgrp varchar(30), grpbehave varchar(5), nettreport varchar(5),
+			caluse varchar(5), metallo varchar(30));
+
+mysql> desc groupdetails;
++------------+-------------+------+-----+---------+-------+
+| Field      | Type        | Null | Key | Default | Extra |
++------------+-------------+------+-----+---------+-------+
+| name       | varchar(30) | YES  |     | NULL    |       |
+| alias      | varchar(30) | YES  |     | NULL    |       |
+| under      | varchar(30) | YES  |     | NULL    |       |
+| nameofgrp  | varchar(30) | YES  |     | NULL    |       |
+| grpbehave  | varchar(5)  | YES  |     | NULL    |       |
+| nettreport | varchar(5)  | YES  |     | NULL    |       |
+| caluse     | varchar(5)  | YES  |     | NULL    |       |
+| metallo    | varchar(30) | YES  |     | NULL    |       |
++------------+-------------+------+-----+---------+-------+
+8 rows in set (0.02 sec)
+
+mysql> select * from groupdetails;
++-----------------------+---------------------+--------------------+-------------+-----------+------------+--------+--------------------+
+| name                  | alias               | under              | nameofgrp   | grpbehave | nettreport | caluse | metallo            |
++-----------------------+---------------------+--------------------+-------------+-----------+------------+--------+--------------------+
+| BankAccounts          |                     | CurrentAssets      |             | no        | no         |        | NotApplicable      |
+| BankOCC-A/c           |                     | Loans(Liabilities) |             | no        | no         |        | NotApplicable      |
+| BankOD-A/c            | BankOCC-A/c         | Loans(Liabilities) |             | no        | no         |        | NotApplicable      |
+| Branch/Divisions      |                     | Primary            | Liabilities | no        | no         |        | NotApplicable      |
+| CapitalAccount        |                     | Primary            | Liabilities | no        | no         |        | NotApplicable      |
+| Cash-in-Hand          |                     | CurrentAssets      |             | no        | no         |        | AppropriatebyQty |
+| CurrentAssets         |                     | Primary            | Assets      | no        | no         |        | NotApplicable      |
+| CurrentLiabilities    |                     | Primary            | Liabilities | no        | no         |        | NotApplicable      |
+| Deposits(Asset)       |                     | CurrentAssets      |             | no        | no         |        | NotApplicable      |
+| DirectExpenses        | Expenses(Direct)    | Primary            | Expenses    | no        | no         |        | NotApplicable      |
+| DirectIncomes         | Income(Direct)      | Primary            | Income      | no        | no         |        | NotApplicable      |
+| Duties&Taxes          |                     | CurrentLiabilities |             | no        | no         |        | NotApplicable      |
+| Expenses(Direct)      |                     | Primary            | Expenses    | no        | no         |        | NotApplicable      |
+| Expenses(InDirect)    |                     | Primary            | Expenses    | no        | no         |        | NotApplicable      |
+| FixedAssets           |                     | Primary            | Assets      | no        | no         |        | NotApplicable      |
+| Income(Direct)        |                     | Primary            | Income      | no        | no         |        | NotApplicable      |
+| Income(InDirect)      |                     | Primary            | Income      | no        | no         |        | NotApplicable      |
+| IndirectExpenses      | Exprenses(InDirect) | Primary            | Expenses    | no        | no         |        | NotApplicable      |
+| IndirectIncomes       | Income(InDirect)    | Primary            | Income      | no        | no         |        | NotApplicable      |
+| Investments           |                     | Primary            | Assets      | no        | no         |        | NotApplicable      |
+| Loans&Advances(Asset) |                     | CurrentAssets      |             | no        | no         |        | NotApplicable      |
+| Loans(Liability)      |                     | Primary            | Liabilities | no        | no         |        | NotApplicable      |
+| Misc.Expenses(ASSET)  |                     | Primary            | Assets      | no        | no         |        | NotApplicable      |
+| Provisions            |                     | CurrentLiabilities |             | no        | no         |        | NotApplicable      |
+| PurchaseAccounts      |                     | Primary            | Expenses    | no        | no         |        | NotApplicable      |
+| Reverse&Surplus       | RetainedEarnings    | CapitalAccount     |             | no        | no         |        | NotApplicable      |
+| RetainedEarnings      |                     | CapitalAccount     |             | no        | no         |        | NotApplicable      |
+| SalesAccounts         |                     | Primary            | Income      | no        | no         |        | NotApplicable      |
+| SecuredLoans          |                     | Loans(Liability)   |             | no        | no         |        | NotApplicable      |
+| Stock-in-hand         |                     | CurrentAssets      |             | no        | no         |        | NotApplicable      |
+| SundryCreditors       |                     | CurrentLiabilities |             | yes       | no         |        | NotApplicable      |
+| SundryDebtors         |                     | CurrentAssets      |             | yes       | no         |        | NotApplicable      |
+| Suspense-A/c          |                     | Primary            | Liabilities | no        | no         |        | NotApplicable      |
+| UnSecuredLoans        |                     | Loans(Liability)   |             | no        | no         |        | NotApplicable      |
++-----------------------+---------------------+--------------------+-------------+-----------+------------+--------+--------------------+
+34 rows in set (0.00 sec)
+
+insert into groupdetails values('','','','','','','','');
+insert into groupdetails values('','','','','no','no','','NotApplicable');
+
+insert into groupdetails values('BankAccounts','','CurrentAssets','','no','no','','NotApplicable');
+insert into groupdetails values('BankOCC-A/c','','Loans(Liabilities)','','no','no','','NotApplicable');
+insert into groupdetails values('BankOD-A/c','BankOCC-A','Loans(Liabilities)','','no','no','','NotApplicable');
+insert into groupdetails values('Branch/Divisions','','Primary','Liabilities','no','no','','NotApplicable');
+insert into groupdetails values('CapitalAccount','','Primary','Liabilities','no','no','','NotApplicable');
+insert into groupdetails values('Cash-in-Hand','','CurrentAssets','','no','no','','AppropriatebyQty');
+insert into groupdetails values('CurrentAssets','','Primary','Assets','no','no','','NotApplicable');
+insert into groupdetails values('CurrentLiabilities','','Primary','Liabilities','no','no','','NotApplicable');
+insert into groupdetails values('Deposits(Asset)','','CurrentAssets','','no','no','','NotApplicable');
+insert into groupdetails values('DirectExpenses','Expenses(Direct)','Primary','Expenses','no','no','','NotApplicable');
+insert into groupdetails values('DirectIncomes','Income(Direct)','Primary','Income','no','no','','NotApplicable');
+insert into groupdetails values('Duties&Taxes','','CurrentLiabilities','','no','no','','NotApplicable');
+insert into groupdetails values('Expenses(Direct)','','Primary','Expenses','no','no','','NotApplicable');
+insert into groupdetails values('Expenses(InDirect)','','Primary','Expenses','no','no','','NotApplicable');
+insert into groupdetails values('FixedAssets','','Primary','Assets','no','no','','NotApplicable');
+insert into groupdetails values('Income(Direct)','','Primary','Income','no','no','','NotApplicable');
+insert into groupdetails values('Income(InDirect)','','Primary','Income','no','no','','NotApplicable');
+insert into groupdetails values('IndirectExpenses','Exprenses(InDirect)','Primary','Expenses','no','no','','NotApplicable');
+insert into groupdetails values('IndirectIncomes','Income(InDirect)','Primary','Income','no','no','','NotApplicable');
+insert into groupdetails values('Investments','','Primary','Assets','no','no','','NotApplicable');
+insert into groupdetails values('Loans&Advances(Asset)','','CurrentAssets','','no','no','','NotApplicable');
+insert into groupdetails values('Loans(Liability)','','Primary','Liabilities','no','no','','NotApplicable');
+insert into groupdetails values('Misc.Expenses(ASSET)','','Primary','Assets','no','no','','NotApplicable');
+insert into groupdetails values('Provisions','','CurrentLiabilities','','no','no','','NotApplicable');
+insert into groupdetails values('PurchaseAccounts','','Primary','Expenses','no','no','','NotApplicable');
+insert into groupdetails values('Reverse&Surplus','RetainedEarnings','CapitalAccount','','no','no','','NotApplicable');
+insert into groupdetails values('RetainedEarnings','','CapitalAccount','','no','no','','NotApplicable');
+insert into groupdetails values('SalesAccounts','','Primary','Income','no','no','','NotApplicable');
+insert into groupdetails values('SecuredLoans','','Loans(Liability)','','no','no','','NotApplicable');
+insert into groupdetails values('Stock-in-hand','','CurrentAssets','','no','no','','NotApplicable');
+insert into groupdetails values('SundryCreditors','','CurrentLiabilities','','no','no','','NotApplicable');
+insert into groupdetails values('SundryDebtors','','CurrentAssets','','no','no','','NotApplicable');
+insert into groupdetails values('Suspense-A/c','','Primary','Liabilities','no','no','','NotApplicable');
+insert into groupdetails values('UnSecuredLoans','','Loans(Liability)','','no','no','','NotApplicable');
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+create table unitsofmeasure(type varchar(20),symbol varchar(30) primary key, formalname varchar(20) unique,
+			noofdecimal int(10));
+
+
+
+
+
+
+
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+create table stockgroup(name varchar(30));
+
+
+insert into stockgroup values ('Primary');
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+create table stockgroupdetails(name varchar(30), alias varchar(20), under varchar(20), qtyadd varchar(5));
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+create table stockitems(name varchar(30) primary key,alias varchar(10),under varchar(30),units varchar(30),
+			tax_rateof varchar(10),tax_traffic varchar(20),qty int,rate double(15,2),per varchar(20),value double(15,2));
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+create table voucher_receipt(no int auto_increment primary key, v_date date,vouchertype varchar(30), account varchar(30),
+			particulars varchar(30),amount double(15,2),narration varchar(300));
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+create table voucher_contra(no int auto_increment primary key, v_date date, vouchertype varchar(30),account varchar(30),
+			particulars varchar(30),amount double(15,2),narration varchar(300));
+
+
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+create table voucher_payment(no int auto_increment primary key, v_date date, vouchertype varchar(30),account varchar(30),
+			particulars varchar(30),amount double(15,2),narration varchar(300));
+
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+create table voucher_purchase(no int auto_increment primary key  , refno char(50), 
+		v_date date,vouchertype varchar(30),partyaccname varchar(30),
+		purchaseledger varchar(30),nameofitem varchar(30), quantity int,
+		rate double, units  varchar(20), amount double(15,2), narration varchar(300));          
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+create table voucher_sales(no int auto_increment primary key  , refno char(50),
+		v_date date, vouchertype varchar(30),
+		partyaccname varchar(30), salesledger varchar(30),nameofitem varchar(30), 
+		quantity int, rate double, units  varchar(20), amount double(15,2), narration varchar(300));          
+
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+create table voucher_journal(no int auto_increment primary key  ,v_date date,
+			vouchertype varchar(30), by_parti varchar(30),nameofitem varchar(30), 
+			quantity int, rate double, units  varchar(20), by_amount double(15,2), 
+			to_parti varchar(30), to_amount double(15,2), narration varchar(300));
+
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+create table closing_stock(stock_item varchar(30), qty int,units varchar(20),
+			rate double(15,2), balance double(15,2));
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+create table current_assets(ledgername char(50), balance double(15,2),under varchar(30));
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+create table  in_purchases(v_date date, partyname varchar(30),quotationno varchar(20),
+		itemcode varchar(20),nameofitem varchar(30), qty int , units varchar(10),
+		rate double , amount double , narration varchar(300));
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+create table  in_purchase_returns(v_date date, partyname varchar(30),quotationno varchar(20),
+		itemcode varchar(20),nameofitem varchar(30), qty int , units varchar(10),
+		rate double , amount double , narration varchar(300));
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+create table  sl_sales(v_date date, partyname varchar(30),quotationno varchar(20),
+		itemcode varchar(20),nameofitem varchar(30), qty int , units varchar(10),
+		rate double , amount double , checkno varchar(20), bankname varchar(30),
+		narration varchar(300));
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+create table  sl_sales_returns(v_date date, partyname varchar(30),quotationno varchar(20),
+		itemcode varchar(20),nameofitem varchar(30), qty int , units varchar(10),
+		rate double , amount double , checkno varchar(20), bankname varchar(30),
+		narration varchar(300));
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+//create table primary(capital_account double, current_assets double, current_liability double,
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+//create table capital_account(capital_account double(15,2));
+
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------------------------------

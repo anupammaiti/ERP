@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="employees" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[select * from employee]]>
+	</queryString>
+	<field name="sno" class="java.lang.Long"/>
+	<field name="empno" class="java.lang.String"/>
+	<field name="name" class="java.lang.String"/>
+	<field name="nameinhris" class="java.lang.String"/>
+	<field name="fathername" class="java.lang.String"/>
+	<field name="dob" class="java.lang.String"/>
+	<field name="sex" class="java.lang.String"/>
+	<field name="joinindate" class="java.lang.String"/>
+	<field name="designation" class="java.lang.String"/>
+	<field name="department" class="java.lang.String"/>
+	<field name="reportingto" class="java.lang.String"/>
+	<field name="joblevel" class="java.lang.String"/>
+	<field name="location" class="java.lang.String"/>
+	<field name="entrymanner" class="java.lang.String"/>
+	<field name="nomination" class="java.lang.String"/>
+	<field name="birthplace" class="java.lang.String"/>
+	<field name="maritalstatus" class="java.lang.String"/>
+	<field name="marriagedate" class="java.lang.String"/>
+	<field name="religion" class="java.lang.String"/>
+	<field name="pannumber" class="java.lang.String"/>
+	<field name="passportnumber" class="java.lang.String"/>
+	<field name="issueddateandplace" class="java.lang.String"/>
+	<field name="validity" class="java.lang.String"/>
+	<field name="companyname" class="java.lang.String"/>
+	<field name="qualification" class="java.lang.String"/>
+	<field name="username" class="java.lang.String"/>
+	<field name="password" class="java.lang.String"/>
+	<field name="presentsalary" class="java.lang.String"/>
+	<field name="join_time_req" class="java.lang.String"/>
+	<field name="gendate" class="java.lang.String"/>
+	<field name="bankaccount" class="java.lang.String"/>
+	<field name="pfno" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="233" y="18" width="101" height="48"/>
+				<textElement>
+					<font size="36"/>
+				</textElement>
+				<text><![CDATA[ERP]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement x="455" y="0" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.Long"><![CDATA[$F{sno}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="128" y="0" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[dob]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="258" y="0" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[department]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="26" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="128" y="6" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{dob}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="258" y="6" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{department}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

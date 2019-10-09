@@ -1,0 +1,174 @@
+@CHARSET "ISO-8859-1";
+
+@charset "utf-8";
+/* CSS Document */
+
+body{
+	background-color: #9ac1e0;
+	}
+a{
+	text-decoration:none;
+	}
+.mainframe{
+	color:#000000;
+	float:left;
+	margin:0 0 0 10em;
+	background-color:#ffffff;
+	height:auto;
+	width:1020px;
+	}
+.titleform{
+	float:left;
+	margin:auto !important;
+	height:auto;
+	width:100%;
+	}
+#logo{
+	float:left;
+	margin: 0 0 0 0 ;
+	}
+.title_app{
+	float:left;
+	margin:0 0 0 0;
+	font-size:36px;
+	color:white;
+	width: 100%;
+	}
+.menu{
+	float:left;
+	margin:0 0 0 0 ;
+	height:100px;
+	width:75%;
+	}
+.bodyframe{
+	color:#0099CC;
+	float:left;
+	margin:10em 0 0 0 ;
+	}
+.formtable{
+	font-family: arial,helvetica, sans-serif;
+	font-size: 20em;
+	color:white;
+	float:left;
+	margin:8em 0 0 -21em;
+	}
+.Content{
+	float:left;
+	margin:auto;
+	font-family: arial,helvetica, sans-serif;
+	font-size: 14px;
+	color:white;
+	width:100%;
+	}
+.bodyframe{
+	folat:left;
+	margin:0 0 0 0;
+	}
+.text1{
+	color:white;
+	background-color: gray;
+	font-family: arial,helvetica, sans-serif;
+	font-size: 14px;
+	font-style: italic;
+	}
+td
+	{
+	font-family: arial,helvetica, sans-serif;
+	color:black;
+	font-size: 12px;
+	font-style: italic;
+	}
+.alertmessage
+	{
+	font-family: arial,helvetica, sans-serif;
+	color:red;
+	font-size: 14px;
+	font-style: italic;
+	}
+.inputtext{
+	font-family: arial,helvetica, sans-serif;
+	font-size: 12px;
+	font-style: italic;
+	color:blue;
+	}
+.error{
+	font-family: arial,helvetica, sans-serif;
+	font-size: 14px;
+	color:red;
+	}
+h3{
+	font:Arial;
+	font-size:16px;
+	color:gray;
+	}
+#loginby{
+	font:Arial;
+	font-size:14px;
+	color:gray;
+	float:right;
+	}
+/*in-page placement */
+div.rotator {
+	position:relative;
+	height:345px;
+	margin:auto -30px;
+	display: none;
+	float:left;
+	width: 100%;
+	}
+/* rotator css */
+div.rotator ul li {
+	float:left;
+	position:absolute;
+	list-style: none;
+}
+/* rotator image style */	
+div.rotator ul li img {
+	
+}
+div.rotator ul li.show {
+	z-index:500
+}
+h3{
+	font-family: arial,helvetica, sans-serif;
+	font-size: 18px;
+	color:#186098;
+	}
+p{
+	font-family: arial,helvetica, sans-serif;
+	font-size: 14px;
+	color:#000000;
+	}
+.footer span a{
+	font-family: arial,helvetica, sans-serif;
+	font-size: 12px;
+	color:#bad9f1;
+	text-decoration: none;
+	}
+.footer span{
+	font-family: arial,helvetica, sans-serif;
+	font-size: 12px;
+	color:#1d7ac2;
+	float:right;
+	margin:auto;
+	}
+.footer{
+	float:left;
+	margin:auto 10em;
+	height:55px;
+	}
+legend{
+	font-family: arial,helvetica, sans-serif;
+	font-size: 12px;
+	color:#1d7ac2;
+	}
+#project_content{
+	float:left;
+	margin:auto;
+	width:60%;
+	}
+#login_content{
+	float:right;
+	margin:auto;
+	width:30%;
+	}

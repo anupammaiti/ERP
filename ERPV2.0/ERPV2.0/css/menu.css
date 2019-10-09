@@ -1,0 +1,160 @@
+/**
+ *********************************************
+ * Prototype of styles for horizontal CSS-menu
+ * @data 25.01.2010
+ *********************************************
+ * (X)HTML-scheme:
+ *  <div id="menu">
+ *      <ul class="menu">
+ *          <li><a href="#" class="parent"><span>level 1</span></a>
+ *              <div><ul>
+ *                  <li><a href="#" class="parent"><span>level 2</span></a>
+ *                      <div><ul><li><a href="#"><span>level 3</span></a></li></ul></div>
+ *                  </li>
+ *              </ul></div>
+ *          </li>
+ *          <li class="last"><a href="#"><span>level 1</span></a></li>
+ *      </ul>
+ *  </div>
+ *********************************************
+ */
+
+/* menu::base */
+#menu {
+    position:relative;
+    z-index:100;
+    height:43px;
+    width:75%;
+}
+
+//menu background
+#menu .menu {
+    position:absolute;
+    padding-left: 40px;
+    background-color:blue; 
+    width:100%;
+}
+
+#menu * {
+    list-style:none;
+    border:0;
+    padding:0;
+    margin:0;
+}
+
+#menu a {
+    display:block;
+    padding:15px 14px 14px 14px;
+    white-space:nowrap;
+}
+
+#menu li {
+    float:left;
+    background:#fff;
+}
+
+#menu li li {
+    float:none;
+}
+
+#menu div {
+    visibility:hidden;
+    position:absolute;
+    
+}
+
+#menu div div {
+    margin:-35px 0 0 -1px;
+    left:100%;
+}
+
+#menu div div div {
+    margin:-35px 0 0 -1px;
+    left:100%;
+}
+
+#menu li:hover>div { visibility:visible;}
+
+/* menu::special styles */
+/* menu::level 1 */
+
+#menu a {
+    text-decoration:none;
+    color:white;/*1*/
+    position:relative;
+    z-index:77;
+}
+
+#menu a:hover {
+    background-color: #5fa5db;
+    color:blue;
+}
+#menu a:hover span {background-color: #5fa5db; color:white;}
+
+#menu li.current a {
+    /*background: transparent url(images/header_active.gif) repeat-x;*/
+     background-color: #5fa5db;
+    color:#3C4955;
+}
+/*Home tab bacground*/
+#menu li.current span {
+	 background-color: #5fa5db;
+    color:#ffffff;
+}
+/**/
+#menu>ul>li:hover>a {
+	 
+    background-color:#55D6F2;
+    color:#CACFD3;
+}
+/*Mouse over the menu Stript*/
+#menu>ul>li:hover>a span { color:#90add7;background-color: #5fa5db;}
+
+/*Menu Stript links */
+#menu span {
+    text-transform:uppercase;
+    font:9px 'Lucida Grande','Lucida Sans Unicode',Arial,Verdana,sans-serif;
+    letter-spacing:0.3em;
+    text-decoration:none;
+    color:#ffffff;
+}
+/*Menu Stript Background*/
+#menu li { background-color:#41759d;}
+
+/* menu::level >= 2 */
+#menu ul ul {width: 150px;}
+#menu li li{
+	  background-color:#005161;
+	  border-bottom:1px solid #006782;}
+#menu li li a {
+    position:static;
+    background:#005161;
+    white-space:normal;
+    text-align: center;
+    color:white;
+    padding:0;
+	text-transform:none;
+	width: 100%;
+}
+#menu li.current li a {
+    background: none;
+    color:#FFF;
+}
+#menu li.current li span {
+    color:#FFF;
+}
+#menu li li a:hover { background:#5fa5db;color:#ffffff; }
+
+
+/*First Menu List*/
+#menu li li a span { color:#b3d7e3; line-height: 15px; padding: 10px;background-color: #41759d;	}
+#menu li li a:hover span { color:#ffffff;background-color:#5fa5db; }
+#menu li li a.parent span{background:transparent url(images/arrow.gif) no-repeat scroll right 50%; z-index:10;  }
+
+#menu li li span {
+    display:block;
+    text-transform:none;
+    padding:0px 25px 0px 0px;
+    font-size:11px;
+    letter-spacing: 0;
+}

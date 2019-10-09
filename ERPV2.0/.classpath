@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="src" path="ERPV2.0/reports"/>
+	<classpathentry kind="src" path="ERPV2.0/WEB-INF/resources"/>
+	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
+	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.7">
+		<attributes>
+			<attribute name="owner.project.facets" value="java"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="con" path="org.eclipse.ajdt.core.ASPECTJRT_CONTAINER"/>
+	<classpathentry kind="lib" path="E:/Java Projects/ERP Versions/ERPV2.0/AppJars/antlr-2.7.6rc1.jar"/>
+	<classpathentry kind="lib" path="E:/Java Projects/ERP Versions/ERPV2.0/AppJars/cglib-2.2.jar"/>
+	<classpathentry kind="lib" path="E:/Java Projects/ERP Versions/ERPV2.0/AppJars/commons-beanutils-1.8.0.jar"/>
+	<classpathentry kind="lib" path="E:/Java Projects/ERP Versions/ERPV2.0/AppJars/commons-collections-2.1.1.jar"/>
+	<classpathentry kind="lib" path="E:/Java Projects/ERP Versions/ERPV2.0/AppJars/commons-dbcp-all-1.3-r699049.jar"/>
+	<classpathentry kind="lib" path="E:/Java Projects/ERP Versions/ERPV2.0/AppJars/commons-digester-1.7.jar"/>
+	<classpathentry kind="lib" path="E:/Java Projects/ERP Versions/ERPV2.0/AppJars/commons-javaflow-20060411.jar"/>
+	<classpathentry kind="lib" path="E:/Java Projects/ERP Versions/ERPV2.0/AppJars/commons-logging-1.0.4.jar"/>
+	<classpathentry kind="lib" path="E:/Java Projects/ERP Versions/ERPV2.0/AppJars/commons-logging-1.1.1.jar"/>
+	<classpathentry kind="lib" path="E:/Java Projects/ERP Versions/ERPV2.0/AppJars/commons-logging-1.1.1-javadoc.jar"/>
+	<classpathentry kind="lib" path="E:/Java Projects/ERP Versions/ERPV2.0/AppJars/commons-logging-1.1.1-sources.jar"/>
+	<classpathentry kind="lib" path="E:/Java Projects/ERP Versions/ERPV2.0/AppJars/commons-logging-adapters-1.1.1.jar"/>
+	<classpathentry kind="lib" path="E:/Java Projects/ERP Versions/ERPV2.0/AppJars/commons-logging-api-1.1.1.jar"/>
+	<classpathentry kind="lib" path="E:/Java Projects/ERP Versions/ERPV2.0/AppJars/commons-logging-tests.jar"/>
+	<classpathentry kind="lib" path="E:/Java Projects/ERP Versions/ERPV2.0/AppJars/concurrent-1.3.2.jar"/>
+	<classpathentry kind="lib" path="E:/Java Projects/ERP Versions/ERPV2.0/AppJars/connector.jar"/>
+	<classpathentry kind="lib" path="E:/Java Projects/ERP Versions/ERPV2.0/AppJars/dom4j-1.6.1.jar"/>
+	<classpathentry kind="lib" path="E:/Java Projects/ERP Versions/ERPV2.0/AppJars/ehcache-1.1.jar"/>
+	<classpathentry kind="lib" path="E:/Java Projects/ERP Versions/ERPV2.0/AppJars/groovy-all-1.7.5.jar"/>
+	<classpathentry kind="lib" path="E:/Java Projects/ERP Versions/ERPV2.0/AppJars/hibernate3.jar"/>
+	<classpathentry kind="lib" path="E:/Java Projects/ERP Versions/ERPV2.0/AppJars/hibernate-annotations-3.1beta8.jar"/>
+	<classpathentry kind="lib" path="E:/Java Projects/ERP Versions/ERPV2.0/AppJars/iText-2.1.7.jar"/>
+	<classpathentry kind="lib" path="E:/Java Projects/ERP Versions/ERPV2.0/AppJars/jasperreports-4.0.0.jar"/>
+	<classpathentry kind="lib" path="E:/Java Projects/ERP Versions/ERPV2.0/AppJars/jasperreports-applet-4.0.0.jar"/>
+	<classpathentry kind="lib" path="E:/Java Projects/ERP Versions/ERPV2.0/AppJars/jasperreports-fonts-4.0.0.jar"/>
+	<classpathentry kind="lib" path="E:/Java Projects/ERP Versions/ERPV2.0/AppJars/jasperreports-javaflow-4.0.0.jar"/>
+	<classpathentry kind="lib" path="E:/Java Projects/ERP Versions/ERPV2.0/AppJars/jstl.jar"/>
+	<classpathentry kind="lib" path="E:/Java Projects/ERP Versions/ERPV2.0/AppJars/jstl-1.1.0.jar"/>
+	<classpathentry kind="lib" path="E:/Java Projects/ERP Versions/ERPV2.0/AppJars/jta.jar"/>
+	<classpathentry kind="lib" path="E:/Java Projects/ERP Versions/ERPV2.0/AppJars/log4j-1.2.11.jar"/>
+	<classpathentry kind="lib" path="E:/Java Projects/ERP Versions/ERPV2.0/AppJars/mysql-connector-java-5.1.8-bin.jar"/>
+	<classpathentry kind="lib" path="E:/Java Projects/ERP Versions/ERPV2.0/AppJars/org.springframework.aop-3.1.0.RC2.jar"/>
+	<classpathentry kind="lib" path="E:/Java Projects/ERP Versions/ERPV2.0/AppJars/org.springframework.asm-3.1.0.RC2.jar"/>
+	<classpathentry kind="lib" path="E:/Java Projects/ERP Versions/ERPV2.0/AppJars/org.springframework.aspects-3.1.0.RC2.jar"/>
+	<classpathentry kind="lib" path="E:/Java Projects/ERP Versions/ERPV2.0/AppJars/org.springframework.beans-3.1.0.RC2.jar"/>
+	<classpathentry kind="lib" path="E:/Java Projects/ERP Versions/ERPV2.0/AppJars/org.springframework.context.support-3.1.0.RC2.jar"/>
+	<classpathentry kind="lib" path="E:/Java Projects/ERP Versions/ERPV2.0/AppJars/org.springframework.context-3.1.0.RC2.jar"/>
+	<classpathentry kind="lib" path="E:/Java Projects/ERP Versions/ERPV2.0/AppJars/org.springframework.core-3.1.0.RC2.jar"/>
+	<classpathentry kind="lib" path="E:/Java Projects/ERP Versions/ERPV2.0/AppJars/org.springframework.expression-3.1.0.RC2.jar"/>
+	<classpathentry kind="lib" path="E:/Java Projects/ERP Versions/ERPV2.0/AppJars/org.springframework.instrument.tomcat-3.1.0.RC2.jar"/>
+	<classpathentry kind="lib" path="E:/Java Projects/ERP Versions/ERPV2.0/AppJars/org.springframework.instrument-3.1.0.RC2.jar"/>
+	<classpathentry kind="lib" path="E:/Java Projects/ERP Versions/ERPV2.0/AppJars/org.springframework.jdbc-3.1.0.RC2.jar"/>
+	<classpathentry kind="lib" path="E:/Java Projects/ERP Versions/ERPV2.0/AppJars/org.springframework.jms-3.1.0.RC2.jar"/>
+	<classpathentry kind="lib" path="E:/Java Projects/ERP Versions/ERPV2.0/AppJars/org.springframework.orm-3.1.0.RC2.jar"/>
+	<classpathentry kind="lib" path="E:/Java Projects/ERP Versions/ERPV2.0/AppJars/org.springframework.oxm-3.1.0.RC2.jar"/>
+	<classpathentry kind="lib" path="E:/Java Projects/ERP Versions/ERPV2.0/AppJars/org.springframework.test-3.1.0.RC2.jar"/>
+	<classpathentry kind="lib" path="E:/Java Projects/ERP Versions/ERPV2.0/AppJars/org.springframework.transaction-3.1.0.RC2.jar"/>
+	<classpathentry kind="lib" path="E:/Java Projects/ERP Versions/ERPV2.0/AppJars/org.springframework.web.portlet-3.1.0.RC2.jar"/>
+	<classpathentry kind="lib" path="E:/Java Projects/ERP Versions/ERPV2.0/AppJars/org.springframework.web.servlet-3.1.0.RC2.jar"/>
+	<classpathentry kind="lib" path="E:/Java Projects/ERP Versions/ERPV2.0/AppJars/org.springframework.web.struts-3.1.0.RC2.jar"/>
+	<classpathentry kind="lib" path="E:/Java Projects/ERP Versions/ERPV2.0/AppJars/org.springframework.web-3.1.0.RC2.jar"/>
+	<classpathentry kind="lib" path="E:/Java Projects/ERP Versions/ERPV2.0/AppJars/persistence.jar"/>
+	<classpathentry kind="lib" path="E:/Java Projects/ERP Versions/ERPV2.0/AppJars/rt.jar"/>
+	<classpathentry kind="lib" path="E:/Java Projects/ERP Versions/ERPV2.0/AppJars/servlet-api.jar"/>
+	<classpathentry kind="lib" path="E:/Java Projects/ERP Versions/ERPV2.0/AppJars/spring-dao-2.0-rc1.jar"/>
+	<classpathentry kind="lib" path="E:/Java Projects/ERP Versions/ERPV2.0/AppJars/standard.jar"/>
+	<classpathentry kind="lib" path="E:/Java Projects/ERP Versions/ERPV2.0/AppJars/tools.jar"/>
+	<classpathentry kind="lib" path="E:/Java Projects/ERP Versions/ERPV2.0/AppJars/validation-api-1.0.0.GA.jar"/>
+	<classpathentry kind="output" path="build/classes"/>
+</classpath>

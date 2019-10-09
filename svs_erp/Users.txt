@@ -1,0 +1,18 @@
+For              	 UserName&PWD
+
+Admin  ---------  	admin
+
+			hr_pranam
+			hr_admin
+
+			fn_account
+			admin_account
+		
+			inventory
+			inventory_admin
+
+			sales
+			sales_admin
+			
+			
+			

@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xsi:schemaLocation=
+	"http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+	http://www.springframework.org/schema/context
+	http://www.springframework.org/schema/context/spring-context-3.0.xsd
+	http://www.springframework.org/schema/mvc
+	http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd">
+	
+	
+	<!-- Login  -->
+	<bean id="LoginController" class="com.erp.hr.controller.LoginController"/>
+	<bean id="LoginService" class="com.erp.hr.service.LoginService"/>
+	<bean id="LoginDAO" class="com.erp.hr.dao.LoginDAO"/>
+	
+	<!-- HR -->
+	<bean id="EmployeeController" class="com.erp.hr.controller.EmployeeController"></bean>
+	<bean id="EmployeeService" class="com.erp.hr.service.EmployeeService"/>
+	<bean id="EmployeeDao" class="com.erp.hr.dao.EmployeeDAO"/>
+	<bean id="InterviewEvalutionDAO" class="com.erp.hr.dao.InterviewEvalutionDAO"/>
+	<bean id="RequisitionDAO" class="com.erp.hr.dao.EmployeeRequisitionDAO"/>
+	
+	<!-- Leave Application -->
+	<bean id="LeaveApplication" class="com.erp.hr.controller.LeaveApplicationController"/>
+	<bean id="LeaveService" class="com.erp.hr.service.impl.LeaveApplicationService"/>
+	<bean id="LeaveDAO" class="com.erp.hr.dao.LeaveApplicationDAO"/>
+	
+	
+	<!-- Admin Controller -->
+	<bean id="HRAdministratorController" class="com.erp.hr.controller.AdministratorController"/>
+	<bean id="AdminController" class="com.erp.admin.controller.AdminController"/>
+	
+	<bean id="AccountAdminController" class="com.erp.admin.controller.AccountAdminController"/>
+	
+	<!-- Invoice -->
+	<bean id="InvoiceController" class="com.erp.inventory.controller.InventoryController"/>
+	<bean id="InventoryService" class="com.erp.inventory.service.InventoryService"/>
+	<bean id="InventoryDAO" class="com.erp.inventory.dao.InventoryReportDAO"/>
+	<bean id="PurchaseRequisionDAO" class="com.erp.inventory.dao.PurchaseRequisitionDAO"/>
+	<bean id="OutOfStockDAO" class="com.erp.inventory.dao.OutOfStockDAO"/>
+	<bean id="PhysicalInventoryDAO" class="com.erp.inventory.dao.PhysicalInventoryDAO"/>
+	<bean id="PettyCashJournalDAO" class="com.erp.inventory.dao.PettyCashJournalDAO"/>
+	<bean id="InvoiceAdminController" class="com.erp.inventory.controller.InvoiceAdminController"/>
+	<bean id="InventoryController" class="com.erp.inventory.controller.InvoiceController"/>
+	<bean id="InvoiceService" class="com.erp.inventory.service.InvoiceService"/>
+	<bean id="PurchaseEntryDAO" class="com.erp.inventory.dao.PurchaseEntryFormDAO"/>
+	<bean id="PurchaseReturnDAO" class="com.erp.inventory.dao.PurchaseReturnDAO"/>
+	
+	
+	<!-- Sales -->
+	<bean id="SalesController" class="com.erp.sales.sl.controller.SalesController"/>
+	<bean id="SlService" class="com.erp.sales.sl.service.SlService"/>
+	<bean id="SalesDAO" class="com.erp.sales.sl.dao.InvoiceFormDAO"/>
+	<bean id="OrderFormDAO" class="com.erp.sales.sl.dao.OrderFormDAO"/>
+	<bean id="ApprisialFormDAO" class="com.erp.sales.sl.dao.ApprisialFormDAO"/>
+	<bean id="InvoiceWorkPerfomedDAO" class="com.erp.sales.sl.dao.InvoiceWorkPerformedDAO"/>
+	<bean id="PurchaseOrderDAO" class="com.erp.sales.sl.dao.PurchaseOrderDAO"/>
+	<bean id="SalesCallLogDAO" class="com.erp.sales.sl.dao.SalesCallLogDAO"/>
+	<bean id="TelephoneSalesOrderDAO" class="com.erp.sales.sl.dao.TelephoneSalesOrderDAO"/>
+	<bean id="SaleAdminController" class="com.erp.sales.sl.controller.SalesAdminController"/>
+	<bean id="SalesEntryDAO" class="com.erp.sales.sl.dao.SalesEntryFormDAO"/>
+	<bean id="SalesReturnEntryDAO" class="com.erp.sales.sl.dao.SalesReturnEntryDAO"/>	
+	<bean id="SalesOrderDAO" class="com.erp.sales.sl.dao.SalesOrderDAO"/>
+	
+	
+	<!-- Finance  -->
+	<bean id="FinanceController" class="com.erp.finance.controller.FinancialController"/>
+	<bean id="FinanceServiceImpl" class="com.erp.finance.service.FinanceServiceImpl"/>
+	<bean id="AgingAccount" class="com.erp.finance.dao.AgingAccountDAO"/>
+	<bean id="CompanyPaySlipDAO" class="com.erp.finance.dao.CompanyPaySlipDAO"/>
+	<bean id="GroupDetailsDAO" class="com.erp.finance.dao.GroupDetailsDAO"/>
+	<bean id="GroupsDAO" class="com.erp.finance.dao.GroupsDAO"/>	
+	<bean id="VocherDAO" class="com.erp.finance.dao.VocherDAO"/>
+	<bean id="StockGroupDAO" class="com.erp.finance.dao.StockGroupDAO"/>
+	<bean id="StockItemsDAO" class="com.erp.finance.dao.StockItemsDAO"/>
+	<bean id="MeasurementDAO" class="com.erp.finance.dao.MeasurmentDAO"/>
+	<bean id="VocherTypeDAO" class="com.erp.finance.dao.VocherTypeDAO"/>
+	
+	<bean id="AccountVocherController" class="com.erp.finance.controller.AccountVocherController"/>
+	<bean id="VocherReciptDAO" class="com.erp.finance.dao.VocherReciptDAO"/>
+	<bean id="VocherContraDAO" class="com.erp.finance.dao.VocherContraDAO"/>
+	<bean id="VocherPaymentDAO" class="com.erp.finance.dao.VocherPaymentDAO"/>
+	<bean id="VocherJouranlDAO" class="com.erp.finance.dao.JournalDAO"/>
+	<bean id="VocherPurchaseDAO" class="com.erp.finance.dao.VocherPurchaseDAO"/>
+	<bean id="VocherSalesDAO" class="com.erp.finance.dao.VocherSalesDAO"/>
+	<bean id="VocherPurchaseReturnDAO" class="com.erp.finance.dao.VocherPurchaseReturnDAO"/>
+	<bean id="VocherSalesReturnDAO" class="com.erp.finance.dao.VocherSalesReturnDAO"/>
+	<bean id="TempPaySlipDAO" class="com.erp.finance.dao.TempPaySlipDAO"/>
+	<bean id="FinalPaySlipDAO" class="com.erp.finance.dao.FinalPaySlipDAO"/>
+	<bean id="AggingAccountPayableDAO" class="com.erp.finance.dao.AgingAccountPayableDAO"/>
+	<bean id="CashDisburmentJournalDAO" class="com.erp.finance.dao.CashDisburmentJournalDAO"/>
+	<bean id="CashReciptJournalDAO" class="com.erp.finance.dao.CashReciptJournalDAO"/>
+	<bean id="DailyCashReportDAO" class="com.erp.finance.dao.DailyCashReportDAO"/>
+	<bean id="PettyCashVocherDAO" class="com.erp.inventory.dao.PettyCashVocherDAO"/>
+	<bean id="AutoExpencesesTravelDAO" class="com.erp.finance.dao.AutoExpencesesTravelDAO"/>
+	<bean id="PhoneBillExpencesesDAO" class="com.erp.finance.dao.PhoneBillExpencesesDAO"/>
+	<bean id="FoodExpensesDAO" class="com.erp.finance.dao.FoodExpensesDAO"/>
+	<bean id="HotelExpencesesDAO" class="com.erp.finance.dao.HotelExpencesesDAO"/>
+	<bean id="EntertainmentExpencesesDAO" class="com.erp.finance.dao.EntertainmentExpencesesDAO"/>
+	<bean id="MilslaniousExpencesesDAO" class="com.erp.finance.dao.MilslaniousExpencesesDAO"/>
+	<bean id="NonTradingExpenceseDAO" class="com.erp.finance.dao.NonTradingExpenceseDAO"/>
+	<bean id="WeeklyExpencesesDAO" class="com.erp.finance.dao.WeeklyExpencesesDAO"/>
+	<bean id="LedgerDAO" class="com.erp.finance.dao.LedgerDAO"/>
+	<bean id="CurrwntAssertsDAO" class="com.erp.finance.dao.CurrentAssertsDAO"/>
+	<!-- Util Classes -->
+	<bean id="DateUtil" class="com.erp.util.DateUtil"/>
+	<bean id="DBConnection" class="com.erp.util.DBConnection"/>
+	
+	
+	<!-- Helper Classes -->
+	<bean id="FinanceHelper" class="com.erp.helper.FinanceHelper"/>
+	<bean id="PayrollHelper" class="com.erp.helper.PayrollHelper"/>
+	<bean id="HelperController" class="com.erp.helper.HelperController"/>
+	
+	<!-- Report Controller -->
+	<bean id="ReportController" class="com.erp.reports.controller.ReportController"/>
+	<context:annotation-config/>
+	</beans>
