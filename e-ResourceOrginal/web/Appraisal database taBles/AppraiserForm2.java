@@ -1,0 +1,20 @@
+create table appraiser2(aPPraiseeId varchar(15),
+ 				aPPraiseeName varchar(30),
+			 	grouPProject varchar(60),
+ 				assessmentFrom varchar(30),
+ 				assessmentTo varchar(30),
+				aPPraiserId varchar(15),
+				aPPraiserName varchar(30),
+				reviewerId varchar(15),
+				reviewerName varchar(30),
+				saatext text,
+				ossftext text,
+				appraiseeStrengths text,
+				currentResponsibilites text,
+				additionalResponsibilites text,
+				learningPlan text,
+				selftext text,
+				appraiser text,
+				ipl text);
+				
+There are seven days in a week and some day isnt one of them

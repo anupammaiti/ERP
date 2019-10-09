@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="rep_LoanStatus" language="groovy" pageWidth="1000" pageHeight="792" whenNoDataType="AllSectionsNoDetail" columnWidth="960" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="empid" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="imagePath" class="java.lang.Object"/>
+	<queryString>
+		<![CDATA[select * from laonstatus where empid=$P{empid};]]>
+	</queryString>
+	<field name="sno" class="java.lang.Integer"/>
+	<field name="empid" class="java.lang.String"/>
+	<field name="loanamount" class="java.lang.String"/>
+	<field name="noofmonths" class="java.lang.String"/>
+	<field name="monthlyamout" class="java.lang.String"/>
+	<field name="dueamount" class="java.lang.String"/>
+	<field name="status" class="java.lang.String"/>
+	<field name="gendate" class="java.lang.String"/>
+	<field name="loansanctiondate" class="java.lang.String"/>
+	<field name="duemonths" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="101" splitType="Stretch">
+			<staticText>
+				<reportElement x="415" y="19" width="136" height="40"/>
+				<textElement>
+					<font size="24" isBold="true"/>
+				</textElement>
+				<text><![CDATA[e-Resource]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="710" y="29" width="137" height="30" forecolor="#FF0000">
+					<printWhenExpression><![CDATA[$F{empid}.equals( null )]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font size="18" isBold="true"/>
+				</textElement>
+				<text><![CDATA[No Data Found]]></text>
+			</staticText>
+			<image>
+				<reportElement x="14" y="9" width="122" height="76"/>
+				<imageExpression class="java.lang.String"><![CDATA[$P{imagePath}]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch">
+			<staticText>
+				<reportElement x="426" y="5" width="115" height="30"/>
+				<textElement>
+					<font size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Loan Status]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="33" splitType="Stretch">
+			<staticText>
+				<reportElement x="14" y="12" width="100" height="20"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[EmpId]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="136" y="12" width="100" height="20"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Loan Amount]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="258" y="12" width="100" height="20"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[No Of Months]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="375" y="12" width="100" height="20"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Monthly Amout]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="502" y="12" width="100" height="20"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Due Amount]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="610" y="12" width="100" height="20"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Status]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="729" y="12" width="100" height="20"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Loan Sanction Date]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="847" y="12" width="100" height="20"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Due Months]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="32" width="960" height="1"/>
+			</line>
+			<line>
+				<reportElement x="0" y="7" width="960" height="1"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="47" splitType="Stretch">
+			<textField>
+				<reportElement x="136" y="11" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{loanamount}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="14" y="11" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{empid}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="258" y="11" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{noofmonths}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="375" y="11" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{monthlyamout}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="502" y="11" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{dueamount}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="610" y="11" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{status}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="729" y="11" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{loansanctiondate}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="847" y="11" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{duemonths}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="46" width="960" height="1"/>
+			</line>
+			<line>
+				<reportElement x="960" y="-25" width="1" height="71"/>
+			</line>
+			<line>
+				<reportElement x="0" y="-25" width="1" height="71"/>
+			</line>
+			<line>
+				<reportElement x="124" y="-25" width="1" height="72"/>
+			</line>
+			<line>
+				<reportElement x="248" y="-25" width="1" height="71"/>
+			</line>
+			<line>
+				<reportElement x="367" y="-25" width="1" height="71"/>
+			</line>
+			<line>
+				<reportElement x="488" y="-25" width="1" height="71"/>
+			</line>
+			<line>
+				<reportElement x="606" y="-26" width="1" height="72"/>
+			</line>
+			<line>
+				<reportElement x="719" y="-26" width="1" height="72"/>
+			</line>
+			<line>
+				<reportElement x="838" y="-25" width="1" height="68"/>
+			</line>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

@@ -1,0 +1,352 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="EarlyGoing" language="groovy" pageWidth="850" pageHeight="842" whenNoDataType="AllSectionsNoDetail" columnWidth="810" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="fromdate" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="todate" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="time" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="comp" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="imagePath" class="java.lang.Object"/>
+	<queryString>
+		<![CDATA[select empid,empname,date,RM,HOD,first,last,tothrs,department,leavetype,odtime from empinout1 where companyname=$P{comp} and date between $P{fromdate} and $P{todate} and last<$P{time}]]>
+	</queryString>
+	<field name="empid" class="java.lang.String"/>
+	<field name="empname" class="java.lang.String"/>
+	<field name="date" class="java.sql.Date"/>
+	<field name="RM" class="java.lang.String"/>
+	<field name="HOD" class="java.lang.String"/>
+	<field name="first" class="java.sql.Time"/>
+	<field name="last" class="java.sql.Time"/>
+	<field name="tothrs" class="java.sql.Time"/>
+	<field name="department" class="java.lang.String"/>
+	<field name="leavetype" class="java.lang.String"/>
+	<field name="odtime" class="java.sql.Time"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="77" splitType="Stretch">
+			<staticText>
+				<reportElement x="290" y="55" width="181" height="20" forecolor="#990099"/>
+				<textElement>
+					<font size="12" isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[Early Going Employees Report]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="645" y="0" width="81" height="14"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Report Generated on]]></text>
+			</staticText>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="726" y="0" width="71" height="14"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression class="java.util.Date"><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="585" y="28" width="109" height="20" forecolor="#FF0000">
+					<printWhenExpression><![CDATA[$F{empid}.equals( null )]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[No Records Found]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="273" y="8" width="242" height="40"/>
+				<textElement>
+					<font size="24" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{comp}]]></textFieldExpression>
+			</textField>
+			<image>
+				<reportElement x="11" y="8" width="100" height="50"/>
+				<imageExpression class="java.lang.String"><![CDATA[$P{imagePath}]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="44" splitType="Stretch">
+			<textField pattern="dd/MM/yyyy" isBlankWhenNull="true">
+				<reportElement x="225" y="12" width="68" height="20"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{fromdate}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy" isBlankWhenNull="true">
+				<reportElement x="365" y="12" width="56" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{todate}]]></textFieldExpression>
+			</textField>
+			<textField pattern="HH.mm" isBlankWhenNull="true">
+				<reportElement x="511" y="12" width="40" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{time}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="173" y="12" width="52" height="20"/>
+				<textElement/>
+				<text><![CDATA[From Date:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="325" y="12" width="39" height="20"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[To Date:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="471" y="12" width="40" height="20"/>
+				<textElement/>
+				<text><![CDATA[Before:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="683" y="10" width="80" height="20"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression class="java.lang.String"><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="763" y="10" width="40" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="11" y="10" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[Early Going Report]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="20" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="0" width="810" height="20" backcolor="#FFCCCC"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="77" y="0" width="100" height="20" forecolor="#000066"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Emp Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="200" y="0" width="100" height="20" forecolor="#000066"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Date]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="273" y="0" width="100" height="20" forecolor="#000066"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[RM]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="385" y="0" width="100" height="20" forecolor="#000066"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[HOD]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="581" y="0" width="43" height="20" forecolor="#000066"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[In Time]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="636" y="0" width="50" height="20" forecolor="#000066"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Out Time]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="692" y="0" width="51" height="20" forecolor="#000066"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Total Hrs]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="11" y="0" width="100" height="20" forecolor="#000066"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Emp ID.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="485" y="0" width="100" height="20" forecolor="#000066"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Department]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="738" y="0" width="36" height="20"/>
+				<textElement/>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="757" y="0" width="43" height="20" forecolor="#000066"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Remarks]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="743" y="10" width="61" height="10" forecolor="#000066"/>
+				<textElement>
+					<font size="5"/>
+				</textElement>
+				<text><![CDATA[Time              Per/OD]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="21" splitType="Stretch">
+			<textField isBlankWhenNull="true">
+				<reportElement x="11" y="5" width="62" height="14"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{empid}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="77" y="5" width="112" height="14"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{empname}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy" isBlankWhenNull="true">
+				<reportElement x="197" y="5" width="65" height="14"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression class="java.util.Date"><![CDATA[$F{date}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="265" y="5" width="100" height="14"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{RM}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="373" y="5" width="100" height="14"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{HOD}]]></textFieldExpression>
+			</textField>
+			<textField pattern="HH.mm" isBlankWhenNull="true">
+				<reportElement x="581" y="5" width="56" height="14"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression class="java.sql.Time"><![CDATA[$F{first}]]></textFieldExpression>
+			</textField>
+			<textField pattern="HH.mm" isBlankWhenNull="true">
+				<reportElement x="636" y="5" width="51" height="14"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression class="java.sql.Time"><![CDATA[$F{last}]]></textFieldExpression>
+			</textField>
+			<textField pattern="HH.mm" isBlankWhenNull="true">
+				<reportElement x="692" y="5" width="51" height="14"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression class="java.sql.Time"><![CDATA[$F{tothrs}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="19" width="810" height="1"/>
+			</line>
+			<line>
+				<reportElement x="189" y="-20" width="1" height="40"/>
+			</line>
+			<line>
+				<reportElement x="259" y="-20" width="1" height="40"/>
+			</line>
+			<line>
+				<reportElement x="369" y="-20" width="1" height="40"/>
+			</line>
+			<line>
+				<reportElement x="574" y="-20" width="1" height="40"/>
+			</line>
+			<line>
+				<reportElement x="630" y="-20" width="1" height="40"/>
+			</line>
+			<line>
+				<reportElement x="737" y="-20" width="1" height="40"/>
+			</line>
+			<line>
+				<reportElement x="687" y="-20" width="1" height="40"/>
+			</line>
+			<line>
+				<reportElement x="73" y="-20" width="1" height="40"/>
+			</line>
+			<line>
+				<reportElement x="-1" y="-20" width="1" height="40"/>
+			</line>
+			<textField isBlankWhenNull="true">
+				<reportElement x="482" y="5" width="93" height="14"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{department}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="475" y="-20" width="1" height="40"/>
+			</line>
+			<line>
+				<reportElement x="773" y="0" width="1" height="20"/>
+			</line>
+			<line>
+				<reportElement x="809" y="-20" width="1" height="39"/>
+			</line>
+			<textField pattern="HH.mm" isBlankWhenNull="true">
+				<reportElement x="743" y="5" width="30" height="14"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression class="java.sql.Time"><![CDATA[$F{odtime}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="780" y="5" width="29" height="14"/>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{leavetype}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="3" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="4" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="3" splitType="Stretch"/>
+	</summary>
+</jasperReport>

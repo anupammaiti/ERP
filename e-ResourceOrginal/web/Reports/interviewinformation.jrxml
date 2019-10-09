@@ -1,0 +1,436 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="interviewinformation" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="candidatename" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="imagePath" class="java.lang.Object"/>
+	<queryString>
+		<![CDATA[select * from interviewevaluationreport1 where candidatename=$P{candidatename}]]>
+	</queryString>
+	<field name="candidatename" class="java.lang.String"/>
+	<field name="date" class="java.sql.Date"/>
+	<field name="position" class="java.lang.String"/>
+	<field name="company" class="java.lang.String"/>
+	<field name="appearance" class="java.lang.String"/>
+	<field name="qualification" class="java.lang.String"/>
+	<field name="experience" class="java.lang.String"/>
+	<field name="jobstability" class="java.lang.String"/>
+	<field name="attitude" class="java.lang.String"/>
+	<field name="communicationskills" class="java.lang.String"/>
+	<field name="jobknowledge" class="java.lang.String"/>
+	<field name="jobskills" class="java.lang.String"/>
+	<field name="jobpotential" class="java.lang.String"/>
+	<field name="careerachievements" class="java.lang.String"/>
+	<field name="workdedication" class="java.lang.String"/>
+	<field name="abilitytolearn" class="java.lang.String"/>
+	<field name="openmindness" class="java.lang.String"/>
+	<field name="maturitylevel" class="java.lang.String"/>
+	<field name="overallsuitability" class="java.lang.String"/>
+	<field name="finalassessment" class="java.lang.String"/>
+	<field name="othercomments" class="java.lang.String"/>
+	<field name="interviewedby" class="java.lang.String"/>
+	<field name="executivename" class="java.lang.String"/>
+	<field name="presentsalary" class="java.lang.String"/>
+	<field name="exceptedsalary" class="java.lang.String"/>
+	<field name="salaryoffered" class="java.lang.String"/>
+	<field name="joiningtimerequired" class="java.lang.String"/>
+	<field name="department" class="java.lang.String"/>
+	<group name="candidatename">
+		<groupExpression><![CDATA[$F{candidatename}]]></groupExpression>
+	</group>
+	<group name="date">
+		<groupExpression><![CDATA[$F{date}]]></groupExpression>
+	</group>
+	<group name="qualification">
+		<groupExpression><![CDATA[$F{qualification}]]></groupExpression>
+	</group>
+	<group name="experience">
+		<groupExpression><![CDATA[$F{experience}]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="94" splitType="Stretch">
+			<staticText>
+				<reportElement x="180" y="63" width="180" height="20"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[Interview Information Report]]></text>
+			</staticText>
+			<textField pattern="yyyy/MM/dd">
+				<reportElement x="421" y="20" width="100" height="20"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.util.Date"><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="421" y="63" width="121" height="20"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{candidatename}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="376" y="63" width="45" height="20"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Data of]]></text>
+			</staticText>
+			<image>
+				<reportElement x="16" y="13" width="104" height="70"/>
+				<imageExpression class="java.lang.String"><![CDATA[$P{imagePath}]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="536" splitType="Stretch">
+			<textField>
+				<reportElement x="138" y="19" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.util.Date"><![CDATA[$F{date}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="392" y="19" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{position}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="138" y="51" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{company}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="392" y="51" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{appearance}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="139" y="84" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{qualification}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="393" y="87" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{experience}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="139" y="120" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{jobstability}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="393" y="120" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{attitude}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="142" y="153" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{communicationskills}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="392" y="153" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{jobknowledge}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="141" y="191" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{jobskills}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="393" y="191" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{jobpotential}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="141" y="234" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{careerachievements}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="393" y="232" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{workdedication}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="143" y="276" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{abilitytolearn}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="393" y="276" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{openmindness}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="143" y="316" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{maturitylevel}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="393" y="316" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{overallsuitability}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="144" y="356" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{finalassessment}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="393" y="356" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{othercomments}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="144" y="395" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{interviewedby}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="392" y="395" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{executivename}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="144" y="429" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{presentsalary}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="392" y="429" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{exceptedsalary}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="144" y="472" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{salaryoffered}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="392" y="472" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{joiningtimerequired}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="393" y="514" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{department}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="16" y="19" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[Date:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="16" y="51" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[Company Name:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="16" y="89" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[Qualification:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="20" y="123" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[Jobstability:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="20" y="157" width="118" height="20"/>
+				<textElement/>
+				<text><![CDATA[Communication Skills:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="20" y="191" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[JobSkills:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="20" y="232" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[Carrer Achivements:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="18" y="274" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[Ability To Learn:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="20" y="317" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[Maturity Level:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="20" y="356" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[Final Assessement:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="23" y="397" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[Interviewed By:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="23" y="429" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[Present Salary:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="26" y="472" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[Salary Offered:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="278" y="19" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[Position:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="278" y="51" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[Appearence:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="278" y="84" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[Experience:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="278" y="120" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[Attitude:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="278" y="153" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[Job Knowledge:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="278" y="191" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[Job Potential:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="278" y="234" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[Work Dedication:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="278" y="275" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[Open Mindness:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="278" y="317" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[Over all Suitability:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="278" y="356" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[Other Comments:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="278" y="397" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[Exicutive Name:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="278" y="429" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[Excepted Salary:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="278" y="472" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[Joining Time:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="278" y="514" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[Department:]]></text>
+			</staticText>
+			<line>
+				<reportElement x="261" y="3" width="1" height="531"/>
+			</line>
+			<line>
+				<reportElement x="0" y="39" width="555" height="1"/>
+			</line>
+			<line>
+				<reportElement x="2" y="71" width="555" height="1"/>
+			</line>
+			<line>
+				<reportElement x="2" y="113" width="555" height="1"/>
+			</line>
+			<line>
+				<reportElement x="2" y="149" width="555" height="1"/>
+			</line>
+			<line>
+				<reportElement x="1" y="182" width="555" height="1"/>
+			</line>
+			<line>
+				<reportElement x="1" y="218" width="555" height="1"/>
+			</line>
+			<line>
+				<reportElement x="1" y="261" width="555" height="1"/>
+			</line>
+			<line>
+				<reportElement x="1" y="303" width="555" height="1"/>
+			</line>
+			<line>
+				<reportElement x="1" y="343" width="555" height="1"/>
+			</line>
+			<line>
+				<reportElement x="2" y="390" width="555" height="1"/>
+			</line>
+			<line>
+				<reportElement x="2" y="460" width="553" height="1"/>
+			</line>
+			<line>
+				<reportElement x="0" y="492" width="555" height="1"/>
+			</line>
+			<line>
+				<reportElement x="0" y="2" width="555" height="1"/>
+			</line>
+			<line>
+				<reportElement x="555" y="3" width="1" height="530"/>
+			</line>
+			<line>
+				<reportElement x="2" y="3" width="1" height="530"/>
+			</line>
+			<line>
+				<reportElement x="2" y="533" width="553" height="1"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band splitType="Stretch">
+			<line>
+				<reportElement x="2" y="-112" width="553" height="1"/>
+			</line>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

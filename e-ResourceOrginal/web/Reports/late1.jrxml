@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="late1" language="groovy" pageWidth="800" pageHeight="842" columnWidth="760" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[select empid,empname,date,first,last,tothrs,(select Sec_to_Time(Sum(Time_to_Sec(tothrs))) from empinout1) as tot from empinout1]]>
+	</queryString>
+	<field name="empid" class="java.lang.String"/>
+	<field name="empname" class="java.lang.String"/>
+	<field name="date" class="java.sql.Date"/>
+	<field name="first" class="java.sql.Time"/>
+	<field name="last" class="java.sql.Time"/>
+	<field name="tothrs" class="java.lang.String"/>
+	<field name="tot" class="java.sql.Time"/>
+	<variable name="SUM" class="java.sql.Time" incrementType="Report" calculation="Sum">
+		<variableExpression><![CDATA[$F{tot}]]></variableExpression>
+	</variable>
+	<group name="date">
+		<groupExpression><![CDATA[$F{date}]]></groupExpression>
+	</group>
+	<group name="tothrs">
+		<groupExpression><![CDATA[$F{tothrs}]]></groupExpression>
+	</group>
+	<group name="empid">
+		<groupExpression><![CDATA[$F{empid}]]></groupExpression>
+	</group>
+	<group name="empname">
+		<groupExpression><![CDATA[$F{empname}]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="34" splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="25" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="23" splitType="Stretch">
+			<staticText>
+				<reportElement x="15" y="0" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[empid]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="124" y="0" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[empname]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="234" y="0" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[date]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="341" y="0" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[first]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="445" y="0" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[last]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="550" y="0" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[tothrs]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="28" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="8" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{empid}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="124" y="6" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{empname}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="234" y="7" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.util.Date"><![CDATA[$F{date}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="341" y="4" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.sql.Time"><![CDATA[$F{first}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="445" y="3" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.sql.Time"><![CDATA[$F{last}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="550" y="4" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{tothrs}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="29" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="25" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="18" splitType="Stretch"/>
+	</summary>
+</jasperReport>

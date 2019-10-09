@@ -1,0 +1,347 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Leavebalance" language="groovy" pageWidth="760" pageHeight="842" whenNoDataType="AllSectionsNoDetail" columnWidth="720" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="fromdate" class="java.lang.String"/>
+	<parameter name="todate" class="java.lang.String"/>
+	<parameter name="default" class="java.lang.Integer">
+		<property name="value" value="25"/>
+		<parameterDescription><![CDATA[]]></parameterDescription>
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="comp" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="imagePath" class="java.lang.Object"/>
+	<queryString>
+		<![CDATA[select e.empno,e.name,l.totalleaves,min(l.remainingleaves)as remainingleaves,max(l.grandleaves) as grandleaves,max(l.totalcl)as CL,max(l.totalsl)as SL,max(l.totalpl)as PL,max(l.lop1)as LOP,min(l.bcl)as bcl,min(l.bsl)as bsl,min(l.bpl)as bpl,o.clopen,o.slopen,o.plopen,o.total from employee e LEFT JOIN leaveapplications l  on e.empno=l.empid LEFT JOIN leaveopen o  on e.empno=o.empid group by e.empid order by e.empno and e.companyname=$P{comp}]]>
+	</queryString>
+	<field name="empno" class="java.lang.String"/>
+	<field name="name" class="java.lang.String"/>
+	<field name="totalleaves" class="java.lang.Double"/>
+	<field name="remainingleaves" class="java.lang.Double"/>
+	<field name="grandleaves" class="java.lang.Double"/>
+	<field name="CL" class="java.lang.Double"/>
+	<field name="SL" class="java.lang.Double"/>
+	<field name="PL" class="java.lang.Double"/>
+	<field name="LOP" class="java.lang.Double"/>
+	<field name="bcl" class="java.lang.Double"/>
+	<field name="bsl" class="java.lang.Double"/>
+	<field name="bpl" class="java.lang.Double"/>
+	<field name="clopen" class="java.lang.Double"/>
+	<field name="slopen" class="java.lang.Double"/>
+	<field name="plopen" class="java.lang.Double"/>
+	<field name="total" class="java.lang.Double"/>
+	<group name="empid">
+		<groupExpression><![CDATA[]]></groupExpression>
+	</group>
+	<group name="remainingleaves">
+		<groupExpression><![CDATA[$F{remainingleaves}]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="75" splitType="Stretch">
+			<staticText>
+				<reportElement x="287" y="55" width="159" height="20" forecolor="#990099"/>
+				<textElement>
+					<font size="14" isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[Leave Balance Report]]></text>
+			</staticText>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="618" y="0" width="79" height="20"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression class="java.util.Date"><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="536" y="0" width="100" height="20"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Report generated on]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="467" y="38" width="116" height="20" forecolor="#CC0000">
+					<printWhenExpression><![CDATA[$F{empno}.equals( null )]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font fontName="Bookman Old Style" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[No Records Found]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="282" y="8" width="174" height="40"/>
+				<textElement>
+					<font size="24" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{comp}]]></textFieldExpression>
+			</textField>
+			<image>
+				<reportElement x="21" y="8" width="100" height="50"/>
+				<imageExpression class="java.lang.String"><![CDATA[$P{imagePath}]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="15" splitType="Stretch">
+			<textField>
+				<reportElement x="580" y="0" width="80" height="13"/>
+				<textElement textAlignment="Right">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="660" y="0" width="40" height="13"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="24" splitType="Stretch">
+			<rectangle>
+				<reportElement x="22" y="0" width="684" height="24" backcolor="#FF99CC"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="91" y="4" width="88" height="20"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="293" y="1" width="58" height="23"/>
+				<textElement>
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Total Opening
+    Leaves]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="459" y="1" width="69" height="23"/>
+				<textElement>
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[TOtal Consumed
+            Leaves]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="618" y="1" width="54" height="23"/>
+				<textElement textAlignment="Center">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Total balance
+  Leaves]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="26" y="4" width="62" height="20"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Emp ID.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="533" y="1" width="71" height="13"/>
+				<textElement>
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Balance Leaves]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="669" y="4" width="35" height="20"/>
+				<textElement textAlignment="Center">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[LOP]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="198" y="1" width="72" height="11"/>
+				<textElement>
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Opening Leaves]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="182" y="12" width="100" height="12"/>
+				<textElement textAlignment="Center">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CL               SL              PL]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="360" y="1" width="85" height="11"/>
+				<textElement>
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Consumed Leaves]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="352" y="12" width="94" height="12"/>
+				<textElement textAlignment="Center">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CL             SL              PL ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="530" y="12" width="91" height="12"/>
+				<textElement>
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CL          SL            PL]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="21" splitType="Stretch">
+			<line>
+				<reportElement x="22" y="19" width="684" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="457" y="-24" width="1" height="44"/>
+			</line>
+			<line>
+				<reportElement x="1047" y="-24" width="1" height="44"/>
+			</line>
+			<line>
+				<reportElement x="181" y="-24" width="1" height="44"/>
+			</line>
+			<line>
+				<reportElement x="86" y="-24" width="1" height="44"/>
+			</line>
+			<line>
+				<reportElement x="21" y="-24" width="1" height="44"/>
+			</line>
+			<textField isBlankWhenNull="true">
+				<reportElement x="26" y="4" width="62" height="14"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{empno}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="91" y="4" width="88" height="14"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{name}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="672" y="-24" width="1" height="44"/>
+			</line>
+			<line>
+				<reportElement x="706" y="-24" width="1" height="44"/>
+			</line>
+			<line>
+				<reportElement x="221" y="-10" width="1" height="30"/>
+			</line>
+			<line>
+				<reportElement x="260" y="-10" width="1" height="30"/>
+			</line>
+			<line>
+				<reportElement x="350" y="-24" width="1" height="44"/>
+			</line>
+			<line>
+				<reportElement x="389" y="-10" width="1" height="30"/>
+			</line>
+			<line>
+				<reportElement x="423" y="-10" width="1" height="30"/>
+			</line>
+			<line>
+				<reportElement x="524" y="-24" width="1" height="44"/>
+			</line>
+			<line>
+				<reportElement x="556" y="-10" width="1" height="30"/>
+			</line>
+			<line>
+				<reportElement x="588" y="-10" width="1" height="30"/>
+			</line>
+			<line>
+				<reportElement x="617" y="-24" width="1" height="44"/>
+			</line>
+			<line>
+				<reportElement x="291" y="-24" width="1" height="44"/>
+			</line>
+			<textField isBlankWhenNull="true">
+				<reportElement x="186" y="1" width="33" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.Double"><![CDATA[$F{clopen}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="228" y="1" width="32" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.Double"><![CDATA[$F{slopen}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="266" y="1" width="27" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.Double"><![CDATA[$F{plopen}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="361" y="1" width="31" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.Double"><![CDATA[$F{CL}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="393" y="0" width="30" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.Double"><![CDATA[$F{SL}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="429" y="1" width="27" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.Double"><![CDATA[$F{PL}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="471" y="1" width="51" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.Double"><![CDATA[$F{grandleaves}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="531" y="1" width="25" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.Double"><![CDATA[$F{bcl}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="561" y="1" width="27" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.Double"><![CDATA[$F{bsl}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="594" y="1" width="28" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.Double"><![CDATA[$F{bpl}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="635" y="1" width="38" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.Double"><![CDATA[$F{remainingleaves}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="677" y="1" width="30" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.Double"><![CDATA[$F{LOP}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="308" y="1" width="42" height="17"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.Double"><![CDATA[$F{total}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="2" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="9" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="5" splitType="Stretch"/>
+	</summary>
+</jasperReport>

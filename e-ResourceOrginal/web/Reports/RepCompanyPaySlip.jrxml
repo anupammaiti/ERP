@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="RepCompanyPaySlip" language="groovy" pageWidth="792" pageHeight="612" orientation="Landscape" columnWidth="752" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="imagePath" class="java.lang.Object"/>
+	<queryString>
+		<![CDATA[select * from companypayslip;]]>
+	</queryString>
+	<field name="sno" class="java.lang.Long"/>
+	<field name="companyname" class="java.lang.String"/>
+	<field name="basic" class="java.lang.String"/>
+	<field name="conv" class="java.lang.String"/>
+	<field name="hra" class="java.lang.String"/>
+	<field name="pf" class="java.lang.String"/>
+	<field name="gratuaty" class="java.lang.String"/>
+	<field name="da" class="java.lang.String"/>
+	<field name="mis1" class="java.lang.String"/>
+	<field name="mie1" class="java.lang.String"/>
+	<field name="mip1" class="java.lang.String"/>
+	<field name="mis2" class="java.lang.String"/>
+	<field name="mie2" class="java.lang.String"/>
+	<field name="mip2" class="java.lang.String"/>
+	<field name="mis3" class="java.lang.String"/>
+	<field name="mie3" class="java.lang.String"/>
+	<field name="mip3" class="java.lang.String"/>
+	<field name="mis4" class="java.lang.String"/>
+	<field name="mie4" class="java.lang.String"/>
+	<field name="mip4" class="java.lang.String"/>
+	<field name="fis1" class="java.lang.String"/>
+	<field name="fie1" class="java.lang.String"/>
+	<field name="fip1" class="java.lang.String"/>
+	<field name="fis2" class="java.lang.String"/>
+	<field name="fie2" class="java.lang.String"/>
+	<field name="fip2" class="java.lang.String"/>
+	<field name="fis3" class="java.lang.String"/>
+	<field name="fie3" class="java.lang.String"/>
+	<field name="fip3" class="java.lang.String"/>
+	<field name="fis4" class="java.lang.String"/>
+	<field name="fie4" class="java.lang.String"/>
+	<field name="fip4" class="java.lang.String"/>
+	<field name="gendate" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="326" y="25" width="135" height="38"/>
+				<textElement>
+					<font size="24" isBold="true"/>
+				</textElement>
+				<text><![CDATA[e-Resource]]></text>
+			</staticText>
+			<image>
+				<reportElement x="8" y="4" width="112" height="68"/>
+				<imageExpression class="java.lang.String"><![CDATA[$P{imagePath}]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch">
+			<staticText>
+				<reportElement x="326" y="0" width="147" height="35"/>
+				<textElement>
+					<font size="18"/>
+				</textElement>
+				<text><![CDATA[Company PaySlip]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="146" y="9" width="155" height="26"/>
+				<textElement>
+					<font size="18"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{companyname}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="377" splitType="Stretch">
+			<textField>
+				<reportElement x="161" y="19" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{basic}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="35" y="19" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[basic]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="505" y="19" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{conv}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="361" y="19" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[conv]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="161" y="49" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{hra}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="35" y="49" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[hra]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="505" y="49" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{pf}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="362" y="49" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[pf]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="161" y="86" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{gratuaty}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="35" y="86" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[gratuaty]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="505" y="86" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{da}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="361" y="86" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[da]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="108" y="116" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{mis1}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="346" y="116" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{mie1}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="567" y="116" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{mip1}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="108" y="154" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{mis2}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="346" y="154" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{mie2}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="567" y="154" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{mip2}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="108" y="190" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{mis3}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="346" y="190" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{mie3}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="567" y="190" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{mip3}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="108" y="228" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{mis4}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="346" y="228" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{mie4}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="567" y="228" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{mip4}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="108" y="259" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{fis1}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="346" y="259" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{fie1}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="567" y="259" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{fip1}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="108" y="289" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{fis2}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="346" y="289" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{fie2}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="567" y="289" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{fip2}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="108" y="321" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{fis3}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="346" y="321" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{fie3}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="567" y="321" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{fip3}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="108" y="353" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{fis4}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="346" y="353" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{fie4}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="567" y="353" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{fip4}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

@@ -1,0 +1,340 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="employeeInformation" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="fromdate" class="java.lang.String">
+		<defaultValueExpression><![CDATA[null]]></defaultValueExpression>
+	</parameter>
+	<parameter name="todate" class="java.lang.String">
+		<defaultValueExpression><![CDATA[null]]></defaultValueExpression>
+	</parameter>
+	<parameter name="imagePath" class="java.lang.Object"/>
+	<queryString>
+		<![CDATA[select * from  employee where  joiningdate between $P{fromdate} and $P{todate}]]>
+	</queryString>
+	<field name="empno" class="java.lang.String"/>
+	<field name="name" class="java.lang.String"/>
+	<field name="nameinhris" class="java.lang.String"/>
+	<field name="fathername" class="java.lang.String"/>
+	<field name="dob" class="java.sql.Date"/>
+	<field name="sex" class="java.lang.String"/>
+	<field name="joiningdate" class="java.sql.Date"/>
+	<field name="designation" class="java.lang.String"/>
+	<field name="department" class="java.lang.String"/>
+	<field name="reportingto" class="java.lang.String"/>
+	<field name="joblevel" class="java.lang.String"/>
+	<field name="location" class="java.lang.String"/>
+	<field name="entrymanner" class="java.lang.String"/>
+	<field name="nomination" class="java.lang.String"/>
+	<field name="birthpalce" class="java.lang.String"/>
+	<field name="maritalstatus" class="java.lang.String"/>
+	<field name="marriagedate" class="java.sql.Date"/>
+	<field name="religion" class="java.lang.String"/>
+	<field name="pannumber" class="java.lang.String"/>
+	<field name="passportnumber" class="java.lang.String"/>
+	<field name="issuedateandplace" class="java.lang.String"/>
+	<field name="validity" class="java.lang.String"/>
+	<field name="companyname" class="java.lang.String"/>
+	<field name="qualification" class="java.lang.String"/>
+	<group name="empno">
+		<groupExpression><![CDATA[$F{empno}]]></groupExpression>
+	</group>
+	<group name="name">
+		<groupExpression><![CDATA[$F{name}]]></groupExpression>
+	</group>
+	<group name="fathername">
+		<groupExpression><![CDATA[$F{fathername}]]></groupExpression>
+	</group>
+	<group name="dob">
+		<groupExpression><![CDATA[$F{dob}]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="167" y="59" width="216" height="20"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Employee Information Report]]></text>
+			</staticText>
+			<image>
+				<reportElement x="12" y="9" width="100" height="60"/>
+				<imageExpression class="java.lang.String"><![CDATA[$P{imagePath}]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch">
+			<textField>
+				<reportElement x="410" y="15" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{empno}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="33" width="555" height="1"/>
+			</line>
+			<staticText>
+				<reportElement x="294" y="15" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[Employee Code:]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="410" splitType="Stretch">
+			<textField>
+				<reportElement x="113" y="54" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{name}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="13" y="54" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[Name:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="396" y="19" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{fathername}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="296" y="19" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[Father Name:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="396" y="54" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.util.Date"><![CDATA[$F{dob}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="296" y="54" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[Date of Birth:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="113" y="87" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{sex}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="13" y="87" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[Gender]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="12" y="16" width="132" height="20"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Personal Details:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="396" y="87" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{birthpalce}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="296" y="87" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[Birth Place:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="396" y="116" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.util.Date"><![CDATA[$F{marriagedate}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="294" y="116" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[Marriage Date:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="112" y="116" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{religion}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="12" y="116" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[Religion]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="144" width="555" height="1"/>
+			</line>
+			<textField>
+				<reportElement x="120" y="175" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.util.Date"><![CDATA[$F{joiningdate}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="120" y="203" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{designation}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="400" y="149" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{department}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="404" y="175" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{joblevel}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="407" y="200" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{location}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="120" y="229" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{entrymanner}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="409" y="228" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{nomination}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="120" y="258" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{qualification}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="13" y="174" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[Joining Date:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="15" y="202" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[Designation:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="15" y="228" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[Placement Manner:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="15" y="257" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[Qualification:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="297" y="150" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[Department:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="299" y="176" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[JobLevel:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="299" y="201" width="99" height="20"/>
+				<textElement/>
+				<text><![CDATA[Location:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="297" y="228" width="102" height="20"/>
+				<textElement/>
+				<text><![CDATA[Nomination:]]></text>
+			</staticText>
+			<line>
+				<reportElement x="1" y="313" width="554" height="1"/>
+			</line>
+			<staticText>
+				<reportElement x="67" y="149" width="100" height="20"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Office Details:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="410" y="257" width="100" height="18"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{reportingto}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="296" y="254" width="103" height="20"/>
+				<textElement/>
+				<text><![CDATA[Reporting To:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="14" y="329" width="100" height="20"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Mandatory:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="131" y="354" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{pannumber}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="409" y="352" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{passportnumber}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="131" y="385" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{validity}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="405" y="385" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{companyname}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="15" y="354" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[Pan Card Number:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="13" y="383" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[Validity:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="301" y="352" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[Passport Number:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="296" y="383" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[Company Name:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="407" y="282" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{issuedateandplace}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="294" y="281" width="106" height="20"/>
+				<textElement/>
+				<text><![CDATA[Issue Date and Time:]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band splitType="Stretch"/>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
