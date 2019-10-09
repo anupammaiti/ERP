@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.1.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+	
+	<context:annotation-config/>
+	
+	<!-- Login  -->
+	<bean id="LoginController" class="com.svs.ensign.resort.controller.C_LoginController"/>
+	<bean id="LoginService" class="com.svs.ensign.resort.service.impl.C_LoginServiceImpl"/>
+	<bean id="LoginDAO" class="com.svs.ensign.resort.dao.impl.C_LoginDAOImpl"/>
+	
+	<!-- Human Resource -->
+	<bean id="EmployeeController" class="com.svs.ensign.resort.controller.C_EmployeeController"/>
+	<bean id="EmployeeService" class="com.svs.ensign.resort.service.impl.C_EmployeeServiceImpl"/>
+	<bean id="EmployeeDAO" class="com.svs.ensign.resort.dao.impl.C_EmployeeDAOImpl"/>
+	<!-- Human Resource Ends -->	
+		
+	<!-- Guest And Customer -->	
+	<bean id="CustomerController" class="com.svs.ensign.resort.cms.controller.C_CustomerController"/>
+	<bean id="C_CustomerServiceImpl" class="com.svs.ensign.resort.cms.service.impl.C_CustomerServiceImpl"/>
+	<bean id="GuestUserDAO" class="com.svs.ensign.resort.cms.dao.impl.C_GuestUserDAOImpl"/>
+	<bean id="CustomerDAO" class="com.svs.ensign.resort.cms.dao.impl.C_CustomerDAOImpl"/>
+	<!-- Guest And Customer Ends -->
+	
+	<!-- Admin Starts -->
+	<bean id="AdminController" class="com.svs.ensign.resort.controller.C_AdminController"/>
+	<bean id="AdminService" class="com.svs.ensign.resort.service.impl.C_AdminServiceImpl"/>
+	<bean id="DesignationDAOImpl" class="com.svs.ensign.resort.dao.impl.C_DesignationDAOImpl"/>
+	<bean id="VillaTypeDAO" class="com.svs.ensign.resort.dao.impl.C_VillaTypeDAOImpl"/>
+	<bean id="DepartmentDAO" class="com.svs.ensign.resort.dao.impl.C_DepartmentDAOImpl"/>
+	<bean id="ReportingToDAO" class="com.svs.ensign.resort.dao.impl.C_ReportingToDAOImpl"/>
+	<bean id="AgentComissionDAO" class="com.svs.ensign.resort.dao.impl.C_AgentComissionDAOImpl"/>
+	<!-- Admin Ends -->
+	
+	<!-- Sales Start -->
+	<bean id="SalesController" class="com.svs.ensign.resort.controller.C_SalesController"/>
+	<bean id="SaleService" class="com.svs.ensign.resort.service.impl.C_SalesServiceImpl"/>
+	<bean id="SalesCustomerDAO" class="com.svs.ensign.resort.dao.impl.C_SalesCustomerDAOImpl"/>
+	<bean id="InvoiceDAOImpl" class="com.svs.ensign.resort.dao.impl.C_InvoiceDAOImpl"/>
+	<bean id="PurchaseOrderDAOImpl" class="com.svs.ensign.resort.dao.impl.C_PurchaseOrderDAOImpl"/>
+	<bean id="OrderFormDAO" class="com.svs.ensign.resort.dao.impl.C_OrderFormDAOImpl"/>
+	<bean id="SalesOrderDAO" class="com.svs.ensign.resort.dao.impl.C_SalesOrderDAOImpl"/>
+	<bean id="TelephoneSalesOrderDAO" class="com.svs.ensign.resort.dao.impl.C_TelephoneSalesOrderDAOImpl"/>
+	<bean id="SalesCallLogDAO" class="com.svs.ensign.resort.dao.impl.C_SalesCallLogDAOImpl"/>
+	<bean id="PettyCashJournalDAO" class="com.svs.ensign.resort.dao.impl.C_PettyCashJournalDAOImpl"/>
+	<bean id="SalesManagerDAO" class="com.svs.ensign.resort.dao.impl.C_SalesManagerDAOImpl"/>	
+	<!-- Sales End -->
+	
+	<!-- Finance Start-->
+	<bean id="FinanceController" class="com.svs.ensign.resort.controller.C_FinanceController"/>
+	<bean id="FinanceService" class="com.svs.ensign.resort.service.impl.C_FinanceServiceImpl"/>
+	<bean id="FinanceCustomerDAO" class="com.svs.ensign.resort.dao.impl.C_FinanceCustomerDAOImpl"/>
+	<bean id="ApprisialFormDAO" class="com.svs.ensign.resort.dao.impl.C_ApprisialFormDAOImpl"/>
+	<bean id="DailyAutoExpensesTravelDAOImpl" class="com.svs.ensign.resort.dao.impl.C_DailyAutoExpensesTravelDAOImpl"/>
+	<bean id="LedgerDetailsDAO" class="com.svs.ensign.resort.dao.impl.C_LedgerDetailsDAOImpl"/>
+	<bean id="VoucherDetailsDAO" class="com.svs.ensign.resort.dao.impl.C_VoucherDetailsDAOImpl"/>
+	<bean id="GroupDetailsDAO" class="com.svs.ensign.resort.dao.impl.C_GroupDetailsDAOImpl"/>
+	<bean id="GroupDAO" class="com.svs.ensign.resort.dao.impl.C_GroupDAOImpl"/>
+	<bean id="VoucherPaymentDAO" class="com.svs.ensign.resort.dao.impl.C_VoucherPaymentDAOImpl"/>
+	<bean id="PhoneBillExpDAO" class="com.svs.ensign.resort.dao.impl.C_PhoneBillExpensesDAOImpl"/>
+	<bean id="FoodExpDAO" class="com.svs.ensign.resort.dao.impl.C_FoodExpDAOImpl"/>
+	<bean id="HotelExpDAO" class="com.svs.ensign.resort.dao.impl.C_HotelExpDAOImpl"/>
+	<bean id="EntertainmentExpDAO" class="com.svs.ensign.resort.dao.impl.C_EntertainmentExpDAOImpl"/>
+	<bean id="MisleneousExpDAO" class="com.svs.ensign.resort.dao.impl.C_MisleneousExpDAOImpl"/>
+	<bean id="NOnTradingExpDAO" class="com.svs.ensign.resort.dao.impl.C_NonTradingExpDAOImpl"/>
+	<bean id="GroupMappingDAO" class="com.svs.ensign.resort.dao.impl.C_GroupMappingDAOImpl"/>
+	<bean id="CurrentAssertsDAO" class="com.svs.ensign.resort.dao.impl.C_CurrentAssertsDAOImpl"/>
+	<bean id="VoucherRecieptDAO" class="com.svs.ensign.resort.dao.impl.C_VoucherRecieptDAOImpl"/>
+	<bean id="StockGroupDAO" class="com.svs.ensign.resort.dao.impl.C_StockGroupDAOImpl"/>
+	<bean id="StockItemDAO" class="com.svs.ensign.resort.dao.impl.C_StockItemDAOImpl"/>
+	<bean id="VoucherJournalDAO" class="com.svs.ensign.resort.dao.impl.C_VoucherJournalDAOImpl"/>
+	<bean id="MeasuresDAO" class="com.svs.ensign.resort.dao.impl.C_MeasuresDAOImpl"/>
+	<bean id="VoucherContraDAO" class="com.svs.ensign.resort.dao.impl.C_VoucherContraDAOImpl"/>
+	<bean id="VoucherPurchasesDAO" class="com.svs.ensign.resort.dao.impl.C_VoucherPurchasesDAOImpl"/>
+	<bean id="ClosingStockDAO" class="com.svs.ensign.resort.dao.impl.C_ClosingStockDAOImpl"/>
+	<bean id="StockGroup1DAO" class="com.svs.ensign.resort.dao.impl.C_StockGroup1DAOImpl"/>
+	<bean id="VoucherSalesDAO" class="com.svs.ensign.resort.dao.impl.C_VoucherSalesDAOImpl"/>
+	<bean id="VoucherPurchaseReturnDAO" class="com.svs.ensign.resort.dao.impl.C_VoucherPurchaseReturnDAOImpl"/>
+	<bean id="VoucherSalesReturnDAO" class="com.svs.ensign.resort.dao.impl.C_VoucherSalesReturnDAOImpl"/>
+	<bean id="AgingOfAccountPayableDAO" class="com.svs.ensign.resort.dao.impl.C_AgingOfAccountPayableDAOImpl"/>
+	<bean id="AgingOfAccountRecivablesDAO" class="com.svs.ensign.resort.dao.impl.C_AgingOfAccountRecivablesDAOImpl"/>
+	<!-- Finance End -->
+	
+	<!-- Club Management -->
+	<bean id="ClubManagementController" class="com.svs.ensign.resort.controller.C_ClubManagementController"/>
+	<bean id="ClubManagementServiceImpl" class="com.svs.ensign.resort.service.impl.C_ClubManagementServiceImpl"/>
+	<bean id="ClubMemberDAOImpl" class="com.svs.ensign.resort.dao.impl.C_ClubMemberDAOImpl"/>
+	<!-- Club Management -->
+	
+	
+	
+	<!-- Vehicle Management -->
+	<bean id="VehicleManagementController" class="com.svs.ensign.resort.controller.C_VehicleManagementController"/>
+	<bean id="VehicleService" class="com.svs.ensign.resort.service.impl.C_VehicleServiceImpl"/>
+	<bean id="VehicleDAO" class="com.svs.ensign.resort.dao.impl.C_VehicleDAOImpl"/>
+	<bean id="VehicleAllotmentDAOImpl" class="com.svs.ensign.resort.dao.impl.C_VehicleAllotmentDAOImpl"/>
+	<bean id="VehicleInsurenceDAOImpl" class="com.svs.ensign.resort.dao.impl.C_VehicleInsurenceDAOImpl"/>
+	<bean id="VehicleMaintanenceDAOImpl" class="com.svs.ensign.resort.dao.impl.C_VehicleMaintanenceDAOImpl"/>
+	
+	<!-- Vehicle Management Ends -->
+	
+	<!-- Image Coordinates -->
+	<bean id="ImageService" class="com.svs.ensign.resort.service.impl.C_ImageServiceImpl"/>
+	<bean id="ImageCoordinateDAO" class="com.svs.ensign.resort.dao.impl.C_ImageCoordinateDAOImpl"/>
+	<!-- Image Coordinates Ends -->
+	
+	
+	<!-- Util ,Helper Starts -->
+	<bean id="UtilDate" class="com.svs.ensign.resort.util.C_Util_Date"/>
+	<bean id="MislaniousHelperController" class="com.svs.ensign.resort.helper.C_MislaniousHelperController"/>
+	<bean id="ResortHelper" class="com.svs.ensign.resort.helper.C_ResortHelper"/>
+	<bean id="PropertiesUtil" class="com.svs.ensign.resort.helper.C_PropertiesUtil"/>
+	<bean id="FinanceHelper" class="com.svs.ensign.resort.helper.C_FinanceHelperController"/>
+	<bean id="DBConnection" class="com.svs.ensign.resort.helper.C_DataBaseConnectionHelper"/>
+	<bean id="HumanResourceHelper" class="com.svs.ensign.resort.helper.C_HumanResourceHelperController"/>
+	<bean id="Sl_Helper" class="com.svs.ensign.resort.helper.C_SalesHelperController"/>
+	
+	<bean id="multipartResolver"
+class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+<!-- max upload size in bytes -->
+<property name="maxUploadSize" value="20971520" /> <!-- 20MB -->
+<!-- max size of file in memory (in bytes) -->
+<property name="maxInMemorySize" value="1048576" /> <!-- 1MB -->
+
+</bean>
+	
+	 <!-- <bean id="mailSender" class ="org.springframework.mail.javamail.JavaMailSenderImpl" >
+	        <property name="host" value="${mail.host}" />
+	        <property name="port" value="${mail.port}" />
+	        <property name="username" value="${mail.username}" />
+	        <property name="password" value="${mail.password}" />
+	        <property name="javaMailProperties">
+	        <props>
+				<prop key="mail.transport.protocol">smtp</prop>
+				<prop key="mail.smtp.auth">true</prop>
+				<prop key="mail.smtp.starttls.enable">true</prop>
+			</props>
+	        </property>
+	    </bean> -->
+
+	<bean id="MailUtil" class="com.svs.ensign.resort.util.C_Util_Mail"></bean>
+	<bean id="TeleMarketingHelperController" class="com.svs.ensign.resort.helper.C_TeleMarketingHelperController"/>
+	<bean id="StoredProceduresUtil" class="com.svs.ensign.resort.util.C_StoredProceduresUtil"/>
+	<bean id="ConvertStackTracetoString" class="com.svs.ensign.resort.util.ConvertStackTracetoString"/>
+	<!-- Util,Helper Bean Ends -->
+	
+	<!-- Hr Starts -->
+	<bean id="hRController" class="com.svs.ensign.resort.controller.HRController"/>
+	<bean id="hRServiceImpl" class="com.svs.ensign.resort.service.impl.C_HRServiceImpl"/>
+	<bean id="hRLeaveDAoImpl" class="com.svs.ensign.resort.dao.impl.C_LeaveFormDAOImpl"/>
+        <bean id="hrCompanyPaySlipDAO" class="com.svs.ensign.resort.dao.impl.C_CompanyPaySlipDAOImpl"/>
+        
+        
+	<!-- Hr Ends -->
+	
+        <!--School Management Starts-->
+        <bean id="sMLoginController" class="com.svs.ensign.resort.controller.SMLoginController"/>
+        
+        <!--School Management Ends-->
+	<!--AppRegistration Start-->
+        <bean id="appRegistrationController" class="com.svs.ensign.resort.controller.AppRegistrationController"/>
+        
+        <!--AppRegistration End-->
+        <bean id="ServiceController" class="com.svs.ensign.resort.controller.EducationServices"/>
+        <bean id="SchoolSystemServiceImpl" class="com.svs.ensign.resort.service.impl.SchoolSystemServiceImpl"/>
+</beans>

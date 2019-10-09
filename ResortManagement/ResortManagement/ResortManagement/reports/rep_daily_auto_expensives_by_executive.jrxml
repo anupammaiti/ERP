@@ -1,0 +1,391 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="rep_daily_auto_expensives_by_admin" language="groovy" pageWidth="2200" pageHeight="842" whenNoDataType="AllSectionsNoDetail" columnWidth="2160" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="sno" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[select * from tl_fn_autoexpencestravel where sno=$P{sno}]]>
+	</queryString>
+	<field name="sno" class="java.lang.Long"/>
+	<field name="date1" class="java.lang.String"/>
+	<field name="day1" class="java.lang.String"/>
+	<field name="empname" class="java.lang.String"/>
+	<field name="completedby" class="java.lang.String"/>
+	<field name="location" class="java.lang.String"/>
+	<field name="auditedby" class="java.lang.String"/>
+	<field name="address" class="java.lang.String"/>
+	<field name="purposeoftrip" class="java.lang.String"/>
+	<field name="city" class="java.lang.String"/>
+	<field name="approvedby" class="java.lang.String"/>
+	<field name="state" class="java.lang.String"/>
+	<field name="zipno" class="java.lang.String"/>
+	<field name="phoneno" class="java.lang.String"/>
+	<field name="department" class="java.lang.String"/>
+	<field name="date2" class="java.lang.String"/>
+	<field name="travelfrom" class="java.lang.String"/>
+	<field name="odometerstart" class="java.lang.String"/>
+	<field name="odometerend" class="java.lang.String"/>
+	<field name="totalmileage" class="java.lang.String"/>
+	<field name="rate" class="java.lang.String"/>
+	<field name="amountdue" class="java.lang.String"/>
+	<field name="gendate" class="java.lang.String"/>
+	<field name="department1" class="java.lang.String"/>
+	<field name="manager" class="java.lang.String"/>
+	<field name="deltby" class="java.lang.String"/>
+	<field name="ledgername" class="java.lang.String"/>
+	<field name="empid" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="974" y="13" width="232" height="36"/>
+				<textElement>
+					<font size="24" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Resort Management]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="198" y="13" width="141" height="26" forecolor="#FF0000">
+					<printWhenExpression><![CDATA[$F{completedby}.equals( null )]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font size="18" isBold="true"/>
+				</textElement>
+				<text><![CDATA[No Data Found]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch">
+			<staticText>
+				<reportElement x="974" y="0" width="216" height="25"/>
+				<textElement>
+					<font size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Daily Auto Expenses Travel]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="20" splitType="Stretch">
+			<rectangle>
+				<reportElement x="1" y="0" width="2159" height="20" backcolor="#055799"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="1110" y="0" width="100" height="20" forecolor="#FFFFFF"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Phone No]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="567" y="0" width="100" height="20" forecolor="#FFFFFF"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Address]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="236" y="0" width="100" height="20" forecolor="#FFFFFF"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Completed By]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1326" y="0" width="100" height="20" forecolor="#FFFFFF"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Date Of Journey]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="678" y="0" width="100" height="20" forecolor="#FFFFFF"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Purpose Of Trip]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="18" y="0" width="100" height="20" forecolor="#FFFFFF"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Date]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="128" y="0" width="100" height="20" forecolor="#FFFFFF"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Emp Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="786" y="0" width="100" height="20" forecolor="#FFFFFF"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[City]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1219" y="0" width="100" height="20" forecolor="#FFFFFF"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Department]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="345" y="0" width="100" height="20" forecolor="#FFFFFF"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Location]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1760" y="0" width="100" height="20" forecolor="#FFFFFF"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Total Mileage]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1546" y="0" width="100" height="20" forecolor="#FFFFFF"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Odometer Start]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1651" y="0" width="100" height="20" forecolor="#FFFFFF"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Odometer End]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1436" y="0" width="100" height="20" forecolor="#FFFFFF"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Travel From]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1985" y="0" width="100" height="20" forecolor="#FFFFFF"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Amount Due]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1002" y="0" width="100" height="20" forecolor="#FFFFFF"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[State]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1871" y="0" width="100" height="20" forecolor="#FFFFFF"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Rate]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="457" y="0" width="100" height="20" forecolor="#FFFFFF"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Audited By]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="895" y="0" width="100" height="20" forecolor="#FFFFFF"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Approved By]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="30" splitType="Stretch">
+			<rectangle>
+				<reportElement x="2" y="7" width="2158" height="20" backcolor="#BBDEF9">
+					<printWhenExpression><![CDATA[new Boolean( $V{PAGE_COUNT}.intValue() % 2 ==0 )]]></printWhenExpression>
+				</reportElement>
+			</rectangle>
+			<textField>
+				<reportElement x="17" y="7" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{date1}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="127" y="7" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{empname}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="239" y="7" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{completedby}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="344" y="7" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{location}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="458" y="7" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{auditedby}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="566" y="7" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{address}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="677" y="7" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{purposeoftrip}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="785" y="7" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{city}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="894" y="7" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{approvedby}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="1109" y="7" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{phoneno}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="1001" y="7" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{state}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="1218" y="7" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{department}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="1325" y="7" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{date2}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="1435" y="7" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{travelfrom}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="1545" y="7" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{odometerstart}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="1650" y="7" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{odometerend}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="1759" y="7" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{totalmileage}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="1870" y="7" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{rate}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="1984" y="6" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{amountdue}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="29" width="2160" height="1"/>
+			</line>
+			<line>
+				<reportElement x="2160" y="-25" width="1" height="51"/>
+			</line>
+			<line>
+				<reportElement x="0" y="-20" width="1" height="49"/>
+			</line>
+			<line>
+				<reportElement x="121" y="-20" width="1" height="47"/>
+			</line>
+			<line>
+				<reportElement x="230" y="-20" width="1" height="47"/>
+			</line>
+			<line>
+				<reportElement x="341" y="-20" width="1" height="47"/>
+			</line>
+			<line>
+				<reportElement x="449" y="-20" width="1" height="47"/>
+			</line>
+			<line>
+				<reportElement x="561" y="-20" width="1" height="47"/>
+			</line>
+			<line>
+				<reportElement x="669" y="-20" width="1" height="49"/>
+			</line>
+			<line>
+				<reportElement x="781" y="-20" width="1" height="46"/>
+			</line>
+			<line>
+				<reportElement x="889" y="-20" width="1" height="50"/>
+			</line>
+			<line>
+				<reportElement x="997" y="-20" width="1" height="49"/>
+			</line>
+			<line>
+				<reportElement x="1105" y="-20" width="1" height="47"/>
+			</line>
+			<line>
+				<reportElement x="1213" y="-20" width="1" height="47"/>
+			</line>
+			<line>
+				<reportElement x="1321" y="-20" width="1" height="47"/>
+			</line>
+			<line>
+				<reportElement x="1429" y="-20" width="1" height="47"/>
+			</line>
+			<line>
+				<reportElement x="1539" y="-20" width="1" height="50"/>
+			</line>
+			<line>
+				<reportElement x="1647" y="-20" width="1" height="49"/>
+			</line>
+			<line>
+				<reportElement x="1754" y="-20" width="1" height="47"/>
+			</line>
+			<line>
+				<reportElement x="1863" y="-20" width="1" height="47"/>
+			</line>
+			<line>
+				<reportElement x="1977" y="-20" width="1" height="47"/>
+			</line>
+			<line>
+				<reportElement x="1" y="3" width="2160" height="1"/>
+			</line>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

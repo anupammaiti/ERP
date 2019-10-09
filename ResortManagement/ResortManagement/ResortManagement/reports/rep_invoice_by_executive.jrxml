@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="rep_invoice_by_executive" language="groovy" pageWidth="792" pageHeight="612" orientation="Landscape" columnWidth="752" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="logo" class="java.lang.Byte"/>
+	<queryString>
+		<![CDATA[select * from tl_sl_invoice ]]>
+	</queryString>
+	<field name="sno" class="java.lang.Long"/>
+	<field name="custname" class="java.lang.String"/>
+	<field name="invoiceid" class="java.lang.String"/>
+	<field name="invoiceno" class="java.lang.String"/>
+	<field name="today" class="java.lang.String"/>
+	<field name="referenceno" class="java.lang.String"/>
+	<field name="srlno" class="java.lang.String"/>
+	<field name="name" class="java.lang.String"/>
+	<field name="unitprice" class="java.lang.String"/>
+	<field name="price" class="java.lang.String"/>
+	<field name="servicetax" class="java.lang.String"/>
+	<field name="vat" class="java.lang.String"/>
+	<field name="totalamount" class="java.lang.String"/>
+	<field name="department" class="java.lang.String"/>
+	<field name="inputdate" class="java.lang.String"/>
+	<field name="netamount" class="java.lang.String"/>
+	<field name="quantity" class="java.lang.String"/>
+	<field name="gendate" class="java.lang.String"/>
+	<field name="manager" class="java.lang.String"/>
+	<field name="deltby" class="java.lang.String"/>
+	<field name="dept1" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<image>
+				<reportElement x="13" y="0" width="146" height="79"/>
+				<imageExpression class="java.awt.Image"><![CDATA[$p{logo}]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="125" splitType="Stretch"/>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

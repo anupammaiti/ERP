@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="rep_fn_vocher_details" language="groovy" pageWidth="1100" pageHeight="612" orientation="Landscape" columnWidth="1060" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="486"/>
+	<property name="ireport.y" value="2"/>
+	<queryString language="SQL">
+		<![CDATA[select * from tl_fn_vocherdetails]]>
+	</queryString>
+	<field name="sno" class="java.lang.Long"/>
+	<field name="name" class="java.lang.String"/>
+	<field name="typeofvocher" class="java.lang.String"/>
+	<field name="abbr" class="java.lang.String"/>
+	<field name="vochernumbering" class="java.lang.String"/>
+	<field name="advconfiguration" class="java.lang.String"/>
+	<field name="useeffectivedates" class="java.lang.String"/>
+	<field name="usecommonnarration" class="java.lang.String"/>
+	<field name="narrationsforeachentry" class="java.lang.String"/>
+	<field name="nameofclass" class="java.lang.String"/>
+	<field name="getdate" class="java.lang.String"/>
+	<field name="department" class="java.lang.String"/>
+	<field name="manager" class="java.lang.String"/>
+	<field name="deltby" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="419" y="24" width="225" height="33"/>
+				<textElement>
+					<font size="24"/>
+				</textElement>
+				<text><![CDATA[Resort Management]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch">
+			<staticText>
+				<reportElement x="467" y="7" width="127" height="24"/>
+				<textElement>
+					<font size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Voucher Details]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="40" splitType="Stretch">
+			<staticText>
+				<reportElement x="17" y="14" width="100" height="20"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="128" y="14" width="100" height="20"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Type Of Vocher]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="240" y="14" width="100" height="20"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Abbrivation]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="353" y="14" width="100" height="20"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Vocher Numbering]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="467" y="14" width="100" height="20"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Adv Configuration]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="582" y="14" width="100" height="20"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Use Effective Dates]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="700" y="14" width="100" height="20"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Use Commonnarration]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="817" y="14" width="126" height="20"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Narrations For Each Entry]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="960" y="14" width="100" height="20"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[nameofclass]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="7" width="1060" height="1"/>
+			</line>
+			<line>
+				<reportElement x="0" y="39" width="1060" height="1"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="38" splitType="Stretch">
+			<textField>
+				<reportElement x="17" y="8" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="128" y="11" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{typeofvocher}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="240" y="11" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{abbr}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="353" y="8" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{vochernumbering}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="467" y="8" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{advconfiguration}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="582" y="8" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{useeffectivedates}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="700" y="8" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{usecommonnarration}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="817" y="8" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{narrationsforeachentry}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="960" y="8" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{nameofclass}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="37" width="1060" height="1"/>
+			</line>
+			<line>
+				<reportElement x="0" y="-32" width="1" height="70"/>
+			</line>
+			<line>
+				<reportElement x="122" y="-32" width="1" height="69"/>
+			</line>
+			<line>
+				<reportElement x="233" y="-32" width="1" height="69"/>
+			</line>
+			<line>
+				<reportElement x="346" y="-32" width="1" height="69"/>
+			</line>
+			<line>
+				<reportElement x="461" y="-32" width="1" height="70"/>
+			</line>
+			<line>
+				<reportElement x="574" y="-32" width="1" height="69"/>
+			</line>
+			<line>
+				<reportElement x="682" y="8" width="1" height="29"/>
+			</line>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

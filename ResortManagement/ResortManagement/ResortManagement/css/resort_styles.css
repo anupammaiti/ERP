@@ -1,0 +1,442 @@
+@CHARSET "ISO-8859-1";
+
+@media all{
+	
+
+@font-face{
+	font-family:TitilliumText;
+	src:url(fonts/TitilliumText400wt.otf);
+}
+body{
+	background-color:#f7f7f6;
+	}
+	
+.inputtext{
+		font-family:Arial, Helvetica, sans-serif; 
+		color:#000000;
+		font-weight:bold;
+		font-size:12px;
+}#logo{
+	width:150px;
+	height:60px;
+	float:left;
+	margin:auto;
+	}	
+#proj_title{
+		font-family:Arial Rounded MT Bold;
+		font-size:32px;
+		color:#50a3a2;
+		width:auto;
+		float:left;
+		margin:auto 5em;
+		height:0px;
+		line-height:40px;
+		font-weight: bold;
+	}
+	
+#login_proj_title{
+		font-family:Arial Rounded MT Bold;
+		font-size:32px;
+		color:#3d74c1;
+		width:auto;
+		float:left;
+		margin:auto 5em;
+		height:0px;
+		line-height:40px;
+		font-weight: bold;
+	}	
+.main_screen{
+	width:80%;
+	height:auto;
+	background-color:#e6f6f9;
+	margin: 8px auto 7em;	
+	border-radius:7px;
+	box-shadow:10px 10px 10px #999;
+	
+	}
+	
+.login_main_screen{
+	width:80%;
+	height:auto;
+	background-color:#f8f9f5;
+	margin: 8px auto 7em;	
+	
+	
+	}	
+.content{
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:13px;
+	color:#000;
+	background-color:#fff;
+	border-radius:7px;
+	height:auto;
+	font-weight: bold;
+	
+	}
+	
+.content1{
+	font-family:Arial, Helvetica, sans-serif; 
+	font-size:13px;
+	color:#4182b4;
+	background-color:#fff;
+	border-radius:7px;
+	height:auto;
+	width:100%; 
+	}
+	
+ 
+.error{
+	font-family:"Calibri",Arial, Helvetica, sans-serif; 
+	font-size:12px;
+	color:red;
+	
+	}
+.content1 table tr:odd td{
+	background-color:#50a3a2;
+	color:#fff;
+	}
+.menu{
+	height:50px;
+	width:100%;
+	background-color:#50a3a2;
+	border-radius:5px;
+	}	
+.project_title{
+	
+	margin:0px auto;
+	widht:100%;
+	height:60px;
+	line-height:90px;
+	background-color:#fff;
+}
+
+/*Image Rotator Starts*/
+/* rotator in-page placement */
+    div.rotator {
+	position:relative;
+	height:345px;
+	float:left;
+	margin:auto;
+	display:none;
+	width:100%;
+	
+}
+/* rotator css */
+	div.rotator ul li {
+	float:left;
+	position:absolute;
+	list-style:none;
+}
+/* rotator image style */	
+	div.rotator ul li img {
+	border:#fff solid 4px;
+	border-radius:5px;
+	box-shadow:0 10px 2px #ccc;
+}
+    div.rotator ul li.show {
+	z-index:500
+}
+/*Image Rotator Ends*/
+
+
+.login{
+	float:right;
+	margin:auto 0px;
+	font-family:Arial, Helvetica, sans-serif; 
+	font-size: 10px;
+	color:#4182b4;
+	width:30%;
+	
+}
+
+#form_title{
+	float:left;
+	margin:auto;
+	font-family:Arial, Helvetica, sans-serif; 
+	font-size: 16px;
+	font-weight:bold;
+	color:#fff;
+	backgroud-color:#50a3a2;
+	}
+	
+.images_login{
+	width:100%;
+	height:350px;
+	float:left;
+	margin:auto;
+	padding:0px;
+	}
+.content h2 h3{
+	font-family:"Calibri",Arial, Helvetica, sans-serif; 
+	color:#50a3a2;
+	font-weight: bold; 
+	}
+.footer{
+		font-family:"Calibri",Arial, Helvetica, sans-serif; 
+		color:#ffffff;
+		font-size: 12px;
+		
+		float:right;
+		margin:auto;
+	}
+.footer a{
+		font-family:"Calibri",Arial, Helvetica, sans-serif; 
+		color:#2666c0;
+		font-size: 12px;
+		text-decoration: none;
+	}
+td a{
+	font-family:"Calibri",Arial, Helvetica, sans-serif; 
+	text-decoration: none;
+	font-size: 14px;
+	color:blue;
+	}
+	
+.column_header{
+	font-family:Arial, Helvetica, sans-serif; 
+	font-size:12px;
+	color:#FFF;
+	background-color: #50a3a2; 
+	}
+	
+.login_details{
+	position:absolute;
+	font-family:Arial, Helvetica, sans-serif; 
+	font-size:14px;
+	color:#FFFFFF;
+	background-color:#1b4f7e; 
+	width:300px;
+	height:150px;
+	border-radius:7px;
+	font-weight: bold;
+	box-shadow:10px 10px 2px #ccc;
+	
+	}
+#login_button{
+	width:100px;
+	height:30px;
+	background-color:#badc4a;
+	color:#000;
+	padding:3px;
+	font-size:14px;
+}	
+.login_button_hover{
+	width:200px;
+	height:35px;
+	background-color:#badc4a;
+	color:#fff;
+	padding:5px;
+	font-size:14px;
+}	
+	hr{
+	border:1px solid #1c598a;
+	}
+.coordinates{
+	font-family:"Calibri",Arial, Helvetica, sans-serif; 
+	color:#59a8e5;
+	font-size: 14px;
+}
+.marking{
+	background-color: red;
+	background-image:"images/redspot.jpg";
+	background-repeat: none;
+}
+
+#successmsg{
+	color:#fc905b;
+	font-size:14px;
+	font-family:"Calibri",Arial, Helvetica, sans-serif; 
+}
+#welcome_user{
+	color:#fff;
+	font-size:14px;
+	font-family:"Calibri",Arial, Helvetica, sans-serif; 
+	float:right;
+	margin:-13px auto;
+	}
+
+
+.box_content1{
+	width:500px;
+	height:600px;
+	position:fixed;
+	top:5em;
+	right:10em;
+	border:#000000 1px solid;
+	
+	color:#000000;
+	background-color: #000;
+	filter:alpha(opacity=70);
+	-moz-opacity:0.7;
+	-khtml-opacity: 0.7;
+	opacity: 0.7;
+	z-index: 100;
+	display: none;
+}
+#field_background{
+	background-color: #0cc63c;
+}
+	
+.content_title{
+	font-family:Arial, Helvetica, sans-serif; 
+	font-size:14px;
+	color:#4876c5;
+}
+.form_table{
+	background-color:#50a3a2;
+	font-family:Arial, Helvetica, sans-serif; 
+	color:#fff;
+	border-radius:5px;
+}
+#button1{
+	border-radius:5px;
+	height:20px;
+	background-color:#5b8fd8;
+	
+	}
+#loginby{
+	float:right;
+	margin:-70px auto;
+	color:#3d74c1;
+	font-family:Arial;
+	font-size:16px;
+	
+}
+.timeanddate{
+	float:right;
+	margin: -2em auto;
+	color:#3d74c1;
+	font-family:Arial;
+	font-size:16px;
+	text-align: right;
+}
+fieldset{
+	padding-top:10px;
+	border-radius:8px;
+    height:auto;
+}
+legend{
+	font-family:"Calibri",Arial, Helvetica, sans-serif; 
+	font-size:13px;
+	font-style: italic;	
+	
+}
+input{
+	border-radius:4px;
+	-moz-box-shadow:    inset 0 0 10px #ccc;
+   -webkit-box-shadow: inset 0 0 10px #ccc;
+   box-shadow:         inset 0 0 10px #ccc;
+}
+.page_nation_table{
+	
+	background-color:#bdd7fb;
+}
+
+.villa_details{
+	position:relative;
+	float:right;
+	margin:5px 10px 0 0;
+	font-size:20px;
+	color:#000;
+	width:350px;
+	height:400px;
+	background-color:#bdd7fb;
+	border-radius:6px;
+}
+.villa_details h3{
+	padding:0;
+	font-family:"Calibri",Arial, Helvetica, sans-serif; 
+	text-align: center;
+}
+
+#details{
+	font-family:"Calibri",Arial, Helvetica, sans-serif; 
+	font-size:14px;
+	color:#000;
+}
+#main_layout{
+	border:#ccc solid 2px;
+	border-radius:7px;
+	box-shadow:10px 0 2px #ccc;
+	
+}
+#dialogs{
+	color:#fff;
+}
+#dialogs p{
+	color:#fff;
+}
+
+#dialogs h3{
+	font-family:"Calibri",Arial, Helvetica, sans-serif; 
+	font-size:14px;
+	color:#fff;
+}
+#dialogs a{
+	text-decoration: none;
+	font-family:"Calibri",Arial, Helvetica, sans-serif; 
+	font-size:12px;
+	color:red;
+}
+
+.row_color_change{
+background-color:#94d1f0;
+color:#fff;
+}
+
+.fieldcolor{
+	background-color:lime;
+	
+}
+
+#w {
+  display: block;
+  width: 860px;
+  margin: 0 auto;
+  background: #fff;
+  padding: 5px 11px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  -webkit-box-shadow: 1px 3px 2px rgba(0,0,0,0.3);
+  -moz-box-shadow: 1px 3px 2px rgba(0,0,0,0.3);
+  box-shadow: 1px 2px 3px rgba(0,0,0,0.3);
+}
+.access{
+	float:left;
+}
+.notaccess{
+	float:left;
+	padding-left:10px;
+}
+
+th{
+	
+	font-size:14px;
+	
+}
+
+.border_up_down{
+	border-top:#000 dotted 2px;
+	
+	}
+	
+.villatotal_details{
+	float:left;
+	height:500px;
+	width:560px;
+	background-color: #fff;
+}
+.left_content{
+	float:left;
+	margin:0 0 0 0;
+	heigth:500px;
+	width:500px;
+	padding:0 0 0 0;
+}
+
+#bottom_border{
+	border:1px solid #1c598a;
+	
+}
+}

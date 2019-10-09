@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="rep_ledger_details_by_admin" language="groovy" pageWidth="1020" pageHeight="595" orientation="Landscape" columnWidth="980" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="326"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="logo" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[select * from tl_fn_ledgerdetails;]]>
+	</queryString>
+	<field name="sno" class="java.lang.Long"/>
+	<field name="ledgername" class="java.lang.String"/>
+	<field name="alias" class="java.lang.String"/>
+	<field name="under" class="java.lang.String"/>
+	<field name="inventoryvalues" class="java.lang.String"/>
+	<field name="name" class="java.lang.String"/>
+	<field name="address" class="java.lang.String"/>
+	<field name="state" class="java.lang.String"/>
+	<field name="pincode" class="java.lang.String"/>
+	<field name="panno" class="java.lang.String"/>
+	<field name="salestax" class="java.lang.String"/>
+	<field name="openingbalance" class="java.lang.String"/>
+	<field name="type" class="java.lang.String"/>
+	<field name="getdate" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="308" y="18" width="228" height="50"/>
+				<textElement>
+					<font size="24"/>
+				</textElement>
+				<text><![CDATA[Resort Management]]></text>
+			</staticText>
+			<image>
+				<reportElement x="27" y="4" width="99" height="68"/>
+				<imageExpression class="java.lang.String"><![CDATA[$p{logo}]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch">
+			<staticText>
+				<reportElement x="355" y="9" width="100" height="20"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Ledger Details]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch">
+			<staticText>
+				<reportElement x="12" y="0" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[Ledger Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="123" y="0" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[Alias]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="239" y="0" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[Under]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="355" y="0" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[Inventory Values]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="473" y="0" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="585" y="0" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[Pan No]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="698" y="0" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[Sales Tax]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="810" y="0" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[Opening Balance]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="125" splitType="Stretch">
+			<textField>
+				<reportElement x="12" y="14" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{ledgername}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="122" y="14" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{alias}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="239" y="14" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{under}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="355" y="14" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{inventoryvalues}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="473" y="14" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="585" y="14" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{panno}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="698" y="14" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{salestax}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="810" y="14" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{openingbalance}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

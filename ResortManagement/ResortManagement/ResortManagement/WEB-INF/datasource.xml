@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.1.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+	
+	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName" value="${db.driver}"></property>
+		<property name="url" value="${db.url}"></property>
+		<property name="username" value="${db.user}"></property>
+		<property name="password" value="${db.password}"></property>
+	</bean>
+<!-- JNDI DataSource for J2EE environments -->
+
+<!-- Hibernate SessionFactory -->
+
+	<bean id="sessionFactory" class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">
+		<property name="dataSource"><ref local="dataSource"/></property>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">${hibernate.dialect}</prop>
+				<prop key="hibernate.hbm2ddl.auto">${hibernate.hbm2ddl.auto}</prop>
+				<prop key="hibernate.show_sql">${hibernate.show_sql}</prop>
+				<prop key="hibernate.c3p0.min_size">${hibernate.c3p0.min_size}</prop>
+  				<prop key="hibernate.c3p0.max_size">${hibernate.c3p0.max_size}</prop>
+  				<prop key="hibernate.c3p0.timeout">${hibernate.c3p0.timeout}</prop>
+  				<prop key="hibernate.c3p0.max_statements">${hibernate.c3p0.max_statements}</prop>
+  				<prop key="hibernate.c3p0.idle_test_period">${hibernate.c3p0.idle_test_period}</prop>
+			</props>
+		</property>
+
+		<property name="annotatedClasses">
+			<list>
+				<value>com.svs.ensign.resort.bean.EmployeeBean</value>
+				<value>com.svs.ensign.resort.bean.LoginBean</value>	
+				<value>com.svs.ensign.resort.cms.bean.GuestUserBean</value>	
+				<value>com.svs.ensign.resort.cms.bean.CustomerBean</value>	
+				<value>com.svs.ensign.resort.bean.DesignationBean</value>	
+				<value>com.svs.ensign.resort.bean.VillaTypeBean</value> 
+				<value>com.svs.ensign.resort.bean.DepartmentBean</value>
+				<value>com.svs.ensign.resort.bean.ReportingToBean</value>
+				<value>com.svs.ensign.resort.cms.bean.VehicleDetailsBean</value>	
+				<value>com.svs.ensign.resort.bean.VehicleAllotmentBean</value>
+				<value>com.svs.ensign.resort.bean.ImageCoordinatesBean</value>	
+				<value>com.svs.ensign.resort.bean.VehicleInsurenceBean</value>
+				<value>com.svs.ensign.resort.bean.VehicleMaintanenceBean</value>
+				<value>com.svs.ensign.resort.bean.SalesCustomerBean</value>	
+				<value>com.svs.ensign.resort.bean.InvoiceFormBean</value>
+				<value>com.svs.ensign.resort.bean.PurchaseOrderBean</value>
+				<value>com.svs.ensign.resort.bean.SalesOrderBean</value>
+				<value>com.svs.ensign.resort.bean.FinanceCustomerBean</value>
+				<value>com.svs.ensign.resort.bean.ApprisialFormBean</value>
+				<value>com.svs.ensign.resort.bean.OrderFormBean</value>
+				<value>com.svs.ensign.resort.bean.TelephoneSalesOderBean</value>
+				<value>com.svs.ensign.resort.bean.SalesCallLog</value>
+				<value>com.svs.ensign.resort.bean.PettyCashBean</value>
+				<value>com.svs.ensign.resort.bean.AutoExpencesesTravelBean</value>
+				<value>com.svs.ensign.resort.bean.LedgerDetailsBean</value>
+				<value>com.svs.ensign.resort.bean.VocherDetailsBean</value>
+				<value>com.svs.ensign.resort.bean.VocherTypeBean</value>
+				<value>com.svs.ensign.resort.bean.GroupDetailsBean</value>
+				<value>com.svs.ensign.resort.bean.SalesManagerTastBean</value>
+				<value>com.svs.ensign.resort.bean.TeleAgentPercentageDetails</value>
+				<value>com.svs.ensign.resort.bean.StockGroupBean</value>
+				<value>com.svs.ensign.resort.bean.StockItemBean</value>
+				<value>com.svs.ensign.resort.bean.MeasuresBean</value>
+				<value>com.svs.ensign.resort.bean.Groups</value>
+				<value>com.svs.ensign.resort.bean.VocherPaymentBean</value>
+				<value>com.svs.ensign.resort.bean.PhoneBillExpencesesBean</value>
+				<value>com.svs.ensign.resort.bean.FoodExcepensesBean</value>
+				<value>com.svs.ensign.resort.bean.HotelExpensesBean</value>
+				<value>com.svs.ensign.resort.bean.EntertainmentExpencesesBean</value>
+				<value>com.svs.ensign.resort.bean.MisleniousExpencesesBean</value>
+				<value>com.svs.ensign.resort.bean.GroupMappingBean</value>
+				<value>com.svs.ensign.resort.bean.VoucherRecieptBean</value>
+				<value>com.svs.ensign.resort.bean.CurrentAssertsBean</value>
+				<value>com.svs.ensign.resort.bean.VocherJournalBean</value>
+				<value>com.svs.ensign.resort.bean.VocherContraBean</value>
+				<value>com.svs.ensign.resort.bean.StockGroupBean</value>		
+				<value>com.svs.ensign.resort.bean.StockItemBean</value>
+				<value>com.svs.ensign.resort.bean.VocherPurchaseBean</value>
+				<value>com.svs.ensign.resort.bean.ClosingStockBean</value>	
+				<value>com.svs.ensign.resort.bean.InternetExpBean</value>
+				<value>com.svs.ensign.resort.bean.AdvertisementExpenses</value>
+				<value>com.svs.ensign.resort.bean.OfficeExp</value>
+				<value>com.svs.ensign.resort.bean.RepairMaintenenceBean</value>		
+				<value>com.svs.ensign.resort.bean.PostageExpBean</value>
+				<value>com.svs.ensign.resort.bean.SalaryExpBean</value>
+				<value>com.svs.ensign.resort.bean.SundryStaffWelfareBean</value>
+				<value>com.svs.ensign.resort.bean.VocherPurchaseBean</value>
+				<value>com.svs.ensign.resort.bean.VocherSalesBean</value>
+				<value>com.svs.ensign.resort.bean.VocherPurchaseReturnBean</value>
+				<value>com.svs.ensign.resort.bean.VocherSalesReturnBean</value>
+				<value>com.svs.ensign.resort.bean.AgentComissionBean</value>
+				<value>com.svs.ensign.resort.bean.ClubMemberShipBean</value>
+				<value>com.svs.ensign.resort.bean.AggingaccountpaybleBean</value>
+				<value>com.svs.ensign.resort.bean.AggingaccountreceivableBean</value>
+				<value>com.svs.ensign.resort.bean.LeaveFormBean</value>
+                                <value>com.svs.ensign.resort.bean.AppRegistarionBean</value>
+                                <value>com.svs.ensign.resort.bean.ClientRegistrationBean</value>
+                                <value>com.svs.ensign.resort.bean.LeaveopenBean</value>
+                                <value>com.svs.ensign.resort.bean.CompanyPaySlip</value>
+			</list>
+		</property>
+	</bean>
+
+
+<!-- Transaction manager for a single Hibernate SessionFactory (alternative to JTA) -->
+	<bean id="transactionManager" class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+		<property name="sessionFactory"><ref local="sessionFactory"/></property>
+	</bean>
+	
+</beans>

@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="rep_sl_ex_saleslog" language="groovy" pageWidth="995" pageHeight="842" columnWidth="955" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="SQL">
+		<![CDATA[select * from tl_sl_salescalllog;]]>
+	</queryString>
+	<field name="sno" class="java.lang.Long"/>
+	<field name="number" class="java.lang.String"/>
+	<field name="today" class="java.lang.String"/>
+	<field name="companyname" class="java.lang.String"/>
+	<field name="contactno" class="java.lang.String"/>
+	<field name="phone" class="java.lang.String"/>
+	<field name="calltype" class="java.lang.String"/>
+	<field name="comments" class="java.lang.String"/>
+	<field name="purposeofcall" class="java.lang.String"/>
+	<field name="opencovesation" class="java.lang.String"/>
+	<field name="salesstory" class="java.lang.String"/>
+	<field name="benfitsofcustomer" class="java.lang.String"/>
+	<field name="objection" class="java.lang.String"/>
+	<field name="closingconversation" class="java.lang.String"/>
+	<field name="whentoflow" class="java.lang.String"/>
+	<field name="gendate" class="java.lang.String"/>
+	<field name="department" class="java.lang.String"/>
+	<field name="manager" class="java.lang.String"/>
+	<field name="deltby" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="375" y="19" width="233" height="32"/>
+				<textElement>
+					<font size="22" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Resort Management]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch">
+			<staticText>
+				<reportElement x="405" y="0" width="161" height="35"/>
+				<textElement>
+					<font size="18" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Sales Log List]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="192" splitType="Stretch">
+			<textField>
+				<reportElement x="196" y="0" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{companyname}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="31" y="0" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[Company Name]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="466" y="0" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{contactno}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="332" y="0" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[Contact No]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="738" y="0" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{phone}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="608" y="0" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[Phone]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="196" y="44" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{calltype}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="31" y="44" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[Call Type]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="466" y="44" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{purposeofcall}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="332" y="44" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[Purpose Of Call]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="750" y="44" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{comments}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="608" y="44" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[Comments]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="80" width="955" height="1"/>
+			</line>
+			<textField>
+				<reportElement x="213" y="89" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{opencovesation}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="31" y="89" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[Open Covesation]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="466" y="89" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{salesstory}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="332" y="89" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[Sales Story]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="750" y="89" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{benfitsofcustomer}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="608" y="89" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[Benfits Of Customer]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="213" y="128" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{objection}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="31" y="128" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[Objection]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="466" y="130" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{closingconversation}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="332" y="130" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[Closing Conversation]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="750" y="130" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{whentoflow}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="608" y="128" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[Whent Of Low]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="162" width="955" height="1"/>
+			</line>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

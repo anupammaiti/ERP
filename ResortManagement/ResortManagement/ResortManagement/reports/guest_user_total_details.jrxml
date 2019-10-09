@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="guest_user_total_details" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="28"/>
+	<parameter name="sno" class="java.lang.Long">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="imagePath" class="java.lang.Object"/>
+	<queryString>
+		<![CDATA[select * from tl_guest_user where guestid=$P{sno};]]>
+	</queryString>
+	<field name="guestid" class="java.lang.Long"/>
+	<field name="guest_name" class="java.lang.String"/>
+	<field name="guest_last_name" class="java.lang.String"/>
+	<field name="mobileno" class="java.lang.String"/>
+	<field name="email" class="java.lang.String"/>
+	<field name="status" class="java.lang.String"/>
+	<field name="telecallerid" class="java.lang.String"/>
+	<field name="reqforcall" class="java.lang.String"/>
+	<field name="reqforquote" class="java.lang.String"/>
+	<field name="reqforvisit" class="java.lang.String"/>
+	<field name="guest_id" class="java.lang.String"/>
+	<field name="villa_type" class="java.lang.String"/>
+	<field name="facing_villa" class="java.lang.String"/>
+	<field name="gendate" class="java.lang.String"/>
+	<field name="department" class="java.lang.String"/>
+	<field name="designation" class="java.lang.String"/>
+	<field name="refered1" class="java.lang.String"/>
+	<field name="refered2" class="java.lang.String"/>
+	<field name="requestforcall2" class="java.lang.String"/>
+	<field name="requestforcall3" class="java.lang.String"/>
+	<field name="agent_name" class="java.lang.String"/>
+	<field name="driver_name" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="90" splitType="Stretch">
+			<staticText>
+				<reportElement x="173" y="14" width="187" height="28" forecolor="#096FBE"/>
+				<textElement>
+					<font size="20"/>
+				</textElement>
+				<text><![CDATA[Resort Management]]></text>
+			</staticText>
+			<image>
+				<reportElement x="3" y="5" width="130" height="70"/>
+				<imageExpression class="java.lang.String"><![CDATA[$P{imagePath}]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="393" y="17" width="125" height="25" forecolor="#FF0000">
+					<printWhenExpression><![CDATA[$F{guest_name}.equals( null )]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[No Data Found]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch">
+			<staticText>
+				<reportElement x="202" y="5" width="103" height="30" forecolor="#096FBE"/>
+				<textElement>
+					<font size="16"/>
+				</textElement>
+				<text><![CDATA[Guest Details]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="41" splitType="Stretch">
+			<textField>
+				<reportElement x="455" y="21" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{guest_name}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="305" y="16" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[Name]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="11" width="555" height="1"/>
+			</line>
+			<textField>
+				<reportElement x="161" y="16" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{guest_last_name}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="10" y="16" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[SurName]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="261" splitType="Stretch">
+			<textField>
+				<reportElement x="133" y="22" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{mobileno}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="10" y="22" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[Mobile No]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="405" y="22" width="150" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{email}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="305" y="22" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[Email]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="133" y="65" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{reqforcall}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="10" y="65" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[Request For Call]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="455" y="65" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{reqforvisit}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="305" y="65" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[Request For Visit]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="133" y="105" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{villa_type}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="10" y="105" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[Type Of Villa]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="455" y="105" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{facing_villa}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="305" y="105" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[Facing Villa]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="455" y="152" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{reqforquote}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="305" y="152" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[Customer Price]]></text>
+			</staticText>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

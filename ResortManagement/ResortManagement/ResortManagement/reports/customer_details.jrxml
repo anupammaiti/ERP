@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="customer_details" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="sno" class="java.lang.Long">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="imagePath" class="java.lang.Object"/>
+	<queryString>
+		<![CDATA[select * from tl_customer where sno=$P{sno}]]>
+	</queryString>
+	<field name="sno" class="java.lang.Long"/>
+	<field name="customer_first_name" class="java.lang.String"/>
+	<field name="customer_last_name" class="java.lang.String"/>
+	<field name="gender" class="java.lang.String"/>
+	<field name="mobileno" class="java.lang.String"/>
+	<field name="email" class="java.lang.String"/>
+	<field name="address" class="java.lang.String"/>
+	<field name="typeofvilla" class="java.lang.String"/>
+	<field name="pricelimit" class="java.lang.String"/>
+	<field name="facingofvilla" class="java.lang.String"/>
+	<field name="flatinfeet" class="java.lang.String"/>
+	<field name="location" class="java.lang.String"/>
+	<field name="gendate" class="java.lang.String"/>
+	<field name="deltby" class="java.lang.String"/>
+	<field name="status" class="java.lang.String"/>
+	<field name="bankname" class="java.lang.String"/>
+	<field name="bankaccount" class="java.lang.String"/>
+	<field name="workingtype" class="java.lang.String"/>
+	<field name="workingcompanyname" class="java.lang.String"/>
+	<field name="salary" class="java.lang.String"/>
+	<field name="username" class="java.lang.String"/>
+	<field name="password" class="java.lang.String"/>
+	<field name="department" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="71" splitType="Stretch">
+			<staticText>
+				<reportElement x="181" y="10" width="193" height="30" forecolor="#096FBE"/>
+				<textElement>
+					<font size="20" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Resort Management]]></text>
+			</staticText>
+			<image>
+				<reportElement x="0" y="0" width="144" height="71"/>
+				<imageExpression class="java.lang.String"><![CDATA[$P{imagePath}]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch">
+			<staticText>
+				<reportElement x="188" y="8" width="186" height="27" forecolor="#096FBE"/>
+				<textElement>
+					<font size="18" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Customer Details]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="60" splitType="Stretch">
+			<staticText>
+				<reportElement x="395" y="40" width="46" height="20" forecolor="#000000"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Name:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="455" y="40" width="100" height="20" forecolor="#AA7E00"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{customer_first_name}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="185" splitType="Stretch">
+			<textField>
+				<reportElement x="122" y="0" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{mobileno}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="0" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[Mobile No:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="318" y="0" width="228" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{email}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="279" y="0" width="39" height="20"/>
+				<textElement/>
+				<text><![CDATA[E-mail]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="85" width="100" height="20"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[Villa Type]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="122" y="42" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{address}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="42" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[Address]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="70" width="555" height="1"/>
+			</line>
+			<textField>
+				<reportElement x="122" y="120" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{typeofvilla}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="120" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[Type Of Villa:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="446" y="120" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{facingofvilla}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="295" y="120" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[Flat Fasing To:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="122" y="165" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{pricelimit}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="165" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[Price Chooice]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="447" y="163" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{location}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="295" y="165" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[Location:]]></text>
+			</staticText>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

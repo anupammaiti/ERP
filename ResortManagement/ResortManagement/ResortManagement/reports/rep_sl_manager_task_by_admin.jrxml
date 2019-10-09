@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="rep_sl_manager_task_by_admin" language="groovy" pageWidth="1000" pageHeight="612" orientation="Landscape" whenNoDataType="AllSectionsNoDetail" columnWidth="960" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="34"/>
+	<parameter name="currentdate" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT * FROM tl_sl_manager_task where dateofmeeting=$P{currentdate};]]>
+	</queryString>
+	<field name="sno" class="java.lang.Long"/>
+	<field name="clientname" class="java.lang.String"/>
+	<field name="mobileno" class="java.lang.String"/>
+	<field name="dateofmeeting" class="java.lang.String"/>
+	<field name="meetingtopic" class="java.lang.String"/>
+	<field name="issues" class="java.lang.String"/>
+	<field name="remarks" class="java.lang.String"/>
+	<field name="date1" class="java.lang.String"/>
+	<field name="time1" class="java.lang.String"/>
+	<field name="deltby" class="java.lang.String"/>
+	<field name="companyname" class="java.lang.String"/>
+	<field name="position" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="362" y="15" width="241" height="39" forecolor="#4D84BC"/>
+				<textElement>
+					<font size="24" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Resort Management]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="37" y="15" width="131" height="28" forecolor="#FF0000">
+					<printWhenExpression><![CDATA[$F{mobileno}.equals( null )]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font size="18"/>
+				</textElement>
+				<text><![CDATA[No Data Found]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch">
+			<staticText>
+				<reportElement x="428" y="4" width="109" height="24" forecolor="#4D84BC"/>
+				<textElement>
+					<font size="18"/>
+				</textElement>
+				<text><![CDATA[Daily Task]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="43" splitType="Stretch">
+			<staticText>
+				<reportElement x="30" y="23" width="100" height="20" forecolor="#4D84BC"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Client Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="146" y="23" width="100" height="20" forecolor="#4D84BC"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Mobile No]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="262" y="23" width="100" height="20" forecolor="#4D84BC"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Date Of Meeting]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="385" y="23" width="100" height="20" forecolor="#4D84BC"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Meeting Topic]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="503" y="23" width="100" height="20" forecolor="#4D84BC"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Issues]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="627" y="23" width="100" height="20" forecolor="#4D84BC"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Remarks]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="744" y="23" width="100" height="20" forecolor="#4D84BC"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Date1]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="860" y="23" width="100" height="20" forecolor="#4D84BC"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Time1]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="17" width="960" height="1"/>
+			</line>
+			<line>
+				<reportElement x="1" y="42" width="959" height="1"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="43" splitType="Stretch">
+			<textField>
+				<reportElement x="30" y="11" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{clientname}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="146" y="8" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{mobileno}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="262" y="11" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{dateofmeeting}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="385" y="11" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{meetingtopic}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="503" y="8" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{issues}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="627" y="8" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{remarks}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="744" y="8" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{date1}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="860" y="8" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{time1}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="42" width="960" height="1"/>
+			</line>
+			<line>
+				<reportElement x="0" y="-25" width="1" height="67"/>
+			</line>
+			<line>
+				<reportElement x="137" y="-25" width="1" height="67"/>
+			</line>
+			<line>
+				<reportElement x="254" y="-25" width="1" height="67"/>
+			</line>
+			<line>
+				<reportElement x="374" y="-25" width="1" height="68"/>
+			</line>
+			<line>
+				<reportElement x="492" y="-26" width="1" height="68"/>
+			</line>
+			<line>
+				<reportElement x="614" y="-26" width="1" height="68"/>
+			</line>
+			<line>
+				<reportElement x="736" y="-25" width="1" height="68"/>
+			</line>
+			<line>
+				<reportElement x="852" y="-25" width="1" height="68"/>
+			</line>
+			<line>
+				<reportElement x="960" y="-25" width="1" height="68"/>
+			</line>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch">
+			<textField>
+				<reportElement x="835" y="25" width="80" height="20"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression class="java.lang.String"><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="915" y="25" width="40" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

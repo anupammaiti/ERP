@@ -1,0 +1,66 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.1.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+		
+    <context:annotation-config/>
+    <!--  <context:property-placeholder location="classpath:db.properties"/>-->
+    <import resource="datasource.xml"/>
+    <!-- <context:property-placeholder location="classpath:messages.properties"/>  -->
+    <import resource="spring-beans.xml"/>
+    <import resource="reports-beans.xml"/>
+    <import resource="validation-beans.xml"/>
+
+
+
+ 
+
+    <!-- Configure Properties Files  -->
+    <bean id="propertyConfigurer" 
+          class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="locations">
+            <list>
+                <value>classpath:db.properties</value>
+                <value>classpath:messages.properties</value>
+                <value>classpath:error.properties</value>
+                <value>classpath:log4j.properties</value>
+                <value>classpath:message_en_US.properties</value>
+                <value>classpath:ResortQueries.properties</value>
+            </list>
+        </property>
+    </bean>
+    <!-- Configuring Properties Files -->
+
+
+    <!-- View Resolver-->
+    <bean id="viewResolver"
+          class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+
+        <property name="prefix">
+            <value>/WEB-INF/jsp/</value>
+        </property>
+        <property name="suffix">
+            <value>.jsp</value>
+        </property>
+    </bean>
+    <bean id="multipartResolver"
+          class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+
+        <!-- setting maximum upload size -->
+        <property name="maxUploadSize" value="100000" />
+
+    </bean>	
+	
+ 
+
+
+
+	
+	
+</beans>

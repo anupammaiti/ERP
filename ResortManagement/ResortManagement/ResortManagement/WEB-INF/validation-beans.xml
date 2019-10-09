@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="
+	http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+	http://www.springframework.org/schema/context
+	http://www.springframework.org/schema/context/spring-context-3.0.xsd
+	http://www.springframework.org/schema/mvc
+	http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd
+	http://www.springframework.org/schema/util 
+	http://www.springframework.org/schema/util/spring-util-3.0.xsd">
+	
+	<!-- Finance Validation Starts-->
+	
+<bean id="Validations" class="com.svs.ensign.resort.validation.C_Validations"/>
+<bean id="InvoiceValid" class="com.svs.ensign.resort.validation.C_InvoiceValid"/>
+<bean id="AutoTraveExpVali" class="com.svs.ensign.resort.validation.C_AutoTraveExpVali"/>
+<bean id="ValidationUtil" class="com.svs.ensign.resort.validation.util.C_ValidationUtil"/>
+<bean id="PhoneBillExpValid" class="com.svs.ensign.resort.validation.C_PhoneBillExpValid"/>
+<bean id="FoodExpValid" class="com.svs.ensign.resort.validation.C_FoodExpValid"></bean>
+<bean id="HotelExpValid" class="com.svs.ensign.resort.validation.C_HotelExpValid"/>
+<bean id="EntertainmentExpValid" class="com.svs.ensign.resort.validation.C_EntertainmentExpValid"/>
+<bean id="MisleniousExpValid" class="com.svs.ensign.resort.validation.C_MisleniousExpValid"/>
+<bean id="NonTradingExpValid" class="com.svs.ensign.resort.validation.C_NonTradingExpValid"/>
+<bean id="InternetExpValid" class="com.svs.ensign.resort.validation.C_InternetExpValid"/>
+<bean id="AdvertisementsValid" class="com.svs.ensign.resort.validation.C_AdvertisementsValid"/>
+<bean id="OfficeExpValid" class="com.svs.ensign.resort.validation.C_OfficeExpValid"/>
+<bean id="RepairAndMaintenanceValid" class="com.svs.ensign.resort.validation.C_RepairAndMaintenanceValid"/>
+<bean id="PostageExpValid" class="com.svs.ensign.resort.validation.C_PostageExpValid"/>
+
+<bean id="VGroupValid" class="com.svs.ensign.resort.validation.C_VGroupValid"/>
+<bean id="LedgerValidation" class="com.svs.ensign.resort.validation.C_LedgerValidation"/>
+<bean id="VoucherValidation" class="com.svs.ensign.resort.validation.C_VoucherValidation"/>
+<bean id="StockGroupValidation" class="com.svs.ensign.resort.validation.C_StockGroupValidation"/>
+<bean id="StockItemValid" class="com.svs.ensign.resort.validation.C_StockItemValid"/>
+<bean id="MesurementValidation" class="com.svs.ensign.resort.validation.C_MesurementValidation"/>
+
+	<!-- Finance Validation Ends -->	
+<bean id="GuestUserValidation" class="com.svs.ensign.resort.validation.GuestUserValidation"/>
+	</beans>

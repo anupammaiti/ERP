@@ -1,0 +1,539 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="rep_cashRecieptJournal" language="groovy" pageWidth="1495" pageHeight="842" whenNoDataType="AllSectionsNoDetail" columnWidth="1455" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="6"/>
+	<parameter name="ledgername" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="fromdate" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="todate" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="companyname" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[select * from tl_fn_cashreceiptsjournal where  login_comp=$P{companyname} and  (gendate between $P{fromdate} and $P{todate} or ledgerno=$P{ledgername})]]>
+	</queryString>
+	<field name="sno" class="java.lang.Long"/>
+	<field name="month" class="java.lang.String"/>
+	<field name="ledgerno" class="java.lang.String"/>
+	<field name="date1" class="java.lang.String"/>
+	<field name="accountcredited1" class="java.lang.String"/>
+	<field name="account1" class="java.lang.String"/>
+	<field name="sales1" class="java.lang.String"/>
+	<field name="amountreceivables1" class="java.lang.String"/>
+	<field name="cash1" class="java.lang.String"/>
+	<field name="discount1" class="java.lang.String"/>
+	<field name="other1" class="java.lang.String"/>
+	<field name="accountd1" class="java.lang.String"/>
+	<field name="accounts1" class="java.lang.String"/>
+	<field name="othera1" class="java.lang.String"/>
+	<field name="date2" class="java.lang.String"/>
+	<field name="accountcredited2" class="java.lang.String"/>
+	<field name="account2" class="java.lang.String"/>
+	<field name="sales2" class="java.lang.String"/>
+	<field name="amountreceivables2" class="java.lang.String"/>
+	<field name="cash2" class="java.lang.String"/>
+	<field name="discount2" class="java.lang.String"/>
+	<field name="other2" class="java.lang.String"/>
+	<field name="accountd2" class="java.lang.String"/>
+	<field name="accounts2" class="java.lang.String"/>
+	<field name="othera2" class="java.lang.String"/>
+	<field name="date3" class="java.lang.String"/>
+	<field name="accountcredited3" class="java.lang.String"/>
+	<field name="account3" class="java.lang.String"/>
+	<field name="sales3" class="java.lang.String"/>
+	<field name="amountreceivables3" class="java.lang.String"/>
+	<field name="cash3" class="java.lang.String"/>
+	<field name="discount3" class="java.lang.String"/>
+	<field name="other3" class="java.lang.String"/>
+	<field name="accountd3" class="java.lang.String"/>
+	<field name="accounts3" class="java.lang.String"/>
+	<field name="othera3" class="java.lang.String"/>
+	<field name="date4" class="java.lang.String"/>
+	<field name="accountcredited4" class="java.lang.String"/>
+	<field name="account4" class="java.lang.String"/>
+	<field name="sales4" class="java.lang.String"/>
+	<field name="amountreceivables4" class="java.lang.String"/>
+	<field name="cash4" class="java.lang.String"/>
+	<field name="discount4" class="java.lang.String"/>
+	<field name="other4" class="java.lang.String"/>
+	<field name="accountd4" class="java.lang.String"/>
+	<field name="accounts4" class="java.lang.String"/>
+	<field name="othera4" class="java.lang.String"/>
+	<field name="date5" class="java.lang.String"/>
+	<field name="accountcredited5" class="java.lang.String"/>
+	<field name="account5" class="java.lang.String"/>
+	<field name="sales5" class="java.lang.String"/>
+	<field name="amountreceivables5" class="java.lang.String"/>
+	<field name="cash5" class="java.lang.String"/>
+	<field name="discount5" class="java.lang.String"/>
+	<field name="other5" class="java.lang.String"/>
+	<field name="accountd5" class="java.lang.String"/>
+	<field name="accounts5" class="java.lang.String"/>
+	<field name="othera5" class="java.lang.String"/>
+	<field name="gendate" class="java.lang.String"/>
+	<field name="login_comp" class="java.lang.String"/>
+	<field name="deltby" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="81" y="16" width="123" height="26" forecolor="#FF0000">
+					<printWhenExpression><![CDATA[$F{ledgerno}.equals( null )]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[No Data Found]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="680" y="16" width="219" height="43"/>
+				<textElement>
+					<font size="24" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{companyname}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch">
+			<staticText>
+				<reportElement x="680" y="0" width="199" height="35"/>
+				<textElement>
+					<font size="18" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Cash Reciept Journal]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="20" splitType="Stretch">
+			<rectangle>
+				<reportElement x="18" y="0" width="1367" height="20" backcolor="#055799"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="21" y="0" width="100" height="20" forecolor="#FFFFFF"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Date]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="137" y="0" width="100" height="20" forecolor="#FFFFFF"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Accountcredited]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="255" y="0" width="100" height="20" forecolor="#FFFFFF"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Account]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="371" y="0" width="100" height="20" forecolor="#FFFFFF"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Sales]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="485" y="0" width="100" height="20" forecolor="#FFFFFF"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Amountreceivables]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="624" y="0" width="100" height="20" forecolor="#FFFFFF"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Cash]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="762" y="0" width="100" height="20" forecolor="#FFFFFF"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Discount]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="889" y="0" width="100" height="20" forecolor="#FFFFFF"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Other]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1020" y="0" width="100" height="20" forecolor="#FFFFFF"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Accountd]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1131" y="0" width="100" height="20" forecolor="#FFFFFF"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Accounts]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1264" y="0" width="100" height="20" forecolor="#FFFFFF"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Othera]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="198" splitType="Stretch">
+			<textField>
+				<reportElement x="21" y="16" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{date1}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="136" y="16" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{accountcredited1}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="256" y="16" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{account1}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="371" y="16" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{sales1}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="482" y="16" width="124" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{amountreceivables1}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="625" y="16" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{cash1}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="744" y="16" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{discount1}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="871" y="16" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{other1}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="1002" y="16" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{accountd1}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="1131" y="16" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{accounts1}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="1264" y="16" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{othera1}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="21" y="50" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{date2}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="136" y="50" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{accountcredited2}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="256" y="50" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{account2}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="371" y="50" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{sales2}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="482" y="50" width="119" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{amountreceivables2}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="625" y="50" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{cash2}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="744" y="50" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{discount2}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="872" y="50" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{other2}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="1004" y="51" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{accountd2}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="1131" y="54" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{accounts2}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="1264" y="54" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{othera2}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="21" y="86" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{date3}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="136" y="86" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{accountcredited3}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="256" y="86" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{account3}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="369" y="86" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{sales3}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="485" y="86" width="116" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{amountreceivables3}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="625" y="86" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{cash3}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="744" y="86" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{discount3}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="871" y="86" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{other3}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="1004" y="86" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{accountd3}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="1131" y="86" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{accounts3}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="1264" y="86" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{othera3}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="21" y="113" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{date4}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="136" y="113" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{accountcredited4}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="256" y="113" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{account4}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="369" y="113" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{sales4}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="482" y="113" width="119" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{amountreceivables4}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="628" y="113" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{cash4}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="744" y="113" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{discount4}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="872" y="113" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{other4}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="1006" y="113" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{accountd4}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="1131" y="113" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{accounts4}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="1264" y="113" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{othera4}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="21" y="150" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{date5}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="133" y="150" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{accountcredited5}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="256" y="150" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{account5}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="371" y="150" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{sales5}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="482" y="150" width="119" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{amountreceivables5}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="628" y="150" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{cash5}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="744" y="150" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{discount5}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="868" y="150" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{other5}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="1002" y="150" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{accountd5}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="1131" y="150" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{accounts5}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="1264" y="150" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{othera5}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="16" y="197" width="1369" height="1"/>
+			</line>
+			<line>
+				<reportElement x="17" y="-20" width="1" height="217"/>
+			</line>
+			<line>
+				<reportElement x="128" y="0" width="1" height="198"/>
+			</line>
+			<line>
+				<reportElement x="243" y="0" width="1" height="198"/>
+			</line>
+			<line>
+				<reportElement x="365" y="0" width="1" height="197"/>
+			</line>
+			<line>
+				<reportElement x="476" y="0" width="1" height="197"/>
+			</line>
+			<line>
+				<reportElement x="611" y="0" width="1" height="198"/>
+			</line>
+			<line>
+				<reportElement x="737" y="0" width="1" height="197"/>
+			</line>
+			<line>
+				<reportElement x="857" y="0" width="1" height="197"/>
+			</line>
+			<line>
+				<reportElement x="989" y="0" width="1" height="198"/>
+			</line>
+			<line>
+				<reportElement x="1120" y="0" width="1" height="197"/>
+			</line>
+			<line>
+				<reportElement x="1236" y="0" width="1" height="197"/>
+			</line>
+			<line>
+				<reportElement x="1384" y="0" width="1" height="197"/>
+			</line>
+			<line>
+				<reportElement x="18" y="36" width="1366" height="1"/>
+			</line>
+			<line>
+				<reportElement x="18" y="74" width="1366" height="1"/>
+			</line>
+			<line>
+				<reportElement x="18" y="106" width="1366" height="1"/>
+			</line>
+			<line>
+				<reportElement x="17" y="144" width="1367" height="1"/>
+			</line>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
